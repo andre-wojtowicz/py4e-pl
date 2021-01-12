@@ -113,7 +113,7 @@ Po uruchomieniu programu generuje on następujące wyjście:
 5120 222320
 5120 227440
 3167 230607
-Header length 393
+Długość nagłówka: 393
 HTTP/1.1 200 OK
 Date: Wed, 11 Apr 2018 18:54:09 GMT
 Server: Apache/2.4.7 (Ubuntu)
@@ -149,7 +149,7 @@ Możemy spowolnić nasze kolejne wywołania `recv()` przez odkomentowanie wywoł
 5120 225280
 5120 230400
 207 230607
-Header length 393
+Długość nagłówka: 393
 HTTP/1.1 200 OK
 Date: Wed, 11 Apr 2018 21:42:08 GMT
 Server: Apache/2.4.7 (Ubuntu)

@@ -124,7 +124,7 @@ Wynik programu jest następujący:
 
 Tłumacząc wyrażenie regularne na ludzki język: szukamy podciągów, które zawierają co najmniej jeden *niebiały* znak, po którym następuje znak małpy, po którym następuje co najmniej jeszcze jeden niebiały znak. `\S+` dopasowuje tyle niebiałych znaków, ile tylko się da.
 
-Wyrażenie regularne pasuje dwukrotnie (csev@umich.edu i cwen@iupui.edu), ale nie pasuje do napisu "@2PM", ponieważ nie ma w nim żadnych niebiałych znaków *przed* znakiem małpy. Możemy w następujący sposób użyć tego wyrażenia regularnego, by odczytać wszystkie linie w pliku i wypisać wszystko to, co wygląda jak adres e-mail:
+Wyrażenie regularne pasuje dwukrotnie ("csev@umich.edu" i "cwen@iupui.edu"), ale nie pasuje do napisu "@2PM", ponieważ nie ma w nim żadnych niebiałych znaków *przed* znakiem małpy. Możemy w następujący sposób użyć tego wyrażenia regularnego, by odczytać wszystkie linie w pliku i wypisać wszystko to, co wygląda jak adres e-mail:
 
 \VerbatimInput{../code3/re06.py} 
 \begin{trinketfiles}
@@ -333,7 +333,8 @@ Możemy wskazać, że chcemy po prostu dopasować znak, poprzedzając go odwrotn
 ~~~~ {.python}
 import re
 x = 'Uzyskaliśmy $10.00 za ciasteczka.'
-y = re.findall('\$[0-9.]+',x)
+y = re.findall('\$[0-9.]+', x)
+print(y)
 ~~~~
 
 Ponieważ poprzedzamy znak dolara odwrotnym ukośnikiem, w rzeczywistości odpowiada on znakowi dolara w wejściowym napisie, zamiast oznaczać "koniec linii", a reszta wyrażenia regularnego odpowiada jednej lub kilku cyfrom lub znakowi kropki. *Uwaga:* w nawiasach kwadratowych znaki nie są traktowane jako "specjalne". Jeśli napiszemy `[0-9.]`, to w rzeczywistości oznacza to cyfry lub kropkę. Poza nawiasami kwadratowymi kropka jest znakiem symbolu wieloznacznego i dopasowuje każdy znak. W nawiasach kwadratowych kropka jest kropką.
@@ -373,7 +374,7 @@ Podczas gdy tylko zarysowaliśmy niewielki zakres wyrażeń regularnych, to jedn
 
 `( )` Gdy nawiasy okrągłe są dodawane do wyrażenia regularnego, są one ignorowane podczas dopasowania, ale pozwalają na wyodrębnienie konkretnego podzbioru dopasowanego napisu, a nie całego ciągu znaków, podczas użycia `findall()`.
 
-`\b` Dopasowuje pusty ciąg znaków, ale tylko na początku lub na końcu wyrazu.
+`\b` Dopasowuje pusty ciąg znaków, ale tylko na początku lub na końcu słowa.
 
 `\B` Dopasowuje pusty ciąg znaków, ale ani na początku, ani na końcu słowa.
 
@@ -478,6 +479,8 @@ mbox.txt ma 14368 linii, które pasują do ^X-
 Podaj wyrażenie regularne: java$
 mbox.txt ma 4175 linii, które pasują do java$
 ~~~~
+
+*Wskazówka*: zauważ, że w przypadku wzorca `java$` otrzymujemy 4175 linii. Jeśli otrzymujesz 4218 linii, to prawdopodobnie podczas przetwarzania danego wiersza ucinasz w nim z prawej strony zbyt dużo białych znaków.
 
 #### Ćwiczenie 2
 

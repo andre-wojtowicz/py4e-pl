@@ -21,7 +21,7 @@ mysock.close()
 
 # Znajdź koniec nagłówka (2 CRLF)
 pos = picture.find(b"\r\n\r\n")
-print('Header length', pos)
+print('Długość nagłówka:', pos)
 print(picture[:pos].decode())
 
 # Pomiń nagłówek i zapisz dane obrazu

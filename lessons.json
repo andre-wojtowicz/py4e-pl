@@ -770,6 +770,10 @@
         {
             "title" : "Krótki przewodnik po wyrażeniach regularnych w Pythonie",
             "href" : "https://py4e.pl/lectures3/Pythonlearn-11-Regex-Handout.txt"
+        },
+        {
+            "title" : "RegexOne: interaktywne ćwiczenia z wyrażeń regularnych",
+            "href" : "https://regexone.com/"
         }
     ],
     "lti" : [

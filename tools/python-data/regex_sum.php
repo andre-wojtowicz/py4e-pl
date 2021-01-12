@@ -121,7 +121,7 @@ Wprowadź poniżej sumę z danych do zadania oraz kod programu:<br/>
 Suma: <input type="text" size="20" name="sum"> (kończy się cyframi <?= $actual_sum%1000 ?>)
 <input type="submit" value="Wyślij rozwiązanie"><br/>
 Kod programu:<br/>
-<textarea rows="20" style="width: 90%" name="code"></textarea><br/>
+<textarea rows="20" style="width: 90%; font-family: monospace" name="code"></textarea><br/>
 </form>
 </p>
 <b>Opcjonalnie: po prostu dla zabawy</b>

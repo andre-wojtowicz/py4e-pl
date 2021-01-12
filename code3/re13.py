@@ -1,7 +1,6 @@
 # Szukaj linii, które zaczynają się od 'From '
 # i dowolnych znaków, po których następuje spacja
 # i dwie cyfry od 00 do 99, po których występuje ':'
-# Następnie wypisz liczbę jeśli jest większa od zera.
 import re
 hand = open('mbox-short.txt')
 for line in hand:
