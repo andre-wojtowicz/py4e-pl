@@ -53,7 +53,7 @@ Istnieje wiele innych specjalnych znaków, które pozwalają nam budować jeszcz
 \index{regex!wieloznacznik}
 \index{regex!symbol wieloznaczny}
 
-W poniższym przykładzie wyrażenie regularne `F...m:` pasuje do któregokolwiek z ciągów znaków "From:", "Fxxm:", "F12m:" lub "F!@m:", ponieważ kropka w wyrażeniu regularnym oznacza dopasowanie dowolnego znaku.
+W poniższym przykładzie wyrażenie regularne `F..m:` pasuje do któregokolwiek z ciągów znaków "From:", "Fxxm:", "F12m:" lub "F!@m:", ponieważ kropka w wyrażeniu regularnym oznacza dopasowanie dowolnego znaku.
 
 \VerbatimInput{../code3/re03.py} 
 \begin{trinketfiles}
@@ -157,7 +157,7 @@ Oto nasze nowe wyrażenie regularne:
 [a-zA-Z0-9]\S*@\S*[a-zA-Z]
 ~~~~
 
-Robi się to trochę skomplikowane i może zaczynasz rozumieć, dlaczego wyrażenia regularne są samodzielnym, małym językiem. Tłumacząc to wyrażenie regularne na ludzki język: szukamy podciągów, które rozpoczynają się *pojedynczą* małą literą, dużą literą lub liczbą "[a-zA-Z0-9]", po których następuje zero lub więcej niebiałych znaków (`\S*`), po których następuje znak małpy, po których następuje zero lub więcej niebiałych znaków (`\S*`), po których następuje duża lub mała litera. Zauważ, że zmieniliśmy znak `+` na `*`, tak by wskazać zero lub więcej niebiałych znaków, ponieważ `[a-zA-Z0-9]` jest już jednym niebiałym znakiem. Pamiętaj, że `*` lub `+` odnosi się do pojedynczego znaku znajdującego się bezpośrednio po lewej stronie plusa lub gwiazdki.
+Robi się to trochę skomplikowane i może zaczynasz rozumieć, dlaczego wyrażenia regularne są samodzielnym, małym językiem. Tłumacząc to wyrażenie regularne na ludzki język: szukamy podciągów, które rozpoczynają się *pojedynczą* małą literą, dużą literą lub liczbą `[a-zA-Z0-9]`, po których następuje zero lub więcej niebiałych znaków (`\S*`), po których następuje znak małpy, po których następuje zero lub więcej niebiałych znaków (`\S*`), po których następuje duża lub mała litera. Zauważ, że zmieniliśmy znak `+` na `*`, tak by wskazać zero lub więcej niebiałych znaków, ponieważ `[a-zA-Z0-9]` jest już jednym niebiałym znakiem. Pamiętaj, że `*` lub `+` odnosi się do pojedynczego znaku znajdującego się bezpośrednio po lewej stronie plusa lub gwiazdki.
 
 \index{regex!zbiory znaków (nawiasy kwadratowe)}
 
@@ -204,7 +204,7 @@ Możemy skonstruować następujące wyrażenie regularne, tak aby wybrać intere
 ^X-.*: [0-9.]+
 ~~~~
 
-Tłumacząc to na ludzki, mówimy, że chcemy te linie, które zaczynają się od `X-`, po których następuje zero lub więcej znaków (`.*`), po których następuje dwukropek (`:`), a następnie spacja. Po spacji szukamy jednego lub więcej znaków, które są albo cyfrą (0-9), albo kropką `[0-9.]+`. Zauważ, że wewnątrz nawiasów kwadratowych kropka odpowiada rzeczywistej kropce (tzn. pomiędzy nawiasami kwadratowymi nie jest ona traktowana jako wieloznacznik).
+Tłumacząc to na ludzki, mówimy, że chcemy te linie, które zaczynają się od `X-`, po których następuje zero lub więcej znaków (`.*`), po których następuje dwukropek (`:`), a następnie spacja. Po spacji szukamy jednego lub więcej znaków, które są albo cyfrą, albo kropką (`[0-9.]+`). Zauważ, że wewnątrz nawiasów kwadratowych kropka odpowiada rzeczywistej kropce (tzn. pomiędzy nawiasami kwadratowymi nie jest ona traktowana jako wieloznacznik).
 
 Jest to bardzo zwięzłe wyrażenie, które będzie pasowało tylko do interesujących nas linii, jak widać poniżej:
 
@@ -220,6 +220,7 @@ X-DSPAM-Confidence: 0.8475
 X-DSPAM-Probability: 0.0000
 X-DSPAM-Confidence: 0.6178
 X-DSPAM-Probability: 0.0000
+...
 ~~~~
 
 Teraz musimy rozwiązać problem wyodrębniania liczb. Chociaż da się to zrobić bardzo prosto przy użyciu `split()`, to jednak możemy użyć kolejnej cechy wyrażeń regularnych, tak by w tym samym czasie zarówno wyszukać, jak i przetworzyć linię.
@@ -247,9 +248,7 @@ Wynik programu jest następujący:
 ['0.0000']
 ['0.6178']
 ['0.0000']
-['0.6961']
-['0.0000']
-..
+...
 ~~~~
 
 Liczby wciąż są elementami list i muszą zostać przekonwertowane z ciągów znaków na typ zmiennoprzecinkowy. Niemniej jednak użyliśmy wachlarza możliwości wyrażeń regularnych zarówno do wyszukiwania, jak i wydobywania informacji, które uznaliśmy za interesujące.
@@ -352,7 +351,7 @@ Podczas gdy tylko zarysowaliśmy niewielki zakres wyrażeń regularnych, to jedn
 
 `\s` Dopasowuje biały znak.
 
-`\S` Dopasowuje niebiały znak (przeciwieństwo \\s).
+`\S` Dopasowuje niebiały znak (przeciwieństwo `\s`).
 
 `*` Dotyczy bezpośrednio poprzedzającego znaku lub znaków i wskazuje, by dopasować je zero lub więcej razy.
 
@@ -378,9 +377,9 @@ Podczas gdy tylko zarysowaliśmy niewielki zakres wyrażeń regularnych, to jedn
 
 `\B` Dopasowuje pusty ciąg znaków, ale ani na początku, ani na końcu słowa.
 
-`\d` Dopasowuje dowolną cyfrę dziesiętną; odpowiednik [0-9].
+`\d` Dopasowuje dowolną cyfrę dziesiętną; odpowiednik `[0-9]`.
 
-`\D` Dopasowuje dowolny znak niebędący cyfrą; odpowiednik zestawu [^0-9].
+`\D` Dopasowuje dowolny znak niebędący cyfrą; odpowiednik zestawu `[^0-9]`.
 
 Dodatek dla użytkowników systemu Unix / Linux
 ---------------------------------------------
@@ -389,7 +388,7 @@ Wsparcie wyszukiwania plików za pomocą wyrażeń regularnych zostało wbudowan
 
 \index{grep}
 
-W rzeczywistości Unix posiada wbudowany program wiersza poleceń o nazwie *grep* (Generalized Regular Expression Parser, czyli uogólniony parser wyrażeń regularnych), który robi prawie to samo, co przykłady z `search()` umieszczone w tym rozdziale. Więc jeśli masz system Macintosh lub Linux, możesz spróbować następujących komend w oknie linii poleceń:
+W rzeczywistości Unix posiada wbudowany program wiersza poleceń o nazwie *grep* (Generalized Regular Expression Parser, czyli uogólniony parser wyrażeń regularnych), który robi prawie to samo, co przykłady z `search()` umieszczone w tym rozdziale. Więc jeśli masz system macOS lub Linux, możesz spróbować następujących komend w oknie linii poleceń:
 
 ~~~~ {.bash}
 $ grep '^From:' mbox-short.txt

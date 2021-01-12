@@ -1,10 +1,11 @@
 # Szukaj linii, które zaczynają się od 'From '
 # i dowolnych znaków, po których następuje spacja
 # i dwie cyfry od 00 do 99, po których występuje ':'
-# Następnie wypisz liczbę jeśli jest większa od zera
+# Następnie wypisz liczbę jeśli jest większa od zera.
 import re
 hand = open('mbox-short.txt')
 for line in hand:
     line = line.rstrip()
     x = re.findall('^From .* ([0-9][0-9]):', line)
-    if len(x) > 0: print(x)
+    if len(x) > 0:
+        print(x)
