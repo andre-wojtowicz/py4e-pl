@@ -395,8 +395,9 @@ Podaj link - http://www.dr-chuck.com/page1.htm
 TAG: <a href="http://www.dr-chuck.com/page2.htm">
 Second Page</a>
 URL: http://www.dr-chuck.com/page2.htm
-Content: ['\nSecond Page']
-Attrs: [('href', 'http://www.dr-chuck.com/page2.htm')]
+Contents: 
+Second Page
+Attrs: {'href': 'http://www.dr-chuck.com/page2.htm'}
 ~~~~
 
 `html.parser` to parser HTMLa zawarty w standardowej bibliotece Pythona 3. Informacje o innych parserach HTMLa są dostępne na stronie internetowej:
@@ -451,15 +452,15 @@ web scraping
 
 #### Ćwiczenie 1
 
-Zmień program używający gniazda `socket1.py` tak, aby poprosić użytkownika o podanie adresu URL i by mógł on przeczytać dowolną stronę internetową. Możesz użyć `split('/')`, aby rozbić URL na części składowe, dzięki czemu łatwo wyodrębnisz nazwę hosta dla metody `connect()`. Dodaj sprawdzanie błędów przy użyciu `try` i `except`, aby poradzić sobie z przypadkiem, w którym użytkownik wprowadzi nieprawidłowo sformatowany lub nieistniejący adres URL.
+Zmień program używający gniazda `socket1.py` tak, aby poprosić użytkownika o podanie adresu URL i by mógł on przeczytać dowolną stronę internetową. Możesz użyć `split('/')`, aby rozbić URL na części składowe, dzięki czemu łatwo wyodrębnisz nazwę hosta dla metody `connect()`. Dodaj sprawdzanie błędów przy użyciu `try` i `except`, aby poradzić sobie z przypadkiem, w którym użytkownik wprowadzi nieprawidłowo sformatowany lub nieistniejący adres URL. Przetestuj działanie na <http://data.pr4e.org/romeo.txt>.
 
 #### Ćwiczenie 2
 
-Zmień swój program używający gniazda tak, by zliczał liczbę otrzymanych znaków i przestawał wyświetlać jakikolwiek tekst po wyświetleniu 3000 znaków. Program powinien pobrać cały dokument, zliczyć całkowitą liczbę znaków oraz na końcu ją wyświetlić.
+Zmień swój program używający gniazda tak, by zliczał liczbę otrzymanych znaków i przestawał wyświetlać jakikolwiek tekst po wyświetleniu 3000 znaków. Program powinien pobrać cały dokument, zliczyć całkowitą liczbę znaków oraz na końcu ją wyświetlić. Przetestuj działanie na <http://data.pr4e.org/romeo-full.txt>.
 
 #### Ćwiczenie 3
 
-Użyj `urllib`, aby powtórzyć poprzednie ćwiczenie dotyczące (1) pobrania dokumentu z adresu URL, (2) wyświetlenia do 3000 znaków, (3) zliczenia całkowitej liczby znaków w dokumencie. Nie martw się o nagłówki, po prostu pokaż pierwsze 3000 znaków dokumentu.
+Użyj `urllib`, aby powtórzyć poprzednie ćwiczenie dotyczące (1) pobrania dokumentu z adresu URL, (2) wyświetlenia do 3000 znaków, (3) zliczenia całkowitej liczby znaków w dokumencie. Nie martw się o nagłówki, po prostu pokaż pierwsze 3000 znaków dokumentu. Przetestuj działanie na <http://data.pr4e.org/romeo-full.txt>.
 
 #### Ćwiczenie 4
 
@@ -467,4 +468,4 @@ Zmień program `urllinks.py` tak, by wyodrębnić i policzyć znaczniki akapitu 
 
 #### Ćwiczenie 5
 
-(Zaawansowane) Zmień program używający gniazda tak, by wyświetlał dane dopiero po otrzymaniu nagłówków i pustej linii. Pamiętaj, że `recv()` otrzymuje znaki (wszystkie, włączając w to znaki końca linii), a nie linie.
+(Zaawansowane) Zmień program używający gniazda tak, by wyświetlał dane dopiero po otrzymaniu nagłówków i pustej linii. Pamiętaj, że `recv()` otrzymuje znaki (wszystkie, włączając w to znaki końca linii), a nie linie. Przetestuj działanie na <http://data.pr4e.org/romeo-full.txt>.

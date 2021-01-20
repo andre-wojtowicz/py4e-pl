@@ -1,5 +1,5 @@
 # Wyszukaj linki w danych z URL
-import urllib.request, urllib.parse, urllib.error
+import urllib.request
 import re
 import ssl
 

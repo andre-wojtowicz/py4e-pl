@@ -1,5 +1,5 @@
 import os
-import urllib.request, urllib.parse, urllib.error
+import urllib.request
 
 print('Podaj adres URL podobny do http://data.pr4e.org/cover3.jpg')
 urlstr = input().strip()

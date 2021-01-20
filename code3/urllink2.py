@@ -1,9 +1,3 @@
-# Aby uruchomić poniższy kod, poprzez wiersz linii
-# poleceń zainstaluj bibliotekę BeautifulSoup:
-#
-#    pip3 install beautifulsoup4
-#
-
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 import ssl
