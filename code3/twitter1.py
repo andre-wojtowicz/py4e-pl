@@ -1,4 +1,4 @@
-import urllib.request, urllib.parse, urllib.error
+import urllib.request
 import twurl
 import ssl
 

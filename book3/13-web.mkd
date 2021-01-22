@@ -249,7 +249,7 @@ Wynik działania programu jest następujący (część zwróconych danych JSON z
 $ python3 geojson.py 
 Podaj nazwę miejsca: Ann Arbor, MI
 Pobieranie https://nominatim.openstreetmap.org/search.php?q=...
-Pobrano: 587
+Pobrano: 594
 ~~~~
 
 ~~~~ {.json}
@@ -260,21 +260,21 @@ Pobrano: 587
         {
             "type": "Feature",
             "properties": {
-                "place_id": 146750,
-                "osm_type": "node",
-                "osm_id": 27023455,
+                "place_id": 255697953,
+                "osm_type": "relation",
+                "osm_id": 135130,
                 "display_name": "Ann Arbor, Washtenaw County, ...",
                 "place_rank": 16,
-                "category": "place",
-                "type": "city",
+                "category": "boundary",
+                "type": "administrative",
                 "importance": 0.837069344370284,
                 "icon": "https://nominatim.openstreetmap.org/..."
             },
             "bbox": [
-                -83.8912291,
-                42.1081569,
-                -83.5712291,
-                42.4281569
+                -83.799572,
+                42.222668,
+                -83.675807,
+                42.3238941
             ],
             "geometry": {
                 "type": "Point",
