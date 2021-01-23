@@ -467,7 +467,7 @@ Przykładowe uruchomienie:
 
 ~~~~
 Podaj nazwę pliku: mbox-short.txt
-{'Fri': 20, 'Thu': 6, 'Sat': 1}
+{'Sat': 1, 'Fri': 20, 'Thu': 6}
 ~~~~
 
 #### Ćwiczenie 3

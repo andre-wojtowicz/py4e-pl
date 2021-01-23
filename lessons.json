@@ -901,7 +901,7 @@
 },
 {
     "title": "Korzystanie z usług sieciowych",
-    "anchor": "servces",
+    "anchor": "services",
     "icon" : "fa-briefcase",
     "description": "Usługi sieciowe umożliwiają programowi dostęp do danych umieszczonych na innym serwerze.",
     "slides": "lectures3/Pythonlearn-13-WebServices.pptx",

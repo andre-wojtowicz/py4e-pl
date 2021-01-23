@@ -824,7 +824,7 @@ e. Zap Zap Zap
 
 Przepisz ponownie swoje obliczenie wynagrodzenia z dodatkiem za
 nadgodziny i stwórz funkcję o nazwie `computepay()`, która przyjmuje dwa
-parametry (`hours` i `rate`).
+argumenty (parametry `hours` i `rate`).
 
 ~~~~
 Podaj liczbę godzin: 45
@@ -835,7 +835,7 @@ Wynagrodzenie: 475.0
 #### Ćwiczenie 7
 
 Napisz ponownie program z poprzedniego rozdziału do wyliczania
-ocen za pomocą funkcji o nazwie `computegrade()`, która przyjmuje jako parametr
+ocen za pomocą funkcji o nazwie `computegrade()`, która przyjmuje jako argument
 wartość i zwraca ocenę jako ciąg znaków.
 
 ~~~~
