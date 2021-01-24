@@ -1,13 +1,14 @@
 <?php include("top.php"); ?>
 <?php include("nav.php");?>
 
+<h2>Python dla wszystkich</h2>
+
 <div style="float: right; border-left:0px; border-right:0px; border-bottom:0px; max-width:200px; border-top: 2px solid #f90; padding: 8px 0; margin: 0; line-height: 11px;">
     <div style="text-align: center;">
         <img style="max-width: 200px;" src="cover3-final-pl.jpg" />
     </div>
 </div>
 
-<h2>Python dla wszystkich</h2>
 <p>
     Celem książki jest wprowadzenie do tematyki programowania. Szczególny nacisk położono na wykorzystanie Pythona do rozwiązywania podstawowych problemów związanych z danymi, które mogą pojawić się w codziennej pracy.
 </p>
