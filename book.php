@@ -1,6 +1,12 @@
 <?php include("top.php"); ?>
 <?php include("nav.php");?>
-<!-- paper -->
+
+<div style="float: right; border-left:0px; border-right:0px; border-bottom:0px; max-width:200px; border-top: 2px solid #f90; padding: 8px 0; margin: 0; line-height: 11px;">
+    <div style="text-align: center;">
+        <img style="max-width: 200px;" src="cover3-final-pl.jpg" />
+    </div>
+</div>
+
 <h2>Python dla wszystkich</h2>
 <p>
     Celem książki jest wprowadzenie do tematyki programowania. Szczególny nacisk położono na wykorzystanie Pythona do rozwiązywania podstawowych problemów związanych z danymi, które mogą pojawić się w codziennej pracy.
@@ -26,6 +32,9 @@
 </ul>
 
 <p>Wykorzystywane w książce przykładowe kody programów oraz pliki danych znajdują się <a href="code3" target="_blank">tutaj</a>.</p>
+
+<p>Materiały uzupełniające dotyczące ćwiczeń programistycznych znajdują się w serwisie <a href="https://leanpub.com/python-dla-wszystkich-rozwiazania" target="_blank">Leanpub</a>.</p>
+
 <p>
 Rozdziały 2-10 są mocno zaczerpnięte z otwartej książki zatytułowanej "<a href="https://greenteapress.com/wp/learning-with-python/" target="_blank">Think Python: How to Think like a Computer Scientist</a>" autorstwa
     <a href="https://www.allendowney.com/wp/" target="_blank">Allena B. Downeya</a> i <a href="https://elkner.net/" target="_blank">Jeffa Elknera</a>.
