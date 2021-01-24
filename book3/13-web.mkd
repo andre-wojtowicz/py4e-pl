@@ -298,7 +298,7 @@ Możesz pobrać <https://py4e.pl/code3/geoxml.py>, aby sprawdzić wariant XML w 
 
 #### Ćwiczenie 1
 
-Zmień <https://py4e.pl/code3/geojson.py> lub <https://py4e.pl/code3/geoxml.py> tak, żeby wypisać nazwę stanu z pobranych danych (jeżeli podane miejsce jest w USA). Dodaj sprawdzanie błędów, aby Twój program nie wyświetlał danych z mechanizmu *traceback*, gdy w danych nie ma nazwy stanu. Gdy kod już zacznie działać, wyszukaj "Atlantic Ocean" i upewnij się, że program obsługuje też lokalizacje, które nie znajdują się w żadnym kraju.
+Zmień <https://py4e.pl/code3/geojson.py> lub <https://py4e.pl/code3/geoxml.py> tak, żeby wypisać nazwę stanu z pobranych danych (jeżeli podane miejsce jest w USA). Dodaj parametr zapytania `parms['accept-language'] = 'pl'`, tak aby zwracane wyniki o lokalizacji były w języku polskim. Dodaj sprawdzanie błędów, aby Twój program nie wyświetlał danych z mechanizmu *traceback*, gdy w danych nie ma nazwy stanu. Przetestuj działanie na "Ann Arbor, MI", "Washington, WI" oraz "Warszawa". Gdy kod już zacznie działać, wyszukaj "Ocean Atlantycki" oraz "Atlantic Ocean" i upewnij się, że program obsługuje też lokalizacje, które nie znajdują się w żadnym kraju.
 
 Aplikacja nr 2: Twitter
 -----------------------

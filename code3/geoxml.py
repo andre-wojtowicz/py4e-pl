@@ -1,4 +1,4 @@
-import urllib.request, urllib.parse, urllib.error
+import urllib.request
 import xml.etree.ElementTree as ET
 import ssl
 

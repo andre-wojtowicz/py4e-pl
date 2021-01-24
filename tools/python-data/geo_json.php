@@ -89,7 +89,7 @@ API nie posiada również limitów wywołań, zatem możesz je testować tyle ra
 Jeśli wywołasz adres URL bez podanych parametrów, uzyskasz odpowiedź "No address...".
 </p>
 <p>
-Aby wywołać API musisz podać parametr <code>key=</code> oraz <code>address=</code> opisujący
+Aby wywołać API musisz podać parametr <code>key=42</code> oraz <code>address=</code> opisujący
 poszukiwany adres. Oba parametry muszą być poprawnie zakodowane przy pomocy
 funkcji <code>urllib.parse.urlencode()</code>, tak jak to pokazano w programie
 <a href="https://py4e.pl/code3/geojson.py" target="_blank">https://py4e.pl/code3/geojson.py</a>.

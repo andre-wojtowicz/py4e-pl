@@ -4,7 +4,7 @@ import sqlite3
 conn = sqlite3.connect('rosterdb.sqlite')
 cur = conn.cursor()
 
-# Do some setup
+# Przygotowanie bazy
 cur.executescript('''
 DROP TABLE IF EXISTS User;
 DROP TABLE IF EXISTS Member;
@@ -44,8 +44,8 @@ json_data = json.loads(str_data)
 
 for entry in json_data:
 
-    name = entry[0];
-    title = entry[1];
+    name = entry[0]
+    title = entry[1]
 
     print((name, title))
 
