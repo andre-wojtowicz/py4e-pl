@@ -1,7 +1,7 @@
 name = input('Podaj nazwę pliku: ')
 handle = open(name, 'r')
-counts = dict()
 
+counts = dict()
 for line in handle:
     line = line.lower()
     words = line.split()

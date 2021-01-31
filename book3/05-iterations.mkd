@@ -230,7 +230,7 @@ Na przykład, aby zliczyć liczbę pozycji na liście, moglibyśmy napisać nast
 
 ~~~~ {.python}
 count = 0
-for itervar in [3, 41, 12, 9, 74, 15]:
+for itervar in [9, 41, 12, 3, 74, 15]:
     count = count + 1
 print('Ile:', count)
 ~~~~
@@ -246,12 +246,12 @@ Oto kolejna podobna pętla, która oblicza sumę liczb z danej listy:
 
 ~~~~ {.python}
 total = 0
-for itervar in [3, 41, 12, 9, 74, 15]:
+for itervar in [9, 41, 12, 3, 74, 15]:
     total = total + itervar
 print('Suma:', total)
 ~~~~
 
-W powyższej pętli używamy *zmiennej sterującej*. Zamiast po prostu dodawać jeden do `count` jak w poprzedniej pętli, dodajemy rzeczywistą liczbę (3, 41, 12 itd.) do sumy bieżącej podczas każdej iteracji pętli. Jeśli myślisz o zmiennej `count`, to zawiera ona "bieżącą sumę wartości napotkanych do tej pory". Tak więc przed rozpoczęciem pętli zmienna `total` jest zerem, ponieważ nie widzieliśmy jeszcze żadnych wartości; w trakcie działania pętli `total` jest sumą bieżącą, a na końcu pętli `total` jest sumą wszystkich wartości z listy.
+W powyższej pętli używamy *zmiennej sterującej*. Zamiast po prostu dodawać jeden do `count` jak w poprzedniej pętli, dodajemy rzeczywistą liczbę (9, 41, 12 itd.) do sumy bieżącej podczas każdej iteracji pętli. Jeśli myślisz o zmiennej `count`, to zawiera ona "bieżącą sumę wartości napotkanych do tej pory". Tak więc przed rozpoczęciem pętli zmienna `total` jest zerem, ponieważ nie widzieliśmy jeszcze żadnych wartości; w trakcie działania pętli `total` jest sumą bieżącą, a na końcu pętli `total` jest sumą wszystkich wartości z listy.
 
 Podczas wykonywania pętli `total` kumuluje sumę elementów; używana w ten sposób zmienna jest czasami nazywana *akumulatorem*.
 
@@ -271,7 +271,7 @@ Aby znaleźć największą wartość na liście lub sekwencji, tworzymy następu
 ~~~~ {.python}
 largest = None
 print('Przed:', largest)
-for itervar in [3, 41, 12, 9, 74, 15]:
+for itervar in [9, 41, 12, 3, 74, 15]:
     if largest is None or itervar > largest :
         largest = itervar
     print('Pętla:', itervar, largest)
@@ -282,10 +282,10 @@ Gdy uruchomimy program, wyjście będzie następujące:
 
 ~~~~
 Przed: None
-Pętla: 3 3
+Pętla: 9 9
 Pętla: 41 41
 Pętla: 12 41
-Pętla: 9 41
+Pętla: 3 41
 Pętla: 74 74
 Pętla: 15 74
 Po: 74
@@ -293,9 +293,9 @@ Po: 74
 
 Najlepiej myśleć o zmiennej `largest` jako o "największej wartości, którą do tej pory widzieliśmy". Przed pętlą ustawiamy `largest` na stałą `None`. `None` jest specjalną stałą wartością, którą możemy przechowywać w zmiennej, tak by oznaczyć ją jako "pustą".
 
-Przed rozpoczęciem pętli największą wartością, jaką do tej pory widzieliśmy, jest `None`, ponieważ nie widzieliśmy jeszcze żadnych wartości. Podczas wykonywania pętli, jeśli `largest` to `None`, bierzemy pierwszą wartość, którą do tej pory widzieliśmy, jako największą. Możesz zobaczyć w pierwszej iteracji, że wartość `itervar` wynosi 3, ponieważ `largest` to `None`, więc natychmiast ustawiamy `largest` na 3.
+Przed rozpoczęciem pętli największą wartością, jaką do tej pory widzieliśmy, jest `None`, ponieważ nie widzieliśmy jeszcze żadnych wartości. Podczas wykonywania pętli, jeśli `largest` to `None`, bierzemy pierwszą wartość, którą do tej pory widzieliśmy, jako największą. Możesz zobaczyć w pierwszej iteracji, że wartość `itervar` wynosi 9, ponieważ `largest` to `None`, więc natychmiast ustawiamy `largest` na 9.
 
-Po pierwszej iteracji `largest` nie jest już wartością `None`, więc druga część złożonego wyrażenia logicznego, która sprawdza `itervar > largest` wyzwala się tylko wtedy, gdy widzimy wartość, która jest większa niż "największa do tej pory". Gdy widzimy nową "jeszcze większą" wartość, bierzemy tę nową wartość i przypisujemy do `largest`. Możesz zobaczyć na wyjściu programu, że `largest` zwiększa się z 3 do 41, a potem do 74.
+Po pierwszej iteracji `largest` nie jest już wartością `None`, więc druga część złożonego wyrażenia logicznego, która sprawdza `itervar > largest` wyzwala się tylko wtedy, gdy widzimy wartość, która jest większa niż "największa do tej pory". Gdy widzimy nową "jeszcze większą" wartość, bierzemy tę nową wartość i przypisujemy do `largest`. Możesz zobaczyć na wyjściu programu, że `largest` zwiększa się z 9 do 41, a potem do 74.
 
 Na końcu pętli przeskanowaliśmy wszystkie wartości i zmienna `largest` zawiera teraz największą wartość z listy.
 
@@ -304,7 +304,7 @@ Kod do obliczenia najmniejszej liczby jest bardzo podobny, ale z jedną małą z
 ~~~~ {.python}
 smallest = None
 print('Przed:', smallest)
-for itervar in [3, 41, 12, 9, 74, 15]:
+for itervar in [9, 41, 12, 3, 74, 15]:
     if smallest is None or itervar < smallest:
         smallest = itervar
     print('Pętla:', itervar, smallest)

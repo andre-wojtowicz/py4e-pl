@@ -1,4 +1,4 @@
-import urllib.request, urllib.parse, urllib.error
+import urllib.request
 
 fhand = urllib.request.urlopen('http://www.dr-chuck.com/page1.htm')
 for line in fhand:

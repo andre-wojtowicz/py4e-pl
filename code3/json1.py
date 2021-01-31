@@ -1,17 +1,15 @@
 import json
-
-data = '''
-{
-  "name" : "Chuck",
-  "phone" : {
-    "type" : "intl",
-    "number" : "+1 734 303 4456"
+data = '''{
+  "imie" : "Chuck",
+  "telefon" : {
+    "typ" : "miedzynar",
+    "numer" : "+1 734 303 4456"
    },
    "email" : {
-     "hide" : "yes"
+     "ukryty" : "tak"
    }
 }'''
 
 info = json.loads(data)
-print('Name:', info["name"])
-print('Hide:', info["email"]["hide"])
+print('Imię:', info["imie"])
+print('Ukryty:', info["email"]["ukryty"])

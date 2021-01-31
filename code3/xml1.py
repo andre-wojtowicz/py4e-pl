@@ -3,7 +3,7 @@ import xml.etree.ElementTree as ET
 data = '''
 <osoba>
   <imie>Chuck</imie>
-  <telefon typ="intl">
+  <telefon typ="miedzynar">
     +1 734 303 4456
   </telefon>
   <email ukryty="tak" />

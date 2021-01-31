@@ -1,11 +1,10 @@
-rawstr = input('Enter a number:')
+rawstr = input('Podaj liczbę: ')
 try: 
     ival = int(rawstr)
 except: 
     ival = -1
 
 if ival > 0 :  
-    print('Nice work')
+    print('Niezła robota')
 else:  
-    print('Not a number')
-
+    print('To nie jest liczba')

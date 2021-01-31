@@ -1,7 +1,8 @@
 largest = None
-print('Before:', largest)
-for iterval in [3, 41, 12, 9, 74, 15]:
-    if largest is None or largest < iterval:
-        largest = iterval
-    print('Loop:', iterval, largest)
-print('Largest:', largest)
+print('Przed:', largest)
+for itervar in [9, 41, 12, 3, 74, 15]:
+    if largest is None or itervar > largest :
+        largest = itervar
+    print('Pętla:', itervar, largest)
+    
+print('Po:', largest)
