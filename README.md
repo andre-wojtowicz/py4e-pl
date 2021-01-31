@@ -8,8 +8,8 @@ Polish translation
 | Element                | Text | Code | Trinket | Index | Figures | Lectures | YouTube | Autograder | Review |
 |------------------------|------|------|-------|-------|---------|----------|---------|------------|--------|
 | `install.php`          | ☒    |      |      |       |         |          |         |            | ☒    |
-| `software-win.php`     | ☒    |      |      |       |         |          | ☒      |            | ☒    |
-| `software-mac.php`     | ☒    |      |      |       |         |          | ☒      |            | ☒    |
+| `software-win.php`     | ☒    |      |      |       |         |          | ☐      |            | ☒    |
+| `software-mac.php`     | ☒    |      |      |       |         |          | ☐      |            | ☒    |
 | `software-pyaw.php`    | ☒    |      |      |       |         |          |         |            | ☒    |
 | `A0-preface.mkd`       | ☒    |      |      | ☒     |         |          |         |            | ☒    |
 | `01-intro.mkd`         | ☒    | ☒   | ☒    | ☒    | ☒      | ☒        | ☐     | ☒          | ☒    |
