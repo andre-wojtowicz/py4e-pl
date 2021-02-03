@@ -186,7 +186,7 @@
     "anchor": "intro",
     "icon" : "fa-hand-o-right",
     "description": "Dowiemy się dlaczego ktoś może chcieć nauczyć się programowania i przyjrzymy się podstawowym problemom związanym z nauką programowania.",
-    "slides": "lectures3/Pythonlearn-01-Intro.pptx",
+    "slides": "lectures3/Pythonlearn-01-Intro-PL.pptx",
     "references" : [
         {
             "title" : "Rozdział 1: Wstęp [HTML]",
@@ -251,7 +251,7 @@
     "anchor": "memory",
     "icon" : "fa-database",
     "description": "Nauczymy się jak tworzyć zmienne i przechowywać w nich dane.",
-    "slides": "lectures3/Pythonlearn-02-Expressions.pptx",
+    "slides": "lectures3/Pythonlearn-02-Expressions-PL.pptx",
     "references" : [
         {
             "title" : "Rozdział 2: Zmienne, wyrażenia i instrukcje [HTML]",
@@ -304,7 +304,7 @@
     "anchor": "logic",
     "icon" : "fa-diamond",
     "description": "Zobaczymy jak Python wykonuje niektóre instrukcje, a inne pomija.",
-    "slides": "lectures3/Pythonlearn-03-Conditional.pptx",
+    "slides": "lectures3/Pythonlearn-03-Conditional-PL.pptx",
     "references" : [
         {
             "title" : "Rozdział 3: Wykonanie warunkowe [HTML]",
@@ -368,7 +368,7 @@
     "anchor": "functions",
     "icon" : "fa-files-o",
     "description": "Przyjrzymy się pobieżnie temu jak Python stosuje schemat programowania 'zapisz i użyj później'.",
-    "slides": "lectures3/Pythonlearn-04-Functions.pptx",
+    "slides": "lectures3/Pythonlearn-04-Functions-PL.pptx",
     "references" : [
         {
             "title" : "Rozdział 4: Funkcje [HTML]",
@@ -417,7 +417,7 @@
     "anchor": "loops",
     "icon" : "fa-gears",
     "description": "Przyjrzyjmy się jak Python powtarza instrukcje przy użyciu struktury pętli.",
-    "slides": "lectures3/Pythonlearn-05-Iterations.pptx",
+    "slides": "lectures3/Pythonlearn-05-Iterations-PL.pptx",
     "references" : [
         {
             "title" : "Rozdział 5: Pętle i iteracje [HTML]",
@@ -474,7 +474,7 @@
     "anchor": "strings",
     "icon" : "fa-file-text-o",
     "description": "Przyjrzymy się jak Python przechowuje i zarządza danymi tekstowymi za pomocą funkcji i zmiennych będących ciągami znaków.",
-    "slides": "lectures3/Pythonlearn-06-Strings.pptx",
+    "slides": "lectures3/Pythonlearn-06-Strings-PL.pptx",
     "references" : [
         {
             "title" : "Rozdział 6: Ciągi znaków [HTML]",
@@ -523,7 +523,7 @@
     "anchor": "files",
     "icon" : "fa-database",
     "description": "Dowiemy się jak za pomocą Pythona otwierać na komputerze pliki danych i odczytywać ich zawartość.",
-    "slides": "lectures3/Pythonlearn-07-Files.pptx",
+    "slides": "lectures3/Pythonlearn-07-Files-PL.pptx",
     "references" : [
         {
             "title" : "Rozdział 7: Pliki [HTML]",
@@ -572,7 +572,7 @@
     "anchor": "lists",
     "icon" : "fa-list-ol",
     "description": "Przyjrzyjmy się najprostszej strukturze danych Pythona tj. liście. Listy mogą przechowywać w zmiennej więcej niż jeden element.",
-    "slides": "lectures3/Pythonlearn-08-Lists.pptx",
+    "slides": "lectures3/Pythonlearn-08-Lists-PL.pptx",
     "references" : [
         {
             "title" : "Rozdział 8: Listy [HTML]",
@@ -636,7 +636,7 @@
     "anchor": "dictionary",
     "icon" : "fa-key",
     "description": "Struktury danych słownika pozwalają nam przechowywać w obiekcie wiele wartości i wyszukiwać wartości według ich klucza.",
-    "slides": "lectures3/Pythonlearn-09-Dictionaries.pptx",
+    "slides": "lectures3/Pythonlearn-09-Dictionaries-PL.pptx",
     "videos" : [
         {
             "title" : "Dictionaries - Part 1",
@@ -693,7 +693,7 @@
     "anchor": "tuples",
     "icon" : "fa-inbox",
     "description": "Krotka to struktura danych w Pythonie, która przypomina prostą i wydajną listę.",
-    "slides": "lectures3/Pythonlearn-10-Tuples.pptx",
+    "slides": "lectures3/Pythonlearn-10-Tuples-PL.pptx",
     "references" : [
         {
             "title" : "Rozdział 10: Krotki [HTML]",
@@ -743,7 +743,7 @@
     "anchor": "regex",
     "icon" : "fa-magic",
     "description": "Wyrażenia regularne pozwalają nam wyszukiwać w napisach pewne wzorce i wyodrębniać z nich dane przy użyciu języka programowania wyrażeń regularnych.",
-    "slides": "lectures3/Pythonlearn-11-Regex.pptx",
+    "slides": "lectures3/Pythonlearn-11-Regex-PL.pptx",
     "videos" : [
         {
             "title" : "Regular Expressions - Part 1",
@@ -800,7 +800,7 @@
     "anchor": "network",
     "icon" : "fa-cloud",
     "description": "Rzucimy okiem na to jak dane są przesyłane w sieci przy użyciu protokołu HTTP (HyperText Transport Protocol) i jak pisze się programy odczytujące dane z sieci.",
-    "slides": "lectures3/Pythonlearn-12-HTTP.pptx",
+    "slides": "lectures3/Pythonlearn-12-HTTP-PL.pptx",
     "references" : [
         {
             "title" : "Rozdział 12: Programy sieciowe [HTML]",
@@ -904,7 +904,7 @@
     "anchor": "services",
     "icon" : "fa-briefcase",
     "description": "Usługi sieciowe umożliwiają programowi dostęp do danych umieszczonych na innym serwerze.",
-    "slides": "lectures3/Pythonlearn-13-WebServices.pptx",
+    "slides": "lectures3/Pythonlearn-13-WebServices-PL.pptx",
     "references" : [
         {
             "title" : "Rozdział 13: Korzystanie z usług sieciowych [HTML]",
@@ -1021,7 +1021,7 @@
     "anchor": "Objects",
     "icon" : "fa-cubes",
     "description": "Rzucimy okiem na to, jak Python obsługuje paradygmat programowania obiektowego.",
-    "slides": "lectures3/Pythonlearn-14-Objects.pptx",
+    "slides": "lectures3/Pythonlearn-14-Objects-PL.pptx",
     "references" : [
         {
             "title" : "Rozdział 14: Programowanie obiektowe [HTML]",
@@ -1064,7 +1064,7 @@
     "anchor": "database",
     "icon" : "fa-database",
     "description": "Bazy danych dają nam bardzo szybki dostęp do dużych ilości danych. Rozdział ten zawiera dużo materiału, ponieważ nauczymy się podstaw języka SQL.",
-    "slides": "lectures3/Pythonlearn-15-Databases.pptx",
+    "slides": "lectures3/Pythonlearn-15-Databases-PL.pptx",
     "videos" : [
         {
             "title" : "Databases - Part 1",
@@ -1196,7 +1196,7 @@
     "anchor": "dataviz",
     "icon" : "fa-bar-chart-o",
     "description": "W tej sekcji nauczymy się jak pobierać dane z sieci, przechowywać je w bazie danych, a następnie odczytywać je z bazy danych, tak aby stworzyć w przeglądarce internetowej wizualizację tych danych.",
-    "slides": "lectures3/Pythonlearn-16-Data-Viz.pptx",
+    "slides": "lectures3/Pythonlearn-16-Data-Viz-PL.pptx",
     "references" : [
         {
             "title" : "Rozdział 16: Wizualizacja danych [HTML]",

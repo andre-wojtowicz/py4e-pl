@@ -32,7 +32,9 @@
     </li>
 </ul>
 
-<p>Wykorzystywane w książce przykładowe kody programów oraz pliki danych znajdują się <a href="code3" target="_blank">tutaj</a>.</p>
+<p>Wykorzystywane w książce przykładowe kody programów oraz pliki danych znajdują się w katalogu <a href="code3" target="_blank">code3</a>.</p>
+
+<p>Slajdy do wykładów znajdują się w katalogu <a href="lectures3" target="_blank">lectures3</a>.</p>
 
 <p>Materiały uzupełniające dotyczące ćwiczeń programistycznych znajdują się w serwisie <a href="https://leanpub.com/python-dla-wszystkich-rozwiazania" target="_blank">Leanpub</a>.</p>
 
