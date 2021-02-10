@@ -230,13 +230,50 @@ $endfor$
 \makeindex[intoc]
 
 \begin{document}
+
 $if(fontcode)$
 \fontfamily{$fontcode$}\selectfont
 $endif$
+
 \frontmatter
-$if(title)$
-\maketitle
+
+$if(printbook)$
+  \begin{titlepage}
+      \begin{center}
+          \vspace*{1cm}
+          
+          \textbf{\huge\sffamily{}\uppercase{$title$}}
+          
+          \vfill
+          
+      \end{center}
+  \end{titlepage}
+  \begin{titlepage}
+  \setcounter{page}{3}
+      \begin{center}
+          \vspace*{1cm}
+          
+          \textbf{\huge\sffamily{}\uppercase{$title$}}
+          
+          \vspace{0.5cm}
+          \textbf{\Large\sffamily{}\uppercase{$subtitle$}}
+          
+          \vspace{1.5cm}
+          
+          \textbf{\Large\sffamily{}$author$}
+          
+          \vfill
+          
+          \vspace{0.8cm}
+          
+          {\large\sffamily{}Wydanie drugie}
+          
+      \end{center}
+  \end{titlepage}
+$else$
+  \maketitle
 $endif$
+
 $if(abstract)$
 \begin{abstract}
 $abstract$

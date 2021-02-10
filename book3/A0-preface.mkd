@@ -1,22 +1,14 @@
 \thispagestyle{empty}
 
-Podziękowania autorskie
------------------------
+Tytuł oryginału: *Python for Everybody. Exploring Data in Python 3*
+
+Tłumaczenie: Andrzej Wójtowicz
+
+Korekta: Agata i Krzysztof Wierzbiccy
 
 Wsparcie edytorskie: Elliott Hauser, Sue Blumenberg
 
 Projekt okładki: Aimee Andrion
-
-Historia wydań
---------------
-
-* 2020-12-08 – Pierwsza kompletna wersja polskiego wydania
-* 2020-09-27 – Pierwsza wersja robocza polskiego wydania
-* 2016-07-05 – Pierwsza kompletna wersja Pythona 3.0
-* 2015-12-20 – Pierwsza wstępna konwersja do Pythona 3.0
-
-Prawa autorskie
----------------
 
 Copyright 2009– Dr Charles R. Severance
 
@@ -29,6 +21,14 @@ Licencja jest dostępna pod adresem:
 O tym, co autor uważa za komercyjne i niekomercyjne wykorzystanie tego materiału,
 jak również wyłączenia licencyjne, można przeczytać w dodatku zatytułowanym
 "Szczegóły dotyczące praw autorskich".
+
+ISBN (wersja drukowana): 978-83-960176-0-4
+
+ISBN (wersja elektroniczna): 978-83-960176-1-1
+
+Wydanie drugie, 2021
+
+Wydawca: Andrzej Wójtowicz
 
 \cleardoublepage
 \pdfbookmark{Przedmowa}{preface}

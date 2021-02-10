@@ -180,7 +180,7 @@ Histogram wskazuje, że np. litery "a" i "b" pojawiają się raz; "o" pojawia si
 Słowniki posiadają metodę `get()`, która przyjmuje klucz i domyślną wartość. Jeśli klucz pojawia się w słowniku, `get()` zwraca odpowiednią wartość; w przeciwnym razie zwraca wartość domyślną. Na przykład:
 
 ~~~~ {.python .trinket}
->>> counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100}
+>>> counts = { 'chuck' : 1, 'annie' : 42, 'jan' : 100 }
 >>> print(counts.get('jan', 0))
 100
 >>> print(counts.get('tim', 0))
@@ -257,7 +257,7 @@ Pętle i słowniki
 Jeśli używasz słownika jako sekwencji w instrukcji `for`, pętla przechodzi wtedy przez klucze słownika. Poniższa pętla wyświetla każdy klucz i odpowiadającą mu wartość:
 
 ~~~~ {.python}
-counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100 }
+counts = { 'chuck' : 1, 'annie' : 42, 'jan' : 100 }
 for key in counts:
     print(key, counts[key])
 ~~~~
@@ -275,7 +275,7 @@ jan 100
 Możemy użyć tego schematu do zaimplementowania różnych idiomów pętli, które opisaliśmy wcześniej. Na przykład, jeśli chcielibyśmy znaleźć wszystkie wpisy w słowniku o wartości powyżej dziesięciu, moglibyśmy napisać następujący kod:
 
 ~~~~ {.python}
-counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100 }
+counts = { 'chuck' : 1, 'annie' : 42, 'jan' : 100 }
 for key in counts:
     if counts[key] > 10 :
         print(key, counts[key])
@@ -296,7 +296,7 @@ Widzimy teraz tylko te elementy, które mają wartość powyżej 10.
 Jeżeli chcesz wyświetlić klucze w porządku alfabetycznym, to – korzystając z metody `keys()` dostępnej w obiektach słownikowych – sporządzasz listę kluczy występujących w słowniku, a następnie sortujesz ją i przechodzisz w pętli po tej posortowanej liście, przeglądając każdy klucz i wyświetlając pary klucz-wartość w posortowanej kolejności, tak jak pokazano poniżej:
 
 ~~~~ {.python}
-counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100 }
+counts = { 'chuck' : 1, 'annie' : 42, 'jan' : 100 }
 lst = list(counts.keys())
 print(lst)
 lst.sort()
