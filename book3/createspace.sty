@@ -18,7 +18,7 @@
 \define@choicekey*+{createspace.sty}{colorpackage}[\val\nr]{none,color,xcolor}{\let\createspace@colorpackage\nr\let\createspace@colorpackagename\val}{\PackageWarning{createspace}{unknown colorpackage option}}
 \define@boolkeys{createspace.sty}[createspace@]{bleed,colour,color}[true]
 \define@cmdkeys{createspace.sty}[createspace@]{inner,outer,top,bottom,gutter,geometryextra,customsize}
-\presetkeys{createspace.sty}{size=novel,trim=0,paper=white,preview=false,gutter=0.3in,inner=0.5in,outer=0.5in,top=0.5in,bottom=0.5in,geometryextra={twoside,heightrounded,truedimen},colourpackage=xcolor,colorpackage=xcolor}{}
+\presetkeys{createspace.sty}{size=novel,trim=0,paper=white,preview=false,gutter=0.3in,inner=0.5in,outer=0.5in,top=0.75in,bottom=0.4in,geometryextra={twoside,heightrounded,truedimen},colourpackage=xcolor,colorpackage=xcolor}{}
 \ProcessOptionsX
 \ifcreatespace@color\createspace@colourtrue\fi
 \ifcase\createspace@colourpackage\relax\or\or
@@ -245,7 +245,7 @@
 \advance\createspace@l@width by 0.125in
 \advance\createspace@l@height by 0.25in
 \advance\createspace@l@outer by 0.125in
-\advance\createspace@l@top by 0.125in
+\advance\createspace@l@top by 0.225in
 \advance\createspace@l@bottom by 0.225in
 \fi
 
