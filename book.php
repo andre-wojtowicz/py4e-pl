@@ -3,9 +3,56 @@
 
 <h2>Python dla wszystkich</h2>
 
-<div style="float: right; border-left:0px; border-right:0px; border-bottom:0px; max-width:200px; border-top: 2px solid #f90; padding: 8px 0; margin: 0; line-height: 11px;">
+<style>
+.book-primary-btn {
+	background: #f8e6b8;
+	padding: 3px;
+	background: -moz-linear-gradient(top, #f8e6b8 0, #f3d686 6%, #ebb62c 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f8e6b8), color-stop(6%, #f3d686), color-stop(100%, #ebb62c));
+	background: -webkit-linear-gradient(top, #f8e6b8 0, #f3d686 6%, #ebb62c 100%);
+	background: -o-linear-gradient(top, #f8e6b8 0, #f3d686 6%, #ebb62c 100%);
+	background: -ms-linear-gradient(top, #f8e6b8 0, #f3d686 6%, #ebb62c 100%);
+	background: linear-gradient(to bottom, #f8e6b8 0, #f3d686 6%, #ebb62c 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f8e6b8', endColorstr='#ebb62c', GradientType=0)
+}
+.book-primary-btn:hover {
+	background: #f4f2ed;
+	background: -moz-linear-gradient(top, #f4f2ed 0, #efdeb3 6%, #e8bb4a 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f4f2ed), color-stop(6%, #efdeb3), color-stop(100%, #e8bb4a));
+	background: -webkit-linear-gradient(top, #f4f2ed 0, #efdeb3 6%, #e8bb4a 100%);
+	background: -o-linear-gradient(top, #f4f2ed 0, #efdeb3 6%, #e8bb4a 100%);
+	background: -ms-linear-gradient(top, #f4f2ed 0, #efdeb3 6%, #e8bb4a 100%);
+	background: linear-gradient(to bottom, #f4f2ed 0, #efdeb3 6%, #e8bb4a 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f4f2ed', endColorstr='#e8bb4a', GradientType=0)
+}
+</style>
+<div style="float: right; border-left:0px; border-right:0px; border-bottom:0px; max-width:150px; border-top: 2px solid #f90; padding: 8px 0; margin: 0; line-height: 11px;">
     <div style="text-align: center;">
-        <img style="max-width: 200px;" src="cover3-final-pl.jpg" />
+        <img style="max-width: 150px;" src="book-cover3d.png" />
+    </div>
+    <div style="text-align: center; margin-top: 3px;">
+        <span style="color:#333333; font: normal 12px/17px Arial,Helvetica,sans-serif;">Wersja dostępna w druku na żądanie:</span>
+    </div>
+    <div class="book-primary-btn" style="margin-top: 5px; padding: 3px; width: 100%; border-width: 1px 0;">
+        <a rel="nofollow" href="https://amzn.to/3rxx3Nw" target="_blank" style="text-decoration: none; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; margin: 0; padding: 0; width: 100%; font: normal 14px/17px Arial,Helvetica,sans-serif; color: #333; font-size: 12px; text-align: center; display: flex; justify-content: space-between;">
+            <div style=""><img src="book-amz.png" style="height: 20px;" /></div>
+            <div style="align-self: center;">Amazon.pl</div>
+            <div style="width: 20px"></div>
+        </a>
+    </div>
+    <div class="book-primary-btn" style="margin-top: 5px; padding: 3px; width: 100%; border-width: 1px 0;">
+        <a rel="nofollow" href="https://amzn.to/3bvM4dh" target="_blank" style="text-decoration: none; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; margin: 0; padding: 0; width: 100%; font: normal 14px/17px Arial,Helvetica,sans-serif; color: #333; font-size: 12px; text-align: center; display: flex; justify-content: space-between;">
+            <div style=""><img src="book-amz.png" style="height: 20px;" /></div>
+            <div style="align-self: center;">Amazon.de</div>
+            <div style="width: 20px"></div>
+        </a>
+    </div>
+    <div class="book-primary-btn" style="margin-top: 5px; padding: 3px; width: 100%; border-width: 1px 0;">
+        <a rel="nofollow" href="https://tidd.ly/2OHceRm" target="_blank" style="text-decoration: none; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; margin: 0; padding: 0; width: 100%; font: normal 14px/17px Arial,Helvetica,sans-serif; color: #333; font-size: 12px; text-align: center; display: flex; justify-content: space-between;">
+            <div style=""><img src="book-bdp.png" style="height: 20px;" /></div>
+            <div style="align-self: center;">Book Depository</div>
+            <div style="width: 20px"></div>
+        </a>
     </div>
 </div>
 
@@ -14,7 +61,7 @@
 </p>
 <ul>
     <li>
-        Polskie tłumaczenie:
+        <a rel="nofollow" href="https://amzn.to/3rxx3Nw" target="_blank">Python dla wszystkich: Odkrywanie danych z Python 3</a>:
         <ul class="menu vertical nested is-active">
             <li class="menu-text">ostatnia aktualizacja: <?php exec('git log -1 --format="%at" | xargs -I{} date -d @{} "+%Y-%m-%d"', $commit_date); echo($commit_date[0]); ?></li>
             <li class="menu-text">
