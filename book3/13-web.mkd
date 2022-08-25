@@ -40,7 +40,7 @@ Oto prosta aplikacja, która przetwarza część XMLa i wyodrębnia z niego niek
 
 Potrójny apostrof (`'''`), jak również potrójny cudzysłów (`"""`) pozwalają na tworzenie napisów, które obejmują wiele linii.
 
-Wywołanie `fromstring()` zamienia reprezentację XMLa z ciągu znaków na "drzewo" elementów XML. Gdy element XML znajduje się w drzewie, mamy wiele metod, które możemy wywołać, by wyodrębnić interesujące nas dane z ciągu znaków w XMLu. Funkcja `find()` przeszukuje drzewo XML i wyciąga element, który pasuje do określonego znacznika.
+Wywołanie `fromstring()` zamienia reprezentację kodu XML z napisu na "drzewo" elementów XML. Gdy element XML znajduje się w drzewie, mamy wiele metod, które możemy wywołać, by wyodrębnić interesujące nas dane z tekstu w kodzie XML. Funkcja `find()` przeszukuje drzewo XML i wyciąga element, który pasuje do określonego znacznika.
 
 ~~~~
 Imię: Chuck
@@ -219,7 +219,7 @@ Aplikacja nr 1: usługa sieciowa OpenStreetMap do geokodowania
 \index{geokodowanie}
 \index{usługa sieciowa}
 
-OpenStreetMap oferuje usługę internetową Nominatim, która pozwala nam korzystać z ich dużej bazy danych geograficznych. Możemy przesłać do ich geokodującego API ciąg znaków geograficznych, takich jak "Ann Arbor, MI", i sprawić, że OpenStreetMap zwróci najbardziej prawdopodobne przypuszczenie dotyczące tego, gdzie na mapie możemy odnaleźć nasz ciąg znaków.
+OpenStreetMap oferuje usługę internetową Nominatim, która pozwala nam korzystać z ich dużej bazy danych geograficznych. Możemy przesłać do ich geokodującego API tekst opisujący jakieś miejsce geograficzne, np. "Ann Arbor, MI", i sprawić, że OpenStreetMap zwróci najbardziej prawdopodobne przypuszczenie dotyczące tego, gdzie na mapie możemy odnaleźć wprowadzoną przez nas lokalizację.
 
 Usługa geokodowania jest bezpłatna, ale ograniczona ilościowo, więc w aplikacji komercyjnej nie możesz korzystać z API w sposób nieograniczony. Ale jeśli np. masz trochę danych z ankiety, w której użytkownicy wprowadzili w polu danych jakąś lokalizację w dowolnym formacie, to możesz użyć tego API, tak by całkiem nieźle oczyścić swoje dane.
 
@@ -239,7 +239,7 @@ Poniżej znajduje się prosta aplikacja wyszukująca informacje geograficzne na 
 
 \VerbatimInput{../code3/geojson.py} 
 
-Program pobiera ciąg znaków i konstruuje adres URL zawierający wprowadzony ciąg wyszukiwania jako prawidłowo zakodowany parametr adresu URL, a następnie używa `urllib` do pobrania tekstu z API geokodowania OpenStreetMap. W przeciwieństwie do stałej/niezmiennej strony internetowej, otrzymywane dane zależą od parametrów, które wysyłamy, oraz od danych geograficznych przechowywanych na serwerach OpenStreetMap.
+Program odczytuje tekst podany przez użytkownika i konstruuje adres URL zawierający wprowadzoną lokalizację do wyszukania jako prawidłowo zakodowany parametr adresu URL, a następnie używa `urllib` do pobrania tekstu z API geokodowania OpenStreetMap. W przeciwieństwie do stałej/niezmiennej strony internetowej, otrzymywane dane zależą od parametrów, które wysyłamy, oraz od danych geograficznych przechowywanych na serwerach OpenStreetMap.
 
 Kiedy pobierzemy dane JSON, parsujemy je za pomocą modułu `json` i sprawdzamy kilka rzeczy, tak aby upewnić się, że otrzymaliśmy dobre dane, a następnie pobieramy informacje, których szukamy.
 
@@ -307,7 +307,7 @@ Od czasu, gdy API Twittera stało się bardziej wartościowe, Twitter przeszedł
 
 Oba nasze przykłady opierają się na plikach `twurl.py`, `hidden.py`, `oauth.py`, `twitter1.py` i `twitter2.py`, które możesz pobrać z <https://py4e.pl/code3>. Po pobraniu plików umieść je wszystkie w jednym katalogu.
 
-Aby móc korzystać z tych programów, musisz mieć konto na Twitterze i autoryzować swój kod Pythona jako aplikację, ustawić klucz, sekret, token i sekret tokena. Wyedytuj plik `hidden.py` i umieść w nim cztery ciągi znaków w odpowiednich miejscach:
+Aby móc korzystać z tych programów, musisz mieć konto na Twitterze i autoryzować swój kod Pythona jako aplikację, ustawić klucz, sekret, token i sekret tokena. Wyedytuj plik `hidden.py` i umieść w nim cztery specjalne ciągi znaków w odpowiednich miejscach:
 
 \VerbatimInput{../code3/hidden.py} 
 
@@ -329,7 +329,7 @@ Jeśli chcesz dowiedzieć więcej o znaczeniu różnych parametrów, które są 
 
 W naszych programach korzystających z Twittera wszystkie skomplikowane mechanizmy będą ukryte w plikach `oauth.py` i `twurl.py`. Po prostu ustawiamy sekrety w `hidden.py`, następnie wysyłamy żądany adres URL do funkcji `twurl.augment()`, a kod biblioteki dodaje za nas wszystkie niezbędne parametry do adresu URL.
 
-Poniższy program pobiera oś czasu dla konkretnego użytkownika Twittera i zwraca go nam w formacie JSON w postaci ciągu znaków. Po uzyskaniu danych po prostu wypisujemy pierwsze 250 znaków ciągu:
+Poniższy program pobiera oś czasu dla konkretnego użytkownika Twittera i zwraca go nam w formacie JSON w postaci tekstu. Po uzyskaniu danych, po prostu wypisujemy pierwsze 250 znaków:
 
 \VerbatimInput{../code3/twitter1.py} 
 \begin{trinketfiles}

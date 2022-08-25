@@ -2,7 +2,7 @@
 ---
 title: Python dla wszystkich
 author: Charles R. Severance
-rights:  Creative Commons Użycie niekomercyjne-Na tych samych warunkach 3.0
+rights: Creative Commons Użycie niekomercyjne-Na tych samych warunkach 3.0
 language: pl-PL
 cover-image: ../cover3-final-pl.jpg
 ...

@@ -1,16 +1,16 @@
 
-Ciągi znaków
-============
+Napisy
+======
 
-Ciąg znaków jest sekwencją
---------------------------
+Napis jest sekwencją
+--------------------
 
 \index{sekwencja}
 \index{znak}
 \index{nawias kwadratowy, operator}
 \index{operator!nawias kwadratowy}
 
-Ciąg znaków jest *sekwencją* znaków. Możesz uzyskać dostęp do poszczególnych znaków za pomocą operatora w postaci nawiasów kwadratowych:
+Napis jest *sekwencją* znaków. Możesz uzyskać dostęp do poszczególnych znaków za pomocą operatora w postaci nawiasów kwadratowych:
 
 ~~~~ {.python}
 >>> fruit = 'banan'
@@ -32,7 +32,7 @@ a
 ~~~~
 
 
-Dla większości ludzi pierwsza litera słowa "banan" to "b", a nie "a". Jednak w Pythonie indeks oznacza przesunięcie od początku ciągu znaków, a przesunięcie od pierwszej litery wynosi zero.
+Dla większości ludzi pierwsza litera słowa "banan" to "b", a nie "a". Jednak w Pythonie indeks oznacza przesunięcie od początku napisu, a przesunięcie od pierwszej litery wynosi zero.
 
 ~~~~ {.python}
 >>> letter = fruit[0]
@@ -42,7 +42,7 @@ b
 
 Tak więc "b" to 0. ("zerowa") litera słowa "banan", "a" to pierwsza litera, a "n" to druga litera.
 
-![Indeksy w ciągach znaków](height=0.75in@../images/string)
+![Indeksy w napisach](height=0.75in@../images/string)
 
 \index{indeks!numerowanie od zera}
 \index{zero, początek numerowania indeksów}
@@ -59,13 +59,13 @@ Możesz użyć dowolnego wyrażenia, w tym zmiennych i operatorów, jako indeksu
 TypeError: string indices must be integers
 ~~~~
 
-Uzyskanie długości ciągu znaków przy użyciu `len()`
--------------------------------------------------
+Uzyskanie długości napisu przy użyciu `len()`
+---------------------------------------------
 
 \index{len, funkcja}
 \index{funkcja!len}
 
-`len()` jest funkcją wbudowaną, która zwraca liczbę znaków w danym ciągu:
+`len()` jest funkcją wbudowaną, która zwraca liczbę znaków w danym napisie:
 
 ~~~~ {.python}
 >>> fruit = 'banan'
@@ -73,7 +73,7 @@ Uzyskanie długości ciągu znaków przy użyciu `len()`
 5
 ~~~~
 
-Może Cię kusić, by spróbować czegoś takiego, aby otrzymać ostatnią literę ciągu znaków:
+Może Cię kusić, by spróbować czegoś takiego, aby otrzymać ostatnią literę napisu:
 
 \index{wyjątek!IndexError}
 \index{IndexError}
@@ -92,13 +92,13 @@ Powodem błędu `IndexError` jest to, że w słowie "banan" nie ma litery z inde
 n
 ~~~~
 
-Opcjonalnie możesz użyć ujemnych indeksów, które liczą wstecz od końca ciągu znaków. Wyrażenie `fruit[-1]` daje ostatnią literę, `fruit[-2]` daje przedostatnią itd.
+Opcjonalnie możesz użyć ujemnych indeksów, które liczą wstecz od końca napisu. Wyrażenie `fruit[-1]` daje ostatnią literę, `fruit[-2]` daje przedostatnią itd.
 
 \index{indeks!ujemny}
 \index{ujemny indeks}
 
-Przejście przez ciąg znaków przy użyciu pętli
----------------------------------------------
+Przejście przez napis przy użyciu pętli
+---------------------------------------
 
 \index{przejście}
 \index{pętla!przejście}
@@ -106,7 +106,7 @@ Przejście przez ciąg znaków przy użyciu pętli
 \index{pętla!for}
 \index{instrukcja!for}
 
-Wiele obliczeń polega na przetwarzaniu tekstu znak po znaku. Często zaczynają się one od początku ciągu znaków, pobierają po kolei jeden znak, robią coś z nim i kontynuują tak aż do końca. Ten schemat przetwarzania jest nazywany *przejściem*. Jednym ze sposobów na napisanie przejścia jest użycie pętli `while`:
+Wiele obliczeń polega na przetwarzaniu tekstu znak po znaku. Często zaczynają się one od początku napisu, pobierają po kolei jeden znak, robią coś z nim i kontynuują tak aż do końca. Ten schemat przetwarzania jest nazywany *przejściem*. Jednym ze sposobów na napisanie przejścia jest użycie pętli `while`:
 
 ~~~~ {.python}
 index = 0
@@ -116,34 +116,34 @@ while index < len(fruit):
     index = index + 1
 ~~~~
 
-Pętla ta przechodzi po ciągu znaków i wyświetla w wierszu pojedynczo każdą literę. Warunkiem pętli jest `index < len(fruit)`, więc gdy `index` jest równy długości łańcucha, warunek jest fałszywy, a ciało pętli nie jest już wykonywane. Ostatnim dostępnym znakiem jest ten z indeksem `len(fruit)-1`, który jest ostatnim znakiem w ciągu.
+Pętla ta przechodzi po napisie i wyświetla w wierszu pojedynczo każdą literę. Warunkiem pętli jest `index < len(fruit)`, więc gdy `index` jest równy długości napisu, warunek jest fałszywy, a ciało pętli nie jest już wykonywane. Ostatnim dostępnym znakiem jest ten z indeksem `len(fruit)-1`, który jest ostatnim znakiem w napisie.
 
 #### Ćwiczenie 1
 
-Napisz pętlę `while`, która zaczyna się od ostatniego znaku w ciągu i działa od końca, do pierwszego znaku, wypisując każdą literę w osobnej linii, w odwrotnej kolejności.
+Napisz pętlę `while`, która zaczyna się od ostatniego znaku w napisie i działa od końca, do pierwszego znaku, wypisując każdą literę w osobnej linii, w odwrotnej kolejności.
 
 ----
 
-Innym sposobem na napisanie przejścia przez ciąg znaków jest użycie pętli `for`:
+Innym sposobem na napisanie przejścia przez napis jest użycie pętli `for`:
 
 ~~~~ {.python}
 for char in fruit:
     print(char)
 ~~~~
 
-Za każdym przejściem przez pętlę kolejny znak w łańcuchu jest przypisywany do zmiennej `char`. Pętla jest kontynuowana aż do momentu, gdy nie pozostaną już żadne znaki do przypisania.
+Za każdym przejściem przez pętlę kolejny znak napisu jest przypisywany do zmiennej `char`. Pętla jest kontynuowana aż do momentu, gdy nie pozostaną już żadne znaki do przypisania.
 
-Wycinki z ciągu znaków
-----------------------
+Wycinki napisów
+---------------
 
 \index{wycinanie, operator}
 \index{operator!wycinanie}
 \index{indeks!wycinanie}
-\index{ciąg znaków!wycinanie}
-\index{wycinanie!ciąg znaków}
+\index{napis!wycinanie}
+\index{wycinanie!napis}
 \index{wycinek}
 
-Segment ciągu znaków nazywany jest *wycinkiem* lub *kawałkiem*. Wybranie wycinka jest podobne do wybrania znaku:
+Segment napisu nazywany jest *wycinkiem* lub *kawałkiem*. Wybranie wycinka jest podobne do wybrania znaku:
 
 ~~~~ {.python}
 >>> s = 'Monty Python'
@@ -153,9 +153,9 @@ Monty
 Python
 ~~~~
 
-Operator dwukropka zwraca część ciągu znaków od "n-tego" do "m-tego" znaku, włączając w to pierwszy, ale wyłączając z niego ostatni.
+Operator dwukropka zwraca część napisu od "n-tego" do "m-tego" znaku, włączając w to pierwszy, ale wyłączając z niego ostatni.
 
-Jeśli pominiesz pierwszy indeks (przed dwukropkiem), wycinek zaczyna się od początku ciągu znaków. Jeśli pominiesz drugi indeks, wycinek jest pobierany aż do końca ciągu znaków:
+Jeśli pominiesz pierwszy indeks (przed dwukropkiem), wycinek zaczyna się od początku napisu. Jeśli pominiesz drugi indeks, wycinek jest pobierany aż do końca napisu:
 
 ~~~~ {.python}
 >>> fruit = 'banan'
@@ -165,11 +165,11 @@ Jeśli pominiesz pierwszy indeks (przed dwukropkiem), wycinek zaczyna się od po
 'an'
 ~~~~
 
-Jeśli pierwszy indeks jest większy lub równy drugiemu, wynikiem jest *pusty ciąg znaków*, reprezentowany przez dwa apostrofy:
+Jeśli pierwszy indeks jest większy lub równy drugiemu, wynikiem jest *pusty napis*, reprezentowany przez dwa apostrofy:
 
 \index{apostrof}
-\index{pusty ciąg znaków}
-\index{ciąg znaków!pusty}
+\index{pusty napis}
+\index{napis!pusty}
 
 ~~~~ {.python}
 >>> fruit = 'banana'
@@ -177,23 +177,23 @@ Jeśli pierwszy indeks jest większy lub równy drugiemu, wynikiem jest *pusty c
 ''
 ~~~~
 
-Pusty ciąg znaków nie zawiera żadnych znaków i ma długość 0, ale poza tym jest tym samym, co każdy inny ciąg znaków.
+Pusty napis nie zawiera żadnych znaków i ma długość 0, ale poza tym jest tym samym, co każdy inny napis.
 
 #### Ćwiczenie 2
 
-Zakładając, że `fruit` jest ciągiem znaków, co oznacza `fruit[:]`?
+Zakładając, że `fruit` jest napisem, co oznacza `fruit[:]`?
 
 \index{kopiowanie!wycinek}
 \index{wycinanie!kopia}
 
-Ciągi znaków są niezmienne
---------------------------
+Napisy są niezmienne
+--------------------
 
 \index{zmienność}
 \index{niezmienność}
-\index{ciąg znaków!niezmienność}
+\index{napis!niezmienność}
 
-Kuszące jest skorzystanie z operatora przypisania z zamiarem zmiany znaku w ciągu znaków. Na przykład:
+Kuszące jest skorzystanie z operatora przypisania z zamiarem zmiany jakiegoś znaku w napisie. Na przykład:
 
 \index{TypeError}
 \index{wyjątek!TypeError}
@@ -204,14 +204,14 @@ Kuszące jest skorzystanie z operatora przypisania z zamiarem zmiany znaku w ci�
 TypeError: 'str' object does not support item assignment
 ~~~~
 
-Obiekt ("object") w tym przypadku to ciąg znaków, a element ("item") jest znakiem, który próbowałeś do niego przypisać. W tym momencie *obiekt* jest tym samym co wartość, ale definicję tę doszlifujemy później. *Element* jest jedną z wartości w sekwencji.
+Obiekt ("object") w tym przypadku to napis, a element ("item") jest znakiem, który próbowałeś do niego przypisać. W tym momencie *obiekt* jest tym samym co wartość, ale definicję tę doszlifujemy później. *Element* jest jedną z wartości w sekwencji.
 
 \index{obiekt}
 \index{element}
 \index{przypisanie!element}
 \index{niezmienność}
 
-Powodem błędu jest to, że ciągi znaków są *niezmienne*, co oznacza, że nie można zmienić istniejącego ciągu znaków. Jedyne co możesz zrobić, to stworzyć nowy łańcuch, który jest jakąś wersją oryginału:
+Powodem błędu jest to, że napisy są *niezmienne*, co oznacza, że nie można zmienić istniejącego już napisu. Jedyne co możesz zrobić, to stworzyć nowy napis, który jest jakąś wersją oryginału:
 
 ~~~~ {.python}
 >>> greeting = 'Witaj świecie!'
@@ -220,7 +220,7 @@ Powodem błędu jest to, że ciągi znaków są *niezmienne*, co oznacza, że ni
 Vitaj świecie!
 ~~~~
 
-Ten przykład konkatenuje (łączy) nową pierwszą literę z wycinkiem zmiennej `greeting`. Nie ma to żadnego wpływu na pierwotny ciąg znaków.
+Ten przykład konkatenuje (łączy) nową pierwszą literę z wycinkiem zmiennej `greeting`. Nie ma to żadnego wpływu na pierwotny napis.
 
 \index{konkatenacja}
 
@@ -230,9 +230,9 @@ Przechodzenie w pętli i zliczanie
 \index{licznik}
 \index{zliczanie w pętli}
 \index{przechodzenie w pętli i zliczanie}
-\index{przechodzenie w pętli!po ciągach znaków}
+\index{przechodzenie w pętli!po napisach}
 
-Poniższy program zlicza, ile razy litera "a" pojawia się w ciągu znaków:
+Poniższy program zlicza, ile razy litera "a" pojawia się w danym napisie:
 
 ~~~~ {.python}
 word = 'banan'
@@ -249,7 +249,7 @@ Zmienna `count` jest inicjalizowana z wartością 0, a następnie zwiększana za
 
 #### Ćwiczenie 3
 
-Hermetyzacja to styl programowania, w którym szczegóły danej implementacji są ukryte.^[W węższym znaczeniu hermetyzacja jest jednym z założeń programowania obiektowego, ale na razie nie wchodźmy za bardzo w szczegóły tego zagadnienia.] Dokonaj hermetyzacji powyższego kodu poprzez zamknięcie go w funkcji o nazwie `count()` i uogólnij ten kod tak, by przyjmował jako argumenty ciąg znaków i literę.
+Hermetyzacja to styl programowania, w którym szczegóły danej implementacji są ukryte.^[W węższym znaczeniu hermetyzacja jest jednym z założeń programowania obiektowego, ale na razie nie wchodźmy za bardzo w szczegóły tego zagadnienia.] Dokonaj hermetyzacji powyższego kodu poprzez zamknięcie go w funkcji o nazwie `count()` i uogólnij ten kod tak, by przyjmował jako argumenty napis i literę.
 
 Operator `in`
 -------------
@@ -259,7 +259,7 @@ Operator `in`
 \index{logiczny, operator}
 \index{operator!logiczny}
 
-Słowo `in` jest operatorem logicznym, który bierze dwa ciągi znaków i zwraca `True`, jeśli pierwszy z nich pojawi się jako podciąg w drugim:
+Słowo `in` jest operatorem logicznym, który bierze dwa napisy i zwraca `True`, jeśli pierwszy z nich pojawi się jako podciąg w drugim:
 
 ~~~~ {.python}
 >>> 'a' in 'banan'
@@ -268,13 +268,13 @@ True
 False
 ~~~~
 
-Porównywanie ciągów znaków
---------------------------
+Porównywanie napisów
+--------------------
 
-\index{ciąg znaków!porównywanie}
-\index{porównywanie!ciąg znaków}
+\index{napis!porównywanie}
+\index{porównywanie!napis}
 
-Operatory porównania działają również na ciągach znaków. Aby sprawdzić, czy dwa ciągi są równe:
+Operatory porównania działają również na napisach. Aby sprawdzić, czy dwa napisy są równe:
 
 ~~~~ {.python}
 if word == 'banan':
@@ -298,12 +298,12 @@ Python nie radzi sobie z dużymi i małymi literami tak samo jak ludzie. Wszystk
 Twój wyraz, Grejpfrut, jest przed słowem banan.
 ~~~~
 
-Powszechnym sposobem na rozwiązanie tego problemu jest konwersja ciągów znaków do standardowego formatu, czyli zawierającego wyłącznie małe litery, przed wykonaniem porównania. Pamiętaj o tym, na wypadek gdybyś musiał się bronić przed napastnikiem uzbrojonym w grejpfruta.
+Powszechnym sposobem na rozwiązanie tego problemu jest konwersja napisów do standardowego formatu, czyli zawierającego wyłącznie małe litery, przed wykonaniem porównania. Pamiętaj o tym, na wypadek gdybyś musiał się bronić przed napastnikiem uzbrojonym w grejpfruta.
 
-Metody obiektów będących ciągami znaków
----------------------------------------
+Metody obiektów będących napisami
+---------------------------------
 
-Ciągi znaków są przykładem *obiektów* Pythona. Obiekt zawiera zarówno dane (zasadniczy ciąg znaków), jak i *metody*, które w praktyce są funkcjami wbudowanymi w obiekt i dostępnymi dla każdej *instancji* obiektu.
+Napisy są przykładem *obiektów* Pythona. Obiekt zawiera zarówno dane (czyli interesujący nas tekst), jak i *metody*, które w praktyce są funkcjami wbudowanymi w obiekt i dostępnymi dla każdej *instancji* obiektu.
 
 Python posiada funkcję o nazwie `dir()`, która zawiera listę metod dostępnych dla danego obiektu. Funkcja `type()` pokazuje typ obiektu:
 
@@ -337,14 +337,14 @@ capitalize(...)
 >>>
 ~~~~
 
-Podczas gdy funkcja `dir()` wyświetla listę metod, a Ty możesz użyć `help()`, by uzyskać prostą dokumentację jakiejś metody, w przypadku metod ciągów znaków lepszym źródłem dokumentacji jest <https://docs.python.org/library/stdtypes.html#string-methods>.
+Funkcja `dir()` wyświetla listę metod, a Ty możesz użyć `help()`, by uzyskać prostą dokumentację jakiejś metody. Natomiast w przypadku metod związanych z napisami, lepszym źródłem dokumentacji jest <https://docs.python.org/library/stdtypes.html#string-methods>.
 
 Wywołanie *metody* jest podobne do wywołania funkcji (przyjmuje ona argumenty i zwraca wartość), ale składnia jest nieco inna. Metodę wywołujemy poprzez dołączenie nazwy metody do nazwy zmiennej, używając przy tym kropki jako separatora.
 
-Na przykład metoda `upper()` bierze ciąg znaków i zwraca nowy ciąg znaków, w którym wszystkie litery zostały zamienione na duże litery.
+Na przykład metoda `upper()` przyjmuje napis i zwraca nowy napis, w którym wszystkie litery zostały zamienione na duże litery.
 
 \index{metoda}
-\index{ciąg znaków!metoda}
+\index{napis!metoda}
 
 Zamiast składni funkcji `upper(word)` używa ona składni metody `word.upper()`.
 
@@ -357,7 +357,7 @@ Zamiast składni funkcji `upper(word)` używa ona składni metody `word.upper()`
 BANAN
 ~~~~
 
-Taka forma notacji kropkowej określa nazwę metody (`upper()`) oraz nazwę ciągu znaków, do którego metoda ma zostać zastosowana (`word`). Puste nawiasy wskazują, że metoda ta nie przyjmuje żadnego argumentu.
+Taka forma notacji kropkowej określa nazwę metody (`upper()`) oraz nazwę zmiennej z napisem, na której metoda ta ma zostać zastosowana (`word`). Puste nawiasy wskazują, że metoda ta nie przyjmuje żadnego argumentu.
 
 \index{nawiasy okrągłe!puste}
 
@@ -365,7 +365,7 @@ W tym przypadku powiedzielibyśmy, że *wywołujemy metodę* `upper()` na `word`
 
 \index{wywołanie metody}
 
-Na przykład dla ciągów znaków istnieje metoda o nazwie `find()`, która szuka pozycji jednego ciągu w drugim:
+Na przykład dla napisów istnieje metoda o nazwie `find()`, która szuka pozycji jednego napisu w drugim:
 
 ~~~~ {.python}
 >>> word = 'banan'
@@ -393,7 +393,7 @@ Jako drugi argument może przyjąć indeks, od którego powinien zacząć szuka�
 3
 ~~~~
 
-Jednym z częstych zadań jest usunięcie białych znaków (spacji, tabulatorów lub znaków nowej linii) z początku i końca ciągu znaków przy użyciu metody `strip()`:
+Jednym z częstych zadań jest usunięcie białych znaków (spacji, tabulatorów lub znaków nowej linii) z początku i końca napisu przy użyciu metody `strip()`:
 
 ~~~~ {.python}
 >>> line = '  Proszę bardzo  '
@@ -430,22 +430,22 @@ W ostatnim przykładzie metoda `lower()` jest wywoływana, a następnie używamy
 
 #### Ćwiczenie 4
 
-Istnieje metoda dla ciągu znaków o nazwie `count()`, która jest podobna do funkcji z poprzedniego ćwiczenia. Przeczytaj dokumentację tej metody pod adresem:
+Dla tekstowego typu danych istnieje metoda o nazwie `count()`, która jest podobna do funkcji z poprzedniego ćwiczenia. Przeczytaj dokumentację tej metody pod adresem:
 
 <https://docs.python.org/library/stdtypes.html#string-methods>
 
 Napisz wywołanie metody, które zliczy, ile razy litera "a" występuje w słowie "banan".
 
-Parsowanie ciągów znaków
-------------------------
+Parsowanie napisów
+------------------
 
-Często chcemy zajrzeć do ciągu znaków i znaleźć pewien podciąg. Na przykład, jeśli przedstawiono nam serię linii sformatowanych w następujący sposób:
+Często chcemy zajrzeć do napisu i znaleźć pewien podciąg. Na przykład, jeśli przedstawiono nam serię linii sformatowanych w następujący sposób:
 
 `From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008`
 
-i chcielibyśmy z każdej linii wyciągnąć tylko drugą połowę adresu e-mail (tj. `uct.ac.za`), to możemy to zrobić za pomocą metody `find()` i operacji wyciągania wycinków z ciągów znaków.
+i chcielibyśmy z każdej linii wyciągnąć tylko drugą połowę adresu e-mail (tj. `uct.ac.za`), to możemy to zrobić za pomocą metody `find()` i operacji wyodrębniania wycinków z napisów.
 
-Najpierw znajdziemy w ciągu znaków pozycję znaku `@`. Następnie znajdziemy pozycję pierwszej spacji *po* znaku `@`. Na końcu użyjemy wycinków, by wyodrębnić część ciągu znaków, której szukamy.
+Najpierw znajdziemy w napisie pozycję znaku `@`. Następnie znajdziemy pozycję pierwszej spacji *po* znaku `@`. Na końcu użyjemy wycinków, by wyodrębnić część napisu, której szukamy.
 
 ~~~~ {.python}
 >>> data = 'From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008'
@@ -461,7 +461,7 @@ uct.ac.za
 >>>
 ~~~~
 
-Używamy wersji metody `find()` pozwalającej nam określić pozycję w łańcuchu, od której `find()` ma zacząć szukać. Wyodrębniamy znaki od "znaku będącego zaraz za @ aż do *ale nie włączając w to* znaku spacji".
+Używamy tej wersji metody `find()`, która pozwala nam określić w napisie pozycję, od której metoda ta ma rozpocząć przeszukiwanie. Wyodrębniamy znaki od "znaku będącego zaraz za @ aż do *ale nie włączając w to* znaku spacji".
 
 Dokumentacja dotycząca metody `find()` jest dostępna na stronie:
 
@@ -473,11 +473,11 @@ Operator formatowania
 \index{formatowanie, operator}
 \index{operator!formatowanie}
 
-*Operator formatowania* `%` pozwala nam na konstruowanie ciągów znaków, zastępując części ciągów danymi przechowywanymi w zmiennych. W przypadku zastosowania go do liczb całkowitych `%` jest operatorem modulo. Ale gdy pierwszym operandem jest ciąg znaków, `%` jest operatorem formatowania.
+*Operator formatowania* `%` pozwala nam na konstruowanie napisów, zastępując części napisów danymi przechowywanymi w zmiennych. W przypadku zastosowania go do liczb całkowitych `%` jest operatorem modulo. Ale gdy pierwszym operandem jest napis, `%` jest operatorem formatowania.
 
-\index{ciąg formatujący}
+\index{napis formatujący}
 
-Pierwszy operand jest *ciągiem formatującym*, który zawiera jedną lub więcej *sekwencji formatujących*, które z kolei określają, w jaki sposób jest formatowany drugi operand. Wynikiem tej operacji jest nowy ciąg znaków.
+Pierwszy operand jest *napisem formatującym*, który zawiera jedną lub więcej *sekwencji formatujących*, które z kolei określają, w jaki sposób jest formatowany drugi operand. Wynikiem tej operacji jest nowy napis.
 
 \index{sekwencja formatująca}
 
@@ -489,9 +489,9 @@ Na przykład sekwencja formatująca `%d` oznacza, że drugi operand powinien by�
 '42'
 ~~~~
 
-Wynikiem jest ciąg znaków `'42'`, którego nie należy mylić z liczbą całkowitą o wartości `42`.
+Wynikiem jest napis `'42'`, którego nie należy mylić z liczbą całkowitą o wartości `42`.
 
-Sekwencja formatowania może pojawić się w dowolnym miejscu łańcucha, więc możesz osadzić jakąś wartość w zdaniu:
+Sekwencja formatowania może pojawić się w dowolnym miejscu napisu, więc możesz osadzić jakąś wartość np. w środku zdania:
 
 ~~~~ {.python}
 >>> camels = 42
@@ -499,16 +499,16 @@ Sekwencja formatowania może pojawić się w dowolnym miejscu łańcucha, więc 
 'Zauważyłem 42 wielbłądy.'
 ~~~~
 
-Jeśli w ciągu znaków znajduje się więcej niż jedna sekwencja formatująca, to drugim argumentem musi być krotka^[Krotka to sekwencja wartości oddzielonych przecinkami wewnątrz pary nawiasów. Omówimy krotki w rozdziale 10.]. Każda sekwencja formatująca jest dopasowywana do kolejnego elementu krotki.
+Jeśli w napisie znajduje się więcej niż jedna sekwencja formatująca, to drugim argumentem musi być krotka^[Krotka to sekwencja wartości oddzielonych przecinkami wewnątrz pary nawiasów. Omówimy krotki w rozdziale 10.]. Każda sekwencja formatująca jest dopasowywana do kolejnego elementu krotki.
 
-Poniższy przykład używa `%d` do formatowania liczby całkowitej, `%g` do formatowania liczby zmiennoprzecinkowej (nie pytaj, dlaczego), a `%s` do formatowania ciągu znaków^["s" od angielskiego "string", czyli ciąg znaków.]:
+Poniższy przykład używa `%d` do formatowania liczby całkowitej, `%g` do formatowania liczby zmiennoprzecinkowej (nie pytaj, dlaczego), a `%s` do formatowania napisu^["s" od angielskiego "string", czyli napis.]:
 
 ~~~~ {.python}
 >>> 'Przez %d lata widziałem %g %s.' % (3, 0.1, 'wielbłąda')
 'Przez 3 lata widziałem 0.1 wielbłąda.'
 ~~~~
 
-Liczba elementów w krotce musi być zgodna z liczbą sekwencji formatujących w ciągu znaków. Typy elementów również muszą być zgodne z sekwencjami formatującymi:
+Liczba elementów w krotce musi być zgodna z liczbą sekwencji formatujących w napisie. Typy elementów również muszą być zgodne z sekwencjami formatującymi:
 
 \index{wyjątek!TypeError}
 \index{TypeError}
@@ -554,7 +554,7 @@ IndexError: string index out of range
 
 Kod działa dobrze, dopóki nie zostanie mu podsunięty pusty wiersz. Nie można wtedy odnaleźć znaku zerowego, więc otrzymujemy komunikat mechanizmu *traceback*. Są na to dwa rozwiązania, które sprawiają, że trzeci wiersz jest "bezpieczny", nawet jeśli jest on pusty.
 
-Jedną z możliwości jest po prostu użycie metody `startswith()`, która zwraca `False`, jeśli ciąg znaków jest pusty.
+Jedną z możliwości jest po prostu użycie metody `startswith()`, która zwraca `False`, jeśli napis jest pusty.
 
 ~~~~ {.python}
 if line.startswith('#'):
@@ -563,7 +563,7 @@ if line.startswith('#'):
 \index{strażnik, wzorzec}
 \index{wzorzec!strażnik}
 
-Innym sposobem jest bezpieczne napisanie wyrażenia `if` przy użyciu *wzorca strażnika* i upewnienie się, że drugie wyrażenie logiczne jest ewaluowane tylko wtedy, gdy w ciągu znaków jest co najmniej jeden znak.
+Innym sposobem jest bezpieczne napisanie wyrażenia `if` przy użyciu *wzorca strażnika* i upewnienie się, że drugie wyrażenie logiczne jest ewaluowane tylko wtedy, gdy w napisie jest co najmniej jeden znak.
 
 ~~~~ {.python}
 if len(line) > 0 and line[0] == '#':
@@ -572,17 +572,17 @@ if len(line) > 0 and line[0] == '#':
 Słowniczek
 ----------
 
-ciąg formatujący
-:   Ciąg znaków, używany z operatorem formatowania, zawierający sekwencje formatowania.\index{ciąg formatujący}
-
 element
 :   Jedna z wartości w sekwencji.\index{element}
 
 indeks
-:   Wartość całkowita używana do zaznaczenia elementu w sekwencji, np. znaku w ciągu znaków.\index{indeks}\index{}
+:   Wartość całkowita używana do zaznaczenia elementu w sekwencji, np. znaku w napisie.\index{indeks}\index{}
 
 metoda
 :   Funkcja, która jest związana z obiektem i jest wywoływana przy użyciu notacji kropkowej.\index{metoda}
+
+napis formatujący
+:   Napis używany z operatorem formatowania, zawierający sekwencje formatowania.\index{napis formatujący}
 
 niezmienność
 :   Własność sekwencji, której elementy nie mogą być przypisywane.\index{niezmienność}
@@ -591,22 +591,22 @@ obiekt
 :   Coś, do czego może odnosić się zmienna. Na razie możesz używać zamiennie słowa "obiekt" i "wartość".\index{obiekt}
 
 operator formatowania
-:   Operator `%`, który bierze ciąg formatujący oraz krotkę i generuje nowy ciąg znaków, zawierający elementy krotki sformatowane zgodnie z opisem podanym w ciągu formatującym.\index{formatowanie, operator}\index{operator!formatowanie}
+:   Operator `%`, który bierze napis formatujący oraz krotkę i generuje nowy napis, zawierający elementy krotki sformatowane zgodnie z opisem podanym w napisie formatującym.\index{formatowanie, operator}\index{operator!formatowanie}
 
 przejście
 :   Iteracja po elementach sekwencji, wykonująca jakąś podobną operację na każdym z nich.\index{przejście}
 
-pusty ciąg znaków
-:   Ciąg bez żadnych znaków i o długości 0, reprezentowany przez dwa apostrofy.\index{pusty ciąg znaków}\index{ciąg znaków!pusty}
+pusty napis
+:   Napis żadnych znaków i o długości 0, reprezentowany przez dwa apostrofy.\index{pusty napis}\index{napis!pusty}
 
 sekwencja
 :   Uporządkowany zbiór, czyli zbiór wartości, gdzie każda wartość jest identyfikowana przez indeks będący liczbą całkowitą.\index{sekwencja}
 
 sekwencja formatująca
-:   Sekwencja znaków w ciągu formatującym, np. `%d`, która określa, jak dana wartość powinna być sformatowana.\index{sekwencja formatująca}
+:   Sekwencja znaków w napisie formatującym, np. `%d`, która określa, jak dana wartość powinna być sformatowana.\index{sekwencja formatująca}
 
 wycinek
-:   Część ciągu znaków określona przez zakres indeksów.\index{wycinek}
+:   Część napisu określona przez zakres indeksów.\index{wycinek}
 
 wywołanie metody
 :   Instrukcja, która wykonuje funkcję ściśle związaną z danym obiektem i jego instancjami.\index{wywołanie metody}
@@ -616,17 +616,17 @@ wywołanie metody
 
 #### Ćwiczenie 5
 
-Mamy następujący kod Pythona, który przechowuje ciąg znaków:
+Mamy następujący kod Pythona, który przechowuje napis w zmiennej `text`:
 
 `text = 'X-DSPAM-Confidence: 0.8475'`
 
-Użyj `find()` i wycinków ciągów znaków, tak aby wyodrębnić część ciągu po znaku dwukropka, a następnie użyj funkcji `float()`, żeby przekształcić wyodrębniony ciąg znaków na liczbę zmiennoprzecinkową.
+Użyj `find()` i wycinków napisów, tak aby wyodrębnić część tekstu po znaku dwukropka, a następnie użyj funkcji `float()`, żeby przekształcić wyodrębniony napis na liczbę zmiennoprzecinkową.
 
-\index{ciąg znaków!metoda}
-\index{metoda!ciąg znaków}
+\index{napis!metoda}
+\index{metoda!napis}
 
 #### Ćwiczenie 6
 
-Przeczytaj dokumentację metod związanych z ciągami znaków na stronie <https://docs.python.org/library/stdtypes.html#string-methods>. Możesz poeksperymentować z niektórymi z nich, aby upewnić się, że rozumiesz, jak one działają. Szczególnie przydatne są `strip()` i `replace()`.
+Przeczytaj dokumentację metod związanych z tekstowym typem danych na stronie <https://docs.python.org/library/stdtypes.html#string-methods>. Możesz poeksperymentować z niektórymi z nich, aby upewnić się, że rozumiesz, jak one działają. Szczególnie przydatne są `strip()` i `replace()`.
 
 Dokumentacja używa składni, która może być nieco myląca. Na przykład w `find(sub[, start[, end]])` nawiasy kwadratowe wskazują opcjonalne argumenty. Tak więc `sub` jest wymagany, ale `start` jest opcjonalny, a jeśli dodasz `start`, to `end` jest opcjonalny.

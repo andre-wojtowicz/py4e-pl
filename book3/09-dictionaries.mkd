@@ -15,7 +15,7 @@ Słowniki
 
 Możesz myśleć o słowniku jako o mapowaniu pomiędzy zestawem indeksów (które są nazywane *kluczami*) a zestawem wartości. Każdy klucz mapuje się do jakiejś wartości. Skojarzenie klucza i wartości nazywane jest parą *klucz-wartość* lub czasem *elementem*.
 
-Jako przykład zbudujemy słownik, który mapuje słowa angielskie na hiszpańskie, więc klucze i wartości będą ciągami znaków.
+Jako przykład zbudujemy słownik, który mapuje słowa angielskie na hiszpańskie, więc klucze i wartości będą napisami.
 
 Funkcja `dict()` tworzy nowy słownik bez żadnych elementów. Ponieważ `dict()` jest nazwą wbudowanej funkcji, powinieneś unikać używania jej jako nazwy zmiennej.
 
@@ -129,7 +129,7 @@ Słownik jako zbiór liczników
 
 \index{licznik}
 
-Załóżmy, że otrzymałeś ciąg znaków zawierający angielski wyraz i chcesz policzyć, ile razy każda litera się w nim pojawiła. Możesz to zrobić na kilka sposobów:
+Załóżmy, że otrzymałeś napis zawierający angielski wyraz i chcesz policzyć, ile razy każda litera się w nim pojawiła. Możesz to zrobić na kilka sposobów:
 
 1.  Mógłbyś utworzyć 26 zmiennych, po jednej dla każdej litery alfabetu. Następnie mógłbyś przejść po napisie i dla każdego znaku zwiększyć odpowiedni licznik, prawdopodobnie używając połączonych wyrażeń warunkowych.
 
@@ -141,7 +141,7 @@ Każda z tych opcji wykonuje to samo obliczenie, ale każda z nich implementuje 
 
 \index{implementacja}
 
-*Implementacja* to sposób przeprowadzenia obliczeń; niektóre implementacje są lepsze od innych. Na przykład zaletą implementacji poprzez słownik jest to, że nie musimy z góry wiedzieć, które litery pojawiają się w ciągu znaków, i musimy tylko zrobić miejsce na te, które faktycznie się pojawiają.
+*Implementacja* to sposób przeprowadzenia obliczeń; niektóre implementacje są lepsze od innych. Na przykład zaletą implementacji poprzez słownik jest to, że nie musimy z góry wiedzieć, które litery pojawiają się w napisie, i musimy tylko zrobić miejsce na te, które faktycznie się pojawiają.
 
 Oto jak może wyglądać kod:
 
@@ -162,7 +162,7 @@ W praktyce obliczamy *histogram*, który jest statystycznym terminem określają
 \index{częstość}
 \index{przejście}
 
-Pętla `for` przechodzi po ciągu znaków. Za każdym razem gdy przechodzimy przez pętlę, jeśli znak zawarty w `c` nie występuje w słowniku, tworzymy nową pozycję z kluczem `c` i wartością początkową 1 (ponieważ widzieliśmy tę literę raz). Jeśli `c` znajduje się już w słowniku, zwiększamy wartość `d[c]`.
+Pętla `for` przechodzi po napisie. Za każdym razem gdy przechodzimy przez pętlę, jeśli znak zawarty w `c` nie występuje w słowniku, tworzymy nową pozycję z kluczem `c` i wartością początkową 1 (ponieważ widzieliśmy tę literę raz). Jeśli `c` znajduje się już w słowniku, zwiększamy wartość `d[c]`.
 
 \index{histogram}
 
@@ -333,13 +333,13 @@ Ponieważ funkcja `split()` szuka spacji i traktuje słowa jako tokeny oddzielon
 
 Również ze względu na to, że plik ma tekst pisany dużymi literami, traktowalibyśmy "who" i "Who" jako różne słowa o różnej liczności.
 
-Oba te problemy możemy rozwiązać za pomocą metod związanych z obiektami ciągów znaków, tj. `lower()`, `maketrans()` i `translate()`. Metoda `translate()` jest najbardziej wyrafinowaną z tych metod. Oto dokumentacja dla tej metody:
+Oba te problemy możemy rozwiązać za pomocą metod związanych z tekstowym typem danych `str`, tj. `lower()`, `maketrans()` i `translate()`. Metoda `translate()` jest najbardziej wyrafinowaną z tych metod. Oto dokumentacja dla tej metody:
 
 `line.translate(str.maketrans(fromstr, tostr, deletestr))`
 
-*Zmienia znaki w `fromstr` na znak na tej samej pozycji w `tostr` i usuwa wszystkie znaki, które są w `deletestr`. Znaki z `fromstr` i `tostr` mogą być pustymi ciągami znaków, a parametr `deletestr` może zostać pominięty.*
+*Zmienia znaki w `fromstr` na znak na tej samej pozycji w `tostr` i usuwa wszystkie znaki, które są w `deletestr`. Znaki z `fromstr` i `tostr` mogą być pustymi napisami, a parametr `deletestr` może zostać pominięty.*
 
-Moduł `string` dostarcza gotowe sekwencje znaków, które reprezentują np. liczby lub litery. Przykładowo, w `string.digits` znajdziemy ciąg znaków zwierający liczby: 
+Moduł `string` dostarcza gotowe sekwencje znaków, które reprezentują np. liczby lub litery. Przykładowo, w `string.digits` znajdziemy napis zwierający liczby: 
 
 ~~~~ {.python}
 >>> import string
@@ -347,7 +347,7 @@ Moduł `string` dostarcza gotowe sekwencje znaków, które reprezentują np. lic
 '0123456789'
 ~~~~
 
-Metoda `maketrans()` z pustymi ciągami znaków `fromstr` i `tostr` utworzy nam słownik, w którym będziemy mieli informację o tym na co ma być zamieniony dany znak (a w zasadzie jego reprezentacja liczbowa). Możemy zauważyć, że za każdym razem chcemy dokonać zamiany na `None`, co oznacza, że chcemy usunąć dany znak:
+Metoda `maketrans()` z pustymi napisami `fromstr` i `tostr` utworzy nam słownik, w którym będziemy mieli informację o tym na co ma być zamieniony dany znak (a w zasadzie jego reprezentacja liczbowa). Możemy zauważyć, że za każdym razem chcemy dokonać zamiany na `None`, co oznacza, że chcemy usunąć dany znak:
 
 ~~~~ {.python}
 >>> str.maketrans('', '', string.digits)
@@ -357,7 +357,7 @@ Metoda `maketrans()` z pustymi ciągami znaków `fromstr` i `tostr` utworzy nam 
 
 Taki utworzony słownik możemy potem wykorzystać w metodzie `translate()` do efektywnego usunięcia znaków.
 
-Wracając do naszego programu, nie będziemy określać parametru `fromstr` i `tostr` (będą pustymi ciągami znaków), ale użyjemy parametru `deletestr` do usunięcia wszystkich znaków interpunkcyjnych. Pozwolimy nawet Pythonowi wskazać nam sekwencję znaków, które uważa za "interpunkcję":
+Wracając do naszego programu, nie będziemy określać parametru `fromstr` i `tostr` (będą pustymi napisami), ale użyjemy parametru `deletestr` do usunięcia wszystkich znaków interpunkcyjnych. Pozwolimy nawet Pythonowi wskazać nam sekwencję znaków, które uważa za "interpunkcję":
 
 ~~~~ {.python}
 >>> string.punctuation

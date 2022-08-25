@@ -46,7 +46,7 @@ Najpierw program nawiązuje połączenie z serwerem [data.pr4e.org](http://data.
 
 ![Połączenie przez gniazdo](height=2.0in@../images/socket)
 
-Gdy już wyślemy pusty wiersz, piszemy pętlę, która odbiera z gniazda dane w 512-znakowych kawałkach i drukuje je aż do momentu, gdy nie będzie więcej danych do odczytania (czyli `recv()` zwróci pusty ciąg znaków).
+Gdy już wyślemy pusty wiersz, piszemy pętlę, która odbiera z gniazda dane w 512-znakowych kawałkach i drukuje je aż do momentu, gdy nie będzie więcej danych do odczytania (czyli `recv()` zwróci pusty napis).
 
 Program generuje następujące wynik:
 
@@ -78,7 +78,7 @@ Powyższy przykład pokazuje, jak przy pomocy gniazd wykonać niskopoziomowe po�
 
 Ponieważ jednak najczęściej używanym przez nas protokołem jest protokół internetowy HTTP, Python posiada specjalną bibliotekę zaprojektowaną specjalnie do jego obsługi i pobierania dokumentów i danych umieszczonych w sieci.
 
-Jednym z wymogów korzystania z protokołu HTTP jest konieczność wysyłania i odbierania danych w postaci obiektów bajtowych a nie ciągów znaków. W poprzednim przykładzie metody `encode()` i `decode()` przekształcają odpowiednio ciągi znaków na obiekty bajtowe i obiekty bajtowe na ciągi znaków.
+Jednym z wymogów korzystania z protokołu HTTP jest konieczność wysyłania i odbierania danych w postaci obiektów bajtowych a nie napisów. W poprzednim przykładzie metody `encode()` i `decode()` przekształcają odpowiednio napisy na obiekty bajtowe i obiekty bajtowe na napisy.
 
 Następny przykład używa notacji `b''` do określenia, że zmienna powinna być przechowywana jako obiekt bajtowy. `encode()` i `b''` są równoważne, o ile nie używamy np. znaków diakrytycznych (generalnie użycie `encode()` jest bardziej uniwersalne).
 
@@ -133,11 +133,11 @@ Widać, że dla tego adresu URL nagłówek `Content-Type` wskazuje, że treść 
 
 W trakcie działania programu widać, że nie otrzymujemy 5120 znaków za każdym razem, gdy wywołujemy metodę `recv()`. Otrzymujemy tyle znaków, ile zostało wysłanych do nas przez serwer WWW w momencie wywołania `recv()`. W tym przykładzie możemy otrzymać od 3200 do 5120 znaków za każdym razem, gdy żądamy danych.
 
-W zależności od szybkości Twojej sieci te wartości mogą być jeszcze inne. Zauważ również, że przy ostatnim wywołaniu `recv()` otrzymujemy 3167 bajtów, czyli końcówkę strumienia, a przy następnym wywołaniu `recv()` otrzymujemy ciąg o zerowej długości, który mówi nam, że serwer wywołał `close()` po swojej stronie gniazda i nie przyjdzie już więcej danych.
+W zależności od szybkości Twojej sieci te wartości mogą być jeszcze inne. Zauważ również, że przy ostatnim wywołaniu `recv()` otrzymujemy 3167 bajtów, czyli końcówkę strumienia, a przy następnym wywołaniu `recv()` otrzymujemy napis o zerowej długości, który mówi nam, że serwer wywołał `close()` po swojej stronie gniazda i nie przyjdzie już więcej danych.
 
 \index{time, moduł}
 \index{moduł!time}
-\index{time.sleep, funkcja}
+\index{sleep, funkcja}
 
 Możemy spowolnić nasze kolejne wywołania `recv()` przez odkomentowanie wywołania `time.sleep()`. W ten sposób czekamy ćwierć sekundy po każdym wywołaniu, tak aby serwer mógł "wyprzedzić" nas i przesłać nam więcej danych, zanim ponownie wywołamy `recv()`. Z włączonym opóźnieniem program wykonuje się w następujący sposób:
 
@@ -209,7 +209,7 @@ Czasami chcesz pobrać nietekstowy (lub binarny) plik, taki jak zdjęcie lub pli
 
 \index{plik binarny}
 
-Schemat postępowania polega na otwarciu adresu URL i użyciu `read()` do pobrania całej zawartości dokumentu do zmiennej zawierającej ciąg znaków (`img`), a następnie zapisaniu tej informacji do pliku lokalnego:
+Schemat postępowania polega na otwarciu adresu URL i użyciu `read()` do pobrania całej zawartości dokumentu do zmiennej zawierającej napis (`img`), a następnie zapisaniu tej informacji do pliku lokalnego:
 
 \VerbatimInput{../code3/curl1.py}
 
@@ -262,7 +262,7 @@ Możemy skonstruować wyrażenie regularne, tak aby dopasować i wyodrębnić z 
 href="http[s]?://.+?"
 ~~~~
 
-Nasze wyrażenie regularne szuka napisów, które zaczynają się od "href=\"http://" lub "href=\"https://", po których następuje jeden lub więcej znaków (`.+?`), po których następuje kolejny cudzysłów. Znak zapytania `?` za `[s]` wskazuje na szukanie łańcucha "http", po którym następuje zero lub jedno "s".
+Nasze wyrażenie regularne szuka napisów, które zaczynają się od "href=\"http://" lub "href=\"https://", po których następuje jeden lub więcej znaków (`.+?`), po których następuje kolejny cudzysłów. Znak zapytania `?` za `[s]` wskazuje na szukanie napisu "http", po którym następuje zero lub jedno "s".
 
 Znak zapytania dodany do `.+?` wskazuje, że dopasowanie nie może być wykonane w trybie "zachłannym". Takie dopasowanie próbuje znaleźć *najmniejszy* możliwy pasujący ciąg znaków, a z kolei zachłanne dopasowanie próbuje znaleźć *największy* możliwy pasujący ciąg znaków.
 

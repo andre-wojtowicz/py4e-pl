@@ -30,7 +30,7 @@
 #    spróbuj utworzyć nową aplikację ("Standalone Apps" > 
 #    "Create App")
 # 4. Utwórz aplikację, w karcie "Keys and tokens" wygeneruj
-#    klucze  i podmień poniżej cztery ciągi znaków dotyczące
+#    klucze  i podmień poniższe cztery ciągi znaków dotyczące
 #    consumer_key, consumer_secret, token_key i token_secret 
 #    (podmień wszystko, co znajduje się między cudzysłowami, 
 #    łącznie z nawiasami ostrokątnymi)

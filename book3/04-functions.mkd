@@ -50,13 +50,13 @@ występujące w liście:
 >>>
 ~~~~
 
-Funkcja `max()` mówi nam o "największym znaku" w ciągu znaków (który okazuje się 
+Funkcja `max()` mówi nam o "największym znaku" w napisie (który okazuje się 
 być literą "w"), a funkcja `min()` pokazuje nam najmniejszy znak (który okazuje 
 się być spacją). 
 
 Inną bardzo często używaną funkcją jest funkcja `len()`, która mówi nam, ile 
 elementów znajduje się w przekazanym argumencie. Jeśli argument przekazany do funkcji
-`len()` jest ciągiem znaków, to zwraca liczbę znaków w tym ciągu. 
+`len()` jest napis, to zwraca liczbę znaków w tym napisie. 
 
 ~~~~ {.python}
 >>> len('Hello world')
@@ -64,7 +64,7 @@ elementów znajduje się w przekazanym argumencie. Jeśli argument przekazany do
 >>>
 ~~~~
 
-Funkcje te nie ograniczają się do analizowania wyłącznie łańcuchów znaków. Mogą 
+Funkcje te nie ograniczają się do analizowania wyłącznie napisów. Mogą 
 one działać na dowolnym zestawie wartości, jak zobaczymy w późniejszych 
 rozdziałach.
 
@@ -101,7 +101,7 @@ zaokrągla ich (ucina część ułamkową):
 -2
 ~~~~
 
-Funkcja `float()` konwertuje liczby całkowite i ciągi znaków na liczby zmiennoprzecinkowe:
+Funkcja `float()` konwertuje liczby całkowite i napisy na liczby zmiennoprzecinkowe:
 
 \index{float, funkcja}
 \index{funkcja!float}
@@ -113,7 +113,7 @@ Funkcja `float()` konwertuje liczby całkowite i ciągi znaków na liczby zmienn
 3.14159
 ~~~~
 
-Natomiast funkcja `str()` konwertuje swój argument na ciąg znaków:
+Natomiast funkcja `str()` konwertuje swój argument na napis:
 
 \index{str, funkcja}
 \index{funkcja!str}
@@ -620,7 +620,7 @@ Ping
 None
 ~~~~
 
-Wartość `None` nie jest taka sama jak ciąg znaków `'None'`. Jest to specjalna 
+Wartość `None` nie jest taka sama jak napis `'None'`. Jest to specjalna 
 wartość, która ma swój własny typ:
 
 ~~~~ {.python}
@@ -836,7 +836,7 @@ Wynagrodzenie: 475.0
 
 Napisz ponownie program z poprzedniego rozdziału do wyliczania
 ocen za pomocą funkcji o nazwie `computegrade()`, która przyjmuje jako argument
-wartość i zwraca ocenę jako ciąg znaków.
+wartość i zwraca ocenę jako napis.
 
 ~~~~
 Wartość   Ocena

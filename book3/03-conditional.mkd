@@ -22,7 +22,7 @@ False
 ~~~~
 
 `True` i `False` są specjalnymi wartościami, które należą do klasy `bool`; nie 
-są one ciągami znaków:
+są one napisami:
 
 \index{True, wartość specjalna}
 \index{False, wartość specjalna}

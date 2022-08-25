@@ -7,16 +7,16 @@ Wartości i typy
 
 \index{wartość}
 \index{typ}
-\index{ciąg znaków}
 \index{napis}
+\index{ciąg znaków}
 \index{lzancuch znakow@łańcuch znaków}
 
 *Wartość* jest jedną z podstawowych rzeczy, z którymi pracuje program. Wartości, takie jak litery czy cyfry, które widzieliśmy do tej pory, to np. 6 i "Witaj
 świecie!".
 
 Wartości te należą do różnych *typów*: 6 jest liczbą całkowitą, a "Witaj
-świecie!" jest *ciągiem znaków*, *napisem* lub *łańcuchem znaków* (ang. *string*). Ty (i interpreter) możesz 
-rozpoznać ciągi znaków, ponieważ są one zawarte między apostrofami lub w cudzysłowie.
+świecie!" jest *napisem*, *tekstem*, *ciągiem znaków*, lub *łańcuchem znaków* (ang. *string*). Ty (i interpreter) możesz 
+rozpoznać napisy, ponieważ są one zawarte między apostrofami lub w cudzysłowie.
 
 \index{apostrof}
 \index{cudzysłów}
@@ -45,7 +45,7 @@ podpowiedzieć:
 <class 'int'>
 ~~~~
 
-Nic dziwnego, że ciągi znaków należą do typu `str`, a liczby całkowite (ang.
+Nic dziwnego, że napisy należą do tekstowego typu danych `str`, a liczby całkowite (ang.
 *integers*) należą do typu `int`. Mniej oczywiste jest, że liczby z kropką
 dziesiętną należą do typu `float`; liczby te są reprezentowane w
 formacie nazywanym *liczbą zmiennoprzecinkową*^[Mimo że nazwa wskazuje na
@@ -53,7 +53,7 @@ używanie przecinka i tak też robimy na co dzień w polskim zapisie, podczas
 programowania używamy kropki.] (ang. *floating point*):
 
 \index{typ}
-\index{typ!ciągu znaków}
+\index{typ!tekstowy}
 \index{typ!str}
 \index{klasa!str}
 \index{typ!int}
@@ -69,7 +69,7 @@ programowania używamy kropki.] (ang. *floating point*):
 ~~~~
 
 A co z takimi wartościami jak `'17'` i `'3.2'`? Wyglądają one jak liczby, ale 
-tak jak ciągi znaków, są zawarte między apostrofami:
+tak jak napisy, są zawarte między apostrofami:
 
 \index{apostrof}
 
@@ -80,7 +80,7 @@ tak jak ciągi znaków, są zawarte między apostrofami:
 <class 'str'>
 ~~~~
 
-Są to ciągi znaków.
+Są to napisy.
 
 Gdy wpiszesz dużą liczbę całkowitą, być może ulegniesz pokusie użycia przecinków
 między grupami trzycyfrowymi, np. jak w przypadku 1,000,000.^[Jest to zapis
@@ -120,7 +120,7 @@ Jedną z najważniejszych cech języka programowania jest zdolność do operowan
 ~~~~
 
 Powyższy przykład składa się z trzech przypisań. Pierwszy wiersz przypisuje
-łańcuch znaków do nowej zmiennej o nazwie `message`; drugi przypisuje liczbę
+napis do nowej zmiennej o nazwie `message`; drugi przypisuje liczbę
 całkowitą 17 do `n`;
 trzeci przypisuje (przybliżoną) wartość $\pi$ do `pi`.
 
@@ -409,15 +409,15 @@ Możesz również wyodrębnić ostatnią cyfrę po prawej stronie cyfry z liczby
 Na przykład `x % 10` zwraca ostatnią cyfrę po prawej stronie z `x` (w systemie
 dziesiętnym). Podobnie `x % 100` zwraca dwie ostatnie cyfry.
 
-Operacje na ciągach znaków
+Operacje na napisach
 --------------------------
 
-\index{ciąg znaków!operowanie}
-\index{operator!ciąg znaków}
+\index{napis!operowanie}
+\index{operator!napis}
 
-Operator `+` działa z ciągami znaków, ale nie jest to dodawanie w sensie
-matematycznym. Zamiast tego wykonuje on *konkatenację*, co oznacza łączenie
-łańcuchów znaków poprzez złączenie ich. Na przykład:
+Operator `+` działa z napisami, ale nie jest to dodawanie w sensie
+matematycznym. Zamiast tego wykonuje on *konkatenację*, co oznacza "sklejenie"
+napisów poprzez ich złączenie. Na przykład:
 
 \index{konkatenacja}
 
@@ -432,7 +432,7 @@ matematycznym. Zamiast tego wykonuje on *konkatenację*, co oznacza łączenie
 100150
 ~~~~
 
-Operator `*` pracuje również z ciągami znaków, powielając zawartość napisu
+Operator `*` pracuje również z napisami, powielając zawartość napisu
 tyle razy ile wynosi wartość liczby całkowitej. Na przykład:
 
 ~~~~ {.python}
@@ -453,7 +453,7 @@ użytkownika za pomocą jego klawiatury. Python udostępnia wbudowaną funkcję 
 nazwie `input()`, która pobiera dane z klawiatury^[W Pythonie 2 funkcja ta 
 nazywa się `raw_input()`.]. Kiedy funkcja ta jest wywoływana, program zatrzymuje
 się i czeka, aż użytkownik coś wpisze. Gdy użytkownik naciśnie klawisz `<Enter>`, program wznawia działanie, a `input()` zwraca to, co użytkownik
-wpisał jako ciąg znaków.
+wpisał jako napis.
 
 
 \index{Python 2}
@@ -467,7 +467,7 @@ Jakieś bzdury
 
 Przed otrzymaniem danych wejściowych od użytkownika dobrze jest wyświetlić
 komunikat informujący użytkownika o tym, co należy wprowadzić. Możesz przekazać
-ciąg znaków do `input()`, który zostanie wyświetlony użytkownikowi przed
+napis do `input()`, który zostanie wyświetlony użytkownikowi przed
 wstrzymaniem działania na czas wprowadzania danych:
 
 \index{znak!zachęty}
@@ -751,9 +751,6 @@ odpowiedź.
 Słowniczek
 ----------
 
-ciąg znaków
-:   Typ danych `str`, który reprezentuje sekwencje znaków; inaczej napis lub łańcuch znaków.\index{ciąg znaków}\index{napis}\index{lzancuch znakow@łańcuch znaków}
-
 ewaluacja
 :   Uproszczenie wyrażenia poprzez wykonanie operacji w celu uzyskania
     pojedynczej wartości; inaczej wartościowanie.\index{ewaluacja}\index{wartościowanie}
@@ -771,7 +768,7 @@ komentarz
     osób czytających kod źródłowy) i nie ma wpływu na wykonanie programu.\index{komentarz}
 
 konkatenacja
-:   Połączenie dwóch ciągów znaków.\index{konkatenacja}
+:   Połączenie dwóch napisów.\index{konkatenacja}
 
 liczba całkowita
 :   Typ danych `int`, który reprezentuje liczby całkowite.\index{liczba całkowita}
@@ -781,6 +778,9 @@ liczba zmiennoprzecinkowa
 
 mnemonika
 :   Pomoc pamięciowa. Często nadajemy zmiennym nazwy mnemoniczne, tak aby łatwiej zapamiętać, co jest przechowywane w zmiennej.\index{mnemonika}\index{mnemoniczne nazwy zmiennych}
+
+napis
+:   Typ danych `str`, który reprezentuje sekwencje znaków; inaczej ciąg znaków lub łańcuch znaków.\index{napis}\index{ciąg znaków}\index{lzancuch znakow@łańcuch znaków}
 
 operand
 :   Jedna z wartości, na której działa operator.\index{operand}
@@ -803,11 +803,11 @@ słowo kluczowe
 
 typ
 :   Kategoria wartości. Typy, które widzieliśmy do tej pory, to liczby całkowite
-    (typ `int`), liczby zmiennoprzecinkowe (typ `float`) oraz ciągi znaków (typ
+    (typ `int`), liczby zmiennoprzecinkowe (typ `float`) oraz napisy (typ
     `str`).\index{typ}
 
 wartość
-:   Jedna z podstawowych jednostek danych, takich jak liczba lub ciąg znaków,
+:   Jedna z podstawowych jednostek danych, takich jak liczba lub napis,
     którą operuje program.\index{wartość}
 
 wyrażenie

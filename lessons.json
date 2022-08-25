@@ -470,18 +470,18 @@
     ]
 },
 {
-    "title": "Ciągi znaków",
+    "title": "Napisy",
     "anchor": "strings",
     "icon" : "fa-file-text-o",
-    "description": "Przyjrzymy się jak Python przechowuje i zarządza danymi tekstowymi za pomocą funkcji i zmiennych będących ciągami znaków.",
+    "description": "Przyjrzymy się jak Python przechowuje i zarządza danymi tekstowymi za pomocą funkcji i zmiennych będących napisami.",
     "slides": "lectures3/Pythonlearn-06-Strings-PL.pptx",
     "references" : [
         {
-            "title" : "Rozdział 6: Ciągi znaków [HTML]",
+            "title" : "Rozdział 6: Napisy [HTML]",
             "href" : "https://py4e.pl/html3/06-strings.php"
         },
         {
-            "title" : "Rozdział 6: Ciągi znaków [PDF]",
+            "title" : "Rozdział 6: Napisy [PDF]",
             "href" : "https://py4e.pl/translations/PL/06-py4e-pl.pdf"
         }
     ],
@@ -512,7 +512,7 @@
             ]
         },
         {
-            "title" : "Quiz: Ciągi znaków",
+            "title" : "Quiz: Napisy",
             "launch" : "mod/gift/?quiz=Py4Inf-06-Strings.txt",
             "resource_link_id" : "py4e_06_str_quiz"
         }

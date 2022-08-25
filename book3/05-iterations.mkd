@@ -189,7 +189,7 @@ for friend in friends:
 print('Zrobione!')
 ~~~~
 
-W terminologii Pythona zmienna `friends` jest listą^[Przyjrzymy się listom bardziej szczegółowo w dalszych rozdziałach.] trzech ciągów znaków, a pętla `for` przechodzi przez listę i wykonuje ciało raz dla każdego z trzech ciągów znaków w liście, co w rezultacie produkuje takie dane wyjściowe:
+W terminologii Pythona zmienna `friends` jest listą^[Przyjrzymy się listom bardziej szczegółowo w dalszych rozdziałach.] składającą się z trzech napisów, a pętla `for` przechodzi przez listę i wykonuje ciało raz dla każdego z tych trzech napisów w liście, co w rezultacie produkuje takie dane wyjściowe:
 
 ~~~~ {.python}
 Szczęśliwego Nowego Roku Józek
@@ -207,7 +207,7 @@ for friend in friends:
     print('Szczęśliwego Nowego Roku', friend)
 ~~~~
 
-A konkretnie `friend` jest *zmienną sterującą* dla pętli `for`. Zmienna `friend` zmienia się w każdej iteracji pętli i kontroluje, kiedy pętla `for` zostanie zakończona. *Zmienna sterująca* przechodzi kolejno przez trzy ciągi znaków zapisane w zmiennej `friends`.
+A konkretnie `friend` jest *zmienną sterującą* dla pętli `for`. Zmienna `friend` zmienia się w każdej iteracji pętli i kontroluje, kiedy pętla `for` zostanie zakończona. *Zmienna sterująca* przechodzi kolejno przez trzy napisy zapisane w zmiennej `friends`.
 
 Schematy pętli
 --------------

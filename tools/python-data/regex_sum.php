@@ -111,7 +111,7 @@ W każdym wierszu liczby mogą się pojawić w dowolnym miejscu i mogą występo
 </p>
 <b>Przetwarzanie danych</b>
 <p>
-Podstawowy szkic rozwiązania tego zadania to: odczytanie pliku, wyszukanie liczb całkowitych za pomocą funkcji <code>re.findall()</code> i wyrażenia regularnego <code>[0-9]+</code>, przekonwertowanie wyodrębnionych ciągów znaków na liczby całkowite, a następnie ich zsumowanie.
+Podstawowy szkic rozwiązania tego zadania to: odczytanie pliku, wyszukanie liczb całkowitych za pomocą funkcji <code>re.findall()</code> i wyrażenia regularnego <code>[0-9]+</code>, przekonwertowanie wyodrębnionych napisów na liczby całkowite, a następnie ich zsumowanie.
 </p>
 <p>
 <?php httpsWarning($sample_url); ?>

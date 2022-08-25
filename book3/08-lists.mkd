@@ -8,7 +8,7 @@ Listy
 Lista jest sekwencją
 --------------------
 
-Podobnie jak ciąg znaków, *lista* jest sekwencją wartości. W ciągu znaku wartości są znakami, natomiast w liście mogą być dowolnego typu. Wartości występujące w liście są nazywane *elementami*, z rzadka *pozycjami*.
+Podobnie jak napis, *lista* jest sekwencją wartości. W napisie wartości są znakami, natomiast w liście mogą być dowolnego typu. Wartości występujące w liście są nazywane *elementami*, z rzadka *pozycjami*.
 
 \index{element}
 \index{sekwencja}
@@ -20,7 +20,7 @@ Istnieje kilka sposobów na stworzenie nowej listy; najprostszym jest umieszczen
 ['chrupiąca żabka', 'pęcherz barana', 'paw skowronka']
 ~~~~
 
-Pierwszym przykładem jest lista składająca się z czterech liczb całkowitych. Drugi przykład to lista trzech ciągów znaków. Elementy listy nie muszą być tego samego typu. Poniższa lista zawiera ciąg znaków, liczbę zmiennoprzecinkową, liczbę całkowitą i (uwaga!) inną listę:
+Pierwszym przykładem jest lista składająca się z czterech liczb całkowitych. Drugi przykład to lista trzech napisów. Elementy listy nie muszą być tego samego typu. Poniższa lista zawiera napis, liczbę zmiennoprzecinkową, liczbę całkowitą i (uwaga!) inną listę:
 
 ~~~~ {.python}
 ['spam', 2.0, 5, [10, 20]]
@@ -65,7 +65,7 @@ Składnia dostępu do elementów listy jest taka sama, jak w przypadku dostępu 
 Cheddar
 ~~~~
 
-W odróżnieniu od ciągów znaków, listy są zmienne, ponieważ możesz zmienić kolejność elementów na liście lub ponownie przypisać jakiś element do listy. Kiedy nawias kwadratowy pojawi się po lewej stronie przypisania, identyfikuje on pozycję listy, do której zostanie coś przypisane.
+W odróżnieniu od napisów, listy są zmienne, ponieważ możesz zmienić kolejność elementów na liście lub ponownie przypisać jakiś element do listy. Kiedy nawias kwadratowy pojawi się po lewej stronie przypisania, identyfikuje on pozycję listy, do której zostanie coś przypisane.
 
 \index{zmienność}
 
@@ -81,14 +81,14 @@ Pierwszym elementem `numbers`, który kiedyś wynosił 123, jest teraz 5.
 \index{indeks!numerowanie od zera}
 \index{zero, początek numerowania indeksów}
 
-Możesz myśleć o liście jako o relacji między indeksami i elementami. Ta relacja nazywana jest *mapowaniem*; każdy indeks "mapuje" do jednego z elementów.
+Możesz myśleć o liście jako o relacji między indeksami i elementami. Ta relacja nazywana jest *mapowaniem* (przyporządkowaniem); każdy indeks "mapuje" do jednego z elementów.
 
 \index{element, przypisanie}
 \index{przypisanie!element}
 \index{wyjątek!IndexError}
 \index{IndexError}
 
-Indeksy listy działają tak samo jak indeksy ciągów znaków:
+Indeksy list działają tak samo jak indeksy napisów:
 
 -   Każde wyrażenie będące liczbą całkowitą może być użyte jako indeks.
 
@@ -121,7 +121,7 @@ Poruszanie się po listach
 \index{pętla!for}
 \index{instrukcja!for}
 
-Najczęstszym sposobem na przejście po elementach listy jest pętla `for`. Składnia jest taka sama jak dla ciągów znaków:
+Najczęstszym sposobem na przejście po elementach listy jest pętla `for`. Składnia jest taka sama jak dla napisów:
 
 ~~~~ {.python}
 for cheese in cheeses:
@@ -375,7 +375,7 @@ Istnieje szereg wbudowanych funkcji, które mogą być używane na listach, pozw
 25.666666666666668
 ~~~~
 
-Funkcja `sum()` działa tylko wtedy, gdy elementy listy są liczbami. Pozostałe funkcje (`max()`, `len()` itp.) działają z listami ciągów znaków i innych typów, które mogą być porównywane.
+Funkcja `sum()` działa tylko wtedy, gdy elementy listy są liczbami. Pozostałe funkcje (`max()`, `len()` itp.) działają z listami napisów i innych typów danych, które mogą być porównywane.
 
 Moglibyśmy przepisać nasz wcześniejszy program, który teraz obliczyłby średnią z liczb podanych przez użytkownika za pomocą listy.
 
@@ -391,16 +391,15 @@ W alternatywnym podejściu możemy po prostu zapamiętać każdą wprowadzoną l
 
 Przed rozpoczęciem pętli tworzymy pustą listę, w tym przypadku przy pomocy funkcji `list()` (pustą listę moglibyśmy też utworzyć przy pomocy `[]`). Następnie za każdym razem, gdy otrzymamy nową liczbę, dołączamy ją do listy. Na końcu programu po prostu obliczamy sumę liczb występujących na liście i dzielimy ją przez liczbę elementów listy, tak aby uzyskać średnią.
 
-Listy i ciągi znaków
---------------------
+Listy i napisy
+--------------
 
 \index{lista}
-\index{ciąg znaków}
 \index{napis}
 \index{lzancuch znakow@łańcuch znaków}
 \index{sekwencja}
 
-Ciąg znaków jest sekwencją znaków, a lista jest sekwencją wartości, ale lista znaków i ciąg znaków to nie to samo. Aby przekonwertować ciąg znaków na listę znaków, możesz użyć funkcji `list()`:
+Napis jest sekwencją znaków, a lista jest sekwencją wartości, ale lista znaków i napis to nie to samo. Aby przekonwertować napis na listę pojedynczych znaków, możesz użyć funkcji `list()`:
 
 \index{list, funkcja}
 \index{funkcja!list}
@@ -414,7 +413,7 @@ Ciąg znaków jest sekwencją znaków, a lista jest sekwencją wartości, ale li
 
 Ponieważ `list()` jest nazwą wbudowanej funkcji, powinieneś unikać używania jej jako nazwy zmiennej. Unikam również litery "l", ponieważ w wyglądzie jest zbyt podobna do liczby "1". Właśnie dlatego używam "t".
 
-Funkcja `list()` rozbija ciąg znaków na pojedyncze litery. Jeśli chcesz rozbić ciąg znaków na słowa, możesz użyć metody `split()`:
+Funkcja `list()` rozbija napis na pojedyncze litery. Jeśli chcesz rozbić napis na słowa, możesz użyć metody `split()`:
 
 \index{split, metoda}
 \index{metoda!split}
@@ -428,7 +427,7 @@ Funkcja `list()` rozbija ciąg znaków na pojedyncze litery. Jeśli chcesz rozbi
 tęsknoty
 ~~~~
 
-Gdy już użyjesz `split()`, aby rozbić ciąg znaków na listę słów, możesz użyć operatora indeksu (nawias kwadratowy), żeby przyjrzeć się konkretnemu słowu na liście.
+Gdy już użyjesz `split()`, aby rozbić napis na listę słów, możesz użyć operatora indeksu (nawias kwadratowy), żeby przyjrzeć się konkretnemu słowu na liście.
 
 Możesz wywołać `split()` z opcjonalnym argumentem zwanym *separatorem*, który określa, jakie znaki mają być użyte do określania granic słów. Poniższy przykład używa myślnika jako separatora:
 
@@ -443,7 +442,7 @@ Możesz wywołać `split()` z opcjonalnym argumentem zwanym *separatorem*, któr
 ['spam', 'spam', 'spam']
 ~~~~
 
-Metoda `join()` jest odwrotnością `split()`. Przyjmuje ona listę ciągów znaków i konkatenuje jej elementy. `join()` jest metodą obiektów będących ciągami znaków, więc musisz wywołać ją na separatorze i przekazać listę jako argument:
+Metoda `join()` jest odwrotnością `split()`. Przyjmuje ona listę napisów i konkatenuje jej elementy. `join()` jest metodą obiektów będących napisami, więc musisz wywołać ją na separatorze i przekazać listę jako argument:
 
 \index{join, metoda}
 \index{metoda!join}
@@ -456,10 +455,10 @@ Metoda `join()` jest odwrotnością `split()`. Przyjmuje ona listę ciągów zna
 'usycham z tęsknoty za fiordami'
 ~~~~
 
-W tym przypadku separator jest znakiem spacji, więc `join()` umieszcza spację między słowami. Aby połączyć ciągi znaków bez spacji, możesz użyć pustego ciągu znaków (`''` lub `""`) jako separatora.
+W tym przypadku separator jest znakiem spacji, więc `join()` umieszcza spację między słowami. Aby połączyć napisy bez spacji, możesz użyć pustego napisu (`''` lub `""`) jako separatora.
 
-\index{pusty ciąg znaków}
-\index{ciąg znaków!pusty}
+\index{pusty napis}
+\index{napis!pusty}
 
 Parsowanie linii
 ----------------
@@ -500,7 +499,7 @@ a = 'banan'
 b = 'banan'
 ~~~~
 
-to wiemy, że zarówno `a`, jak i `b` odnoszą się do ciągu znaków, ale nie wiemy, czy odnoszą się one do *tego samego* ciągu znaków. Istnieją dwa możliwe stany:
+to wiemy, że zarówno `a`, jak i `b` odnoszą się do napisu, ale nie wiemy, czy odnoszą się one do *tego samego* napisu. Istnieją dwa możliwe stany:
 
 \index{aliasowanie}
 
@@ -520,7 +519,7 @@ Aby sprawdzić, czy dwie zmienne odnoszą się do tego samego obiektu, możesz u
 True
 ~~~~
 
-W powyższym przykładzie Python stworzył tylko jeden obiekt ciągu znaków, a obie zmienne `a` i `b` odnoszą się właśnie do tego obiektu.
+W powyższym przykładzie Python stworzył tylko jeden obiekt napisu, a obie zmienne `a` i `b` odnoszą się właśnie do tego obiektu.
 
 Ale kiedy tworzysz dwie listy, otrzymujesz dwa obiekty:
 
@@ -576,14 +575,14 @@ Chociaż takie zachowanie może być użyteczne, ma ono skłonność do generowa
 
 \index{niezmienność}
 
-W przypadku obiektów niezmiennych, takich jak ciągi znaków, aliasowanie nie jest aż tak dużym problemem. W poniższym przykładzie:
+W przypadku obiektów niezmiennych, takich jak napisy, aliasowanie nie jest aż tak dużym problemem. W poniższym przykładzie:
 
 ~~~~ {.python}
 a = 'banan'
 b = 'banan'
 ~~~~
 
-prawie nigdy nie ma różnicy, czy `a` i `b` odnoszą się do tego samego ciągu znaków, czy też nie.
+prawie nigdy nie ma różnicy, czy `a` i `b` odnoszą się do tego samego napisu, czy też nie.
 
 Argumenty będące listami
 ------------------------
@@ -677,10 +676,10 @@ Nieostrożne korzystanie z list (i innych zmiennych obiektów) może prowadzić 
 
 1.  Nie zapominaj, że większość metod listowych modyfikuje argument i
     zwraca `None`. Jest to zachowanie odmienne w stosunku do tego, co
-    widzieliśmy w metodach obiektów będących ciągami znaków, które 
-    zwracają nowy ciąg znaków, a oryginał zostawiają w spokoju.
+    widzieliśmy w metodach obiektów będących napisami, które 
+    zwracają nowy napis, a oryginał zostawiają w spokoju.
 
-    Jeśli jesteś przyzwyczajony do pisania takiego kodu dla ciągów znaków jak ten:
+    Jeśli jesteś przyzwyczajony do pisania takiego kodu dla napisów jak poniżej:
 
     ~~~~ {.python}
     word = word.strip()
@@ -701,7 +700,7 @@ Nieostrożne korzystanie z list (i innych zmiennych obiektów) może prowadzić 
     Przed użyciem metod i operatorów dla list powinieneś dokładnie
     przeczytać dokumentację, a następnie przetestować ją w trybie
     interaktywnym. Metody i operatory, które listy współdzielą z innymi
-    sekwencjami (np. ciągami znaków), są udokumentowane pod adresem:
+    sekwencjami (np. napisami), są udokumentowane pod adresem:
 
     <https://docs.python.org/library/stdtypes.html#common-sequence-operations>
 
@@ -941,7 +940,7 @@ równoważny
 :   Posiadający tę samą wartość.\index{równoważność}
 
 separator
-:   Znak lub ciąg znaków używany do wskazania, gdzie ciąg znaków 
+:   Znak lub napis używany do wskazania, gdzie dany tekst 
     powinien zostać podzielony.\index{separator}
 
 Ćwiczenia

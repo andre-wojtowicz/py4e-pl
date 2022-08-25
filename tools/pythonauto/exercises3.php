@@ -58,7 +58,7 @@ hrs = input("Podaj liczbę godzin: ")',
 "checks" => Array(
 "input" => "Musisz poprosić o wprowadzenie liczby godzin i stawki godzinowej przy pomocy funkcji input().",
 "print" => "Musisz użyć funkcji print() aby wyświetlić wynik.",
-"float" => "Powinieneś użyć funkcji wbudowanej float() aby przekonwertować ciąg znaków na liczbę zmiennoprzecinkową.",
+"float" => "Powinieneś użyć funkcji wbudowanej float() aby przekonwertować napis na liczbę zmiennoprzecinkową.",
 "*" => "Aby przemnożyć liczbę godzin przez stawkę godzinową użyj operatora '*'.",
 "!35" => "Nie powinieneś umieszczać danych wejściowych w kodzie źródłowym programu. Musisz odczytać wartości liczby godzin i stawi godzinowej za pomocą funkcji input().",
 "!2.75" => "Nie powinieneś umieszczać danych wejściowych w kodzie źródłowym programu. Musisz odczytać wartości liczby godzin i stawi godzinowej za pomocą funkcji input().",
@@ -66,7 +66,7 @@ hrs = input("Podaj liczbę godzin: ")',
 
 
 "3.1" => Array(
-"qtext" => "<b>3.1.</b> Napisz program, który poprosi użytkownika o podanie liczby godzin oraz stawkę za godzinę pracy, a następnie używając danych wejściowych program obliczy wynagrodzenie. Zapłać normalną stawkę godzinową za maksymalnie 40 godzin i 1,5-krotność stawki godzinowej za wszystkie godziny przepracowane powyżej 40 godzin. Powinieneś użyć <code>input()</code> (aby odczytać wprowadzane dane) oraz <code>float()</code> (aby przekonwertować wprowadzony ciąg znaków na liczbę). Nie przejmuj się sprawdzaniem błędów przy wprowadzaniu danych przez użytkownika - załóż, że użytkownik wpisuje liczby prawidłowo.<br/><br/>
+"qtext" => "<b>3.1.</b> Napisz program, który poprosi użytkownika o podanie liczby godzin oraz stawkę za godzinę pracy, a następnie używając danych wejściowych program obliczy wynagrodzenie. Zapłać normalną stawkę godzinową za maksymalnie 40 godzin i 1,5-krotność stawki godzinowej za wszystkie godziny przepracowane powyżej 40 godzin. Powinieneś użyć <code>input()</code> (aby odczytać wprowadzane dane) oraz <code>float()</code> (aby przekonwertować wprowadzony tekst na liczbę). Nie przejmuj się sprawdzaniem błędów przy wprowadzaniu danych przez użytkownika - załóż, że użytkownik wpisuje liczby prawidłowo.<br/><br/>
 Do przetestowania programu wykorzystaj następujące dane wejściowe:
 <ul>
 <li>liczba godzin: <code>45</code>,</li>
@@ -81,7 +81,7 @@ h = float(hrs)',
 "input" => "Musisz poprosić o wprowadzenie liczby godzin i stawki godzinowej przy pomocy funkcji input().",
 "print" => "Musisz użyć funkcji print() aby wyświetlić wynik.",
 "if" => "Powinieneś użyć instrukcji if, tak aby zdecydować czy wykonać obliczenia dotyczące godzin nadliczbowych.",
-"float" => "Powinieneś użyć funkcji wbudowanej float() aby przekonwertować ciąg znaków na liczbę zmiennoprzecinkową.",
+"float" => "Powinieneś użyć funkcji wbudowanej float() aby przekonwertować tekst na liczbę zmiennoprzecinkową.",
 "!45" => "Musisz odczytać dane wejściowe przy pomocy input(), a następnie je przekonwertować. Liczba '45' nie powinna pojawić się w Twoim programie.",
 "!10.5" => "Musisz odczytać dane wejściowe przy pomocy input(), a następnie je przekonwertować.",
 "!498" => "Musisz obliczyć wynagrodzenie.")),
@@ -102,7 +102,7 @@ Do przetestowania działania wprowadź wartość 0.75.
 "code" => 'score = input("Podaj wartość: ")',
 "checks" => Array(
 "input" => "Musisz poprosić o podanie wartości przy pomocy funkcji input().",
-"float" => "Powinieneś użyć funkcji wbudowanej float() aby przekonwertować ciąg znaków na liczbę zmiennoprzecinkową.",
+"float" => "Powinieneś użyć funkcji wbudowanej float() aby przekonwertować tekst na liczbę zmiennoprzecinkową.",
 "print" => "Musisz użyć funkcji print() aby wyświetlić wynik.",
 "if" => "Powinieneś użyć instrukcji if aby sprawdzić jaka powinna być ocena na podstawie wprowadzonej wartości.",
 "elif" => "Jednym z celów tego zadania jest nauczenie użycia instrukcji elif podczas podejmowania decyzji o ocenie na podstawie wprowadzonej wartości.")
@@ -111,7 +111,7 @@ Do przetestowania działania wprowadź wartość 0.75.
 "4.6" => Array(
 "qtext" => "<b>4.6.</b> Napisz program, który poprosi użytkownika o podanie liczby godzin oraz stawkę za godzinę pracy, a następnie używając danych wejściowych program obliczy wynagrodzenie. Zapłać normalną stawkę godzinową za maksymalnie 40 godzin i 1,5-krotność stawki godzinowej za wszystkie godziny przepracowane powyżej 40 godzin.
 Umieść logikę obliczenia wynagrodzenia w funkcji o nazwie <code>computepay()</code>, a następnie użyj tej funkcji. Funkcja powinna zwrócić wartość.
-Powinieneś użyć <code>input()</code> (aby odczytać wprowadzane dane) oraz <code>float()</code> (aby przekonwertować wprowadzony ciąg znaków na liczbę). Nie przejmuj się sprawdzaniem błędów przy wprowadzaniu danych przez użytkownika - załóż, że użytkownik wpisuje liczby prawidłowo. Nie nazywaj swojej zmiennej o nazwie <code>sum</code> ani nie używaj funkcji <code>sum()</code>.<br/><br/>
+Powinieneś użyć <code>input()</code> (aby odczytać wprowadzane dane) oraz <code>float()</code> (aby przekonwertować wprowadzony tekst na liczbę). Nie przejmuj się sprawdzaniem błędów przy wprowadzaniu danych przez użytkownika - załóż, że użytkownik wpisuje liczby prawidłowo. Nie nazywaj swojej zmiennej o nazwie <code>sum</code> ani nie używaj funkcji <code>sum()</code>.<br/><br/>
 Do przetestowania programu wykorzystaj następujące dane wejściowe:
 <ul>
 <li>liczba godzin: <code>45</code>,</li>
@@ -131,7 +131,7 @@ print("Wynagrodzenie:", p)',
 "!45" => "Musisz poprosić użytkownika o wprowadzenie danych.",
 "!10.5" => "Musisz poprosić użytkownika o wprowadzenie danych.",
 "if" => "Powinieneś użyć instrukcji if, tak aby zdecydować czy wykonać obliczenia dotyczące godzin nadliczbowych.",
-"float" => "Powinieneś użyć funkcji wbudowanej float() aby przekonwertować ciąg znaków na liczbę zmiennoprzecinkową.",
+"float" => "Powinieneś użyć funkcji wbudowanej float() aby przekonwertować tekst na liczbę zmiennoprzecinkową.",
 "def" => "Musisz użyć funkcji o nazwie computepay() do wykonania obliczeń.",
 "!sum(" => "Nie nazywaj swojej zmiennej sum ani nie używaj funkcji sum().",
 "return" => "Musisz użyć instrukcji return, tak aby przekazać obliczone wynagrodzenie do głównego kodu.",
@@ -164,7 +164,7 @@ print("Największa:", largest)',
 "input" => "Musisz poprosić o wprowadzenie liczby przy pomocy funkcji input().",
 "print" => "Musisz użyć funkcji print() aby wyświetlić wyniki.",
 "while" => "Powinieneś użyć instrukcji while do odczytania liczb.",
-"int" => "Powinieneś użyć funkcji int() aby przekonwertować ciąg znaków na liczbę całkowitą.",
+"int" => "Powinieneś użyć funkcji int() aby przekonwertować tekst na liczbę całkowitą.",
 "! 2" => "Powinieneś obliczyć największą i najmniejszą liczbę.",
 "!=2" => "Powinieneś obliczyć największą i najmniejszą liczbę.",
 "! 10" => "Powinieneś obliczyć największą i najmniejszą liczbę.",
@@ -178,10 +178,10 @@ print("Największa:", largest)',
 "desired" => "0.8475",
 "code" => 'text = "X-DSPAM-Confidence: 0.8475"',
 "checks" => Array(
-"find" => "Powinieneś użyć funkcji find() do uzyskania pozycji dwukropka w ciągu znaków.",
-":" => "Powinieneś użyć wycinków ciągów znaków [n:m] do wyciągnięcia danych z ciągu znaków.",
-"float" => "Powinieneś użyć funkcji float() do konwersji ciągu znaków na liczbę zmiennoprzecinkową.",
-'!"0.8475"' =>  "Musisz wyciągnąć dane z ciągu znaków.")
+"find" => "Powinieneś użyć funkcji find() do uzyskania pozycji dwukropka w napisie.",
+":" => "Powinieneś użyć wycinków napisów [n:m] do wyciągnięcia danych z tekstu.",
+"float" => "Powinieneś użyć funkcji float() do konwersji tekstu na liczbę zmiennoprzecinkową.",
+'!"0.8475"' =>  "Musisz wyciągnąć dane z napisu.")
 ),
 
 "fopen" => Array(
@@ -284,8 +284,8 @@ print("Średni poziom pewności spamu:", tot/count)
 "input" => "Musisz poprosić o nazwę pliku przy pomocy funkcji input().",
 "open" => "Musisz użyć funkcji open() aby otworzyć plik.",
 "!sum" => "Nie używaj funkcji sum() ani nie nadawaj zmiennej nazwy sum.",
-"float" => "Powinieneś użyć funkcji float() aby przekonwertować ciąg znaków na liczbę zmiennoprzecinkową.",
-'!18518' =>  "Musisz pobrać dane z ciągów znaków, a następnie je przekonwertować.",
+"float" => "Powinieneś użyć funkcji float() aby przekonwertować tekst na liczbę zmiennoprzecinkową.",
+'!18518' =>  "Musisz pobrać dane z tekstu, a następnie je przekonwertować.",
 "/" => "Średnia to suma podzielona przez liczbę elementów.")
 ),
 
@@ -431,11 +431,11 @@ print(bigname, bigcount)
 ),
 
 "10.2" => Array(
-"qtext" => "<b>10.2.</b> Napisz program, który odczytuje zawartość pliku <code>mbox-short.txt</code> i analizując każdą wiadomość, oblicza rozkład godzin w ciągu dnia. Możesz wyciągnąć godzinę z linii zaczynających się od <code>From </code> (są to napisy związane z czasem do przeanalizowania), a następnie dzieląc tę linię na części za pomocą znaku dwukropka. 
+"qtext" => "<b>10.2.</b> Napisz program, który odczytuje zawartość pliku <code>mbox-short.txt</code> i analizując każdą wiadomość, oblicza rozkład godzin w ciągu dnia. Możesz wyodrębnić godzinę z linii zaczynających się od <code>From </code> (są to napisy związane z czasem do przeanalizowania), a następnie dzieląc tę linię na części za pomocą znaku dwukropka. 
 <pre>
 From stephen.marquard@uct.ac.za Sat Jan  5 <b>09</b>:14:16 2008
 </pre>
-Kiedy już zgromadzisz wartości dla każdej godziny, wypisz zliczenia, po jednym na wiersz, posortowane według godzin.",
+Gdy już zgromadzisz wartości dla każdej godziny, wypisz zliczenia, po jednym na wiersz, posortowane według godzin.",
 "desired" => "04 3
 06 1
 07 1

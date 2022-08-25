@@ -136,7 +136,7 @@ Utwory:
 
 Nasza pętla `for` znajduje dwa wiersze, a każdy z nich jest krotką Pythona, w której pierwsza wartość to `tytuł`, a drugą to `odtworzenia`.
 
-*Uwaga: W innych książkach lub w internecie możesz zobaczyć ciągi znaków rozpoczynające się od `u'`. W Pythonie 2 była to wskazówka, że ciągi znaków są napisami z zestawem znaków Unicode, które są w stanie przechowywać niełacińskie znaki. W Pythonie 3 wszystkie ciągi znaków są domyślnie napisami z zestawem znaków Unicode.*
+*Uwaga: W innych książkach lub w internecie możesz zobaczyć napisy rozpoczynające się od `u'`. W Pythonie 2 była to wskazówka, że są to napisy z zestawem znaków Unicode, które są w stanie przechowywać niełacińskie znaki. W Pythonie 3 wszystkie napisy są domyślnie napisami z zestawem znaków Unicode.*
 
 Na samym końcu programu wykonujemy polecenie `DELETE`, aby usunąć wiersze, które właśnie utworzyliśmy, co pozwala uruchamiać nasz program wielokrotnie bez wystąpienia błędu. Polecenie `DELETE` pokazuje użycie klauzuli `WHERE`, która wyraża kryterium wyboru, dzięki czemu możemy poprosić bazę danych o zastosowanie polecenia tylko do spełniających to kryterium wierszy. W tym przykładzie są to wszystkie wiersze, więc czyścimy całą tabelę i możemy program uruchamiać wielokrotnie. Po wykonaniu operacji `DELETE` wywołujemy również `commit()`, aby wymusić usunięcie danych z bazy.
 
@@ -371,11 +371,11 @@ Za każdym razem, gdy napotykamy osobę, którą śledzi użytkownik `drchuck` (
 INSERT INTO Znajomości (znajomy_od, znajomy_do) VALUES ('drchuck', 'lhawthorn')
 ~~~~
 
-Ponieważ przetwarzamy na Twitterze 20 znajomych z kanału użytkownika `drchuck`, wstawimy 20 rekordów z "drchuckiem" jako pierwszym parametrem, przez co będziemy wielokrotnie duplikować ciąg w bazie danych.
+Ponieważ przetwarzamy na Twitterze 20 znajomych z kanału użytkownika `drchuck`, wstawimy 20 rekordów z "drchuckiem" jako pierwszym parametrem, przez co będziemy wielokrotnie duplikować tekst w bazie danych.
 
-Tego typu powielanie danych ciągów znaków narusza jedną z najlepszych praktyk *normalizacji baz danych*, która w dużym uproszczeniu stwierdza, że nigdy nie powinniśmy umieszczać w bazie danych więcej niż jeden raz tego samego ciągu znaków. Jeżeli potrzebujemy tych danych więcej niż jeden raz, tworzymy dla tych danych numeryczny *klucz* i odwołujemy się do rzeczywistych danych za pomocą tego klucza.^[Szersze i bardziej precyzyjnej omówienie zagadnienia normalizacji baz danych jest poza zakresem tej książki.]
+Tego typu powielanie danych tekstowych narusza jedną z najlepszych praktyk *normalizacji baz danych*, która w dużym uproszczeniu stwierdza, że nigdy nie powinniśmy umieszczać w bazie danych więcej niż jeden raz tego samego napisu. Jeżeli potrzebujemy tych danych więcej niż jeden raz, tworzymy dla tych danych numeryczny *klucz* i odwołujemy się do rzeczywistych danych za pomocą tego klucza.^[Szersze i bardziej precyzyjnej omówienie zagadnienia normalizacji baz danych jest poza zakresem tej książki.]
 
-W praktyce ciąg znaków zajmuje na dysku i w pamięci naszego komputera dużo więcej miejsca niż liczba całkowita, a porównywanie i sortowanie zajmuje więcej czasu procesora w przypadku ciągów znaków. Jeśli mamy tylko kilkaset wpisów, to czas związany z dostępem i przetwarzaniem danych nie ma większego znaczenia. Ale jeśli mamy milion osób w naszej bazie danych i możliwość 100 milionów powiązań pomiędzy znajomymi, to ważne jest, aby móc jak najszybciej przetworzyć tego typu dane.
+W praktyce tekst zajmuje na dysku i w pamięci naszego komputera dużo więcej miejsca niż liczba całkowita, a porównywanie i sortowanie zajmuje więcej czasu procesora w przypadku napisów. Jeśli mamy tylko kilkaset wpisów, to czas związany z dostępem i przetwarzaniem danych nie ma większego znaczenia. Ale jeśli mamy milion osób w naszej bazie danych i możliwość 100 milionów powiązań pomiędzy znajomymi, to ważne jest, aby móc jak najszybciej przetworzyć tego typu dane.
 
 Będziemy przechowywać nasze konta na Twitterze w tabeli o nazwie `Osoby` zamiast używanej w poprzednim przykładzie tabeli `Twitter`. Tabela `Osoby` posiada dodatkową kolumnę do przechowywania klucza numerycznego powiązanego z wierszem dla tego użytkownika Twittera. SQLite posiada możliwość automatycznego dodawania wartości klucza do każdego wiersza, który wstawiamy do tabeli, dzięki ustawieniu specjalnego typu danych kolumny (`INTEGER PRIMARY KEY`).
 

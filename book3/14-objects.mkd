@@ -99,7 +99,7 @@ Jeśli spojrzymy ponownie na aplikację do wyodrębniania linków, w której kor
 
 \VerbatimInput{../code3/urllinks.py}
 
-Wczytujemy adres URL do zmiennej przechowującej ciąg znaków, a następnie przekazujemy ją do `urllib`, tak aby pobrać dane z sieci. Moduł `urllib` wykorzystuje w rzeczywistości moduł `socket` do nawiązania połączenia z siecią w celu pobrania danych. Bierzemy ciąg znaków, który zwraca `urllib`, i przekazujemy go do `BeautifulSoup` do dalszej analizy. `BeautifulSoup` korzysta z obiektu `html.parser`^[<https://docs.python.org/3/library/html.parser.html>] i w wyniku też zwraca nam obiekt. Na zwróconym obiekcie wywołujemy metodę `tags()`, która zwraca słownik obiektów będących znacznikami. Przechodzimy w pętli po znacznikach i dla każdego znacznika wywołujemy metodę `get()`, tak aby wypisać jego atrybut `href`.
+Wczytujemy adres URL do zmiennej przechowującej napis, a następnie przekazujemy ją do `urllib`, tak aby pobrać dane z sieci. Moduł `urllib` wykorzystuje w rzeczywistości moduł `socket` do nawiązania połączenia z siecią w celu pobrania danych. Bierzemy napis, który zwraca `urllib`, i przekazujemy go do `BeautifulSoup` do dalszej analizy. `BeautifulSoup` korzysta z obiektu `html.parser`^[<https://docs.python.org/3/library/html.parser.html>] i w wyniku też zwraca nam obiekt. Na zwróconym obiekcie wywołujemy metodę `tags()`, która zwraca słownik obiektów będących znacznikami. Przechodzimy w pętli po znacznikach i dla każdego znacznika wywołujemy metodę `get()`, tak aby wypisać jego atrybut `href`.
 
 Możemy narysować dla tego programu diagram z oznaczeniem, jak te obiekty ze sobą współpracują.
 

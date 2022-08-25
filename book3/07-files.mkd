@@ -58,7 +58,7 @@ Pliki tekstowe i linie
 
 \index{plik tekstowy}
 
-Plik tekstowy może być uważany za sekwencję linii, podobnie jak ciąg znaków w Pythonie może być uważany za sekwencję liter, liczb i symboli. Na przykład poniżej znajduje się fragment pliku tekstowego, który rejestruje aktywność mailową różnych osób w zespole rozwijającym projekt otwartego oprogramowania:
+Plik tekstowy może być uważany za sekwencję linii, podobnie jak napis w Pythonie może być uważany za sekwencję liter, liczb i symboli. Na przykład poniżej znajduje się fragment pliku tekstowego, który rejestruje aktywność mailową różnych osób w zespole rozwijającym projekt otwartego oprogramowania:
 
 ~~~~
 From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008
@@ -86,7 +86,7 @@ Aby podzielić plik na linie, istnieje specjalny znak, który reprezentuje "koni
 \index{nowa linia}
 \index{znak!końca linii}
 
-W ciągach znaków Pythona znak *końca linii* reprezentujemy jako lewy ukośnik-n. Nawet jeśli wygląda to jak dwa znaki, to w rzeczywistości jest to pojedynczy znak. W poniższym przykładzie, gdy patrzymy na zmienną `stuff`, po wpisaniu jej w interpreterze, pokazuje nam ona `\n` w ciągu znaków, ale gdy używamy `print()` do wyświetlenia ciągu znaków, widzimy go rozbitego na dwie linie przez znak końca linii.
+W napisach w języku Python, znak *końca linii* reprezentujemy jako *lewy ukośnik-n*. Nawet jeśli wygląda to jak dwa znaki, to w rzeczywistości jest to pojedynczy znak. W poniższym przykładzie, gdy patrzymy na zmienną `stuff`, po wpisaniu jej w interpreterze, pokazuje nam ona `\n` w napisie, ale gdy używamy `print()` do wyświetlenia napisu, widzimy go rozbitego na dwie linie poprzez znak końca linii.
 
 ~~~~ {.python}
 >>> stuff = 'Witaj\nświecie!'
@@ -103,7 +103,7 @@ Y
 3
 ~~~~
 
-Widzimy też, że długość ciągu znaków `X\nY` to *trzy* znaki, ponieważ znak końca linii jest pojedynczym znakiem.
+Widzimy też, że długość napisu `X\nY` to *trzy* znaki, ponieważ znak końca linii jest pojedynczym znakiem.
 
 Kiedy więc patrzymy na linie w pliku, musimy sobie *wyobrazić*, że na końcu każdej linii znajduje się specjalny niewidoczny znak zwany znakiem końca linii.
 
@@ -141,9 +141,9 @@ Jeśli wiesz, że plik jest stosunkowo mały w porównaniu z rozmiarem Twojej pa
 From stephen.marquar
 ~~~~
 
-W powyższym przykładzie cała zawartość (wszystkie 94 626 znaków) pliku `mbox-short.txt` jest wczytywana bezpośrednio do zmiennej `inp`. Do wyświetlenia pierwszych 20 znaków danych z ciągu znaków przechowywanych w `inp` używamy operacji wycinana podciągów.
+W powyższym przykładzie cała zawartość (wszystkie 94 626 znaków) pliku `mbox-short.txt` jest wczytywana bezpośrednio do zmiennej `inp`. Do wyświetlenia pierwszych 20 znaków z napisu przechowywanego w zmiennej `inp` używamy operacji wycinana podciągu znaków, czyli wycinków.
 
-Gdy plik zostanie odczytany w ten sposób, to wszystkie znaki, łącznie ze wszystkimi liniami i znakami końca linii, są jednym dużym ciągiem znaków znajdującym się w zmiennej `inp`. Dobrym pomysłem jest przechowywanie wyniku funkcji `read()` jako zmiennej, ponieważ każde wywołanie `read()` wykorzystuje zasoby pamięci:
+Gdy plik zostanie odczytany w ten sposób, to wszystkie znaki, łącznie ze wszystkimi liniami i znakami końca linii, są jednym dużym napisem znajdującym się w zmiennej `inp`. Dobrym pomysłem jest przechowywanie wyniku funkcji `read()` jako zmiennej, ponieważ każde wywołanie `read()` wykorzystuje zasoby pamięci:
 
 ~~~~ {.python}
 >>> fhand = open('mbox-short.txt')
@@ -158,12 +158,12 @@ Pamiętaj, że ta forma funkcji `open()` powinna być używana tylko wtedy, gdy 
 Przeszukiwanie pliku
 --------------------
 
-Kiedy przeszukujesz dane w pliku, bardzo powszechnym sposobem jest odczytywanie ich, ignorując przy tym większość linii i przetwarzając tylko te, które spełniają określony warunek – patrząc na to ogólniej, nazywamy to *schematem filtrowania*. Możemy połączyć przebieg odczytywania pliku z metodami ciągów znaków, tak aby zbudować proste mechanizmy wyszukiwania.
+Kiedy przeszukujesz dane w pliku, bardzo powszechnym sposobem jest odczytywanie ich, ignorując przy tym większość linii i przetwarzając tylko te, które spełniają określony warunek – patrząc na to ogólniej, nazywamy to *schematem filtrowania*. Możemy połączyć przebieg odczytywania pliku z metodami tekstowego typu danych, tak aby zbudować proste mechanizmy wyszukiwania.
 
 \index{filtrowanie, schemat}
 \index{schemat!filtrowanie}
 
-Na przykład, jeśli chcielibyśmy odczytać plik i wypisać tylko te linie, które rozpoczęły się od "From:", moglibyśmy użyć metody ciągów znaków `startswith()`, tak aby wybrać tylko te, które mają pożądany początek:
+Na przykład, jeśli chcielibyśmy odczytać plik i wypisać tylko te linie, które rozpoczęły się od "From:", moglibyśmy użyć metody tekstowego typu danych `startswith()`, tak aby wybrać tylko te, które mają pożądany początek:
 
 \VerbatimInput{../code3/search1.py}
 \begin{trinketfiles}
@@ -183,9 +183,9 @@ From: rjlowe@iupui.edu
 ...
 ~~~~
 
-Wynik wygląda świetnie, ponieważ jedyne linie, które widzimy, to te, które zaczynają się od "From:", ale dlaczego widzimy dodatkowe puste linie? Jest to spowodowane wspomnianym wcześniej niewidocznym *znakiem końca linii*. Każda z linii kończy się wspomnianym znakiem, więc funkcja `print()` wypisuje ciąg znaków zapisany w zmiennej `line`, który zawiera znak końca linii, a następnie dodaje *kolejny* znak końca linii, co daje efekt podwójnego odstępu, który widzimy.
+Wynik wygląda świetnie, ponieważ jedyne linie, które widzimy, to te, które zaczynają się od "From:", ale dlaczego widzimy dodatkowe puste linie? Jest to spowodowane wspomnianym wcześniej niewidocznym *znakiem końca linii*. Każda z linii kończy się wspomnianym znakiem, więc funkcja `print()` wypisuje tekst zapisany w zmiennej `line`, który zawiera znak końca linii, a następnie dodaje *kolejny* znak końca linii, co daje efekt podwójnego odstępu, który widzimy.
 
-Moglibyśmy użyć wycinka linii, aby wypisać wszystkie znaki oprócz ostatniego, ale prostszym podejściem jest użycie metody `rstrip()`, która usuwa spacje z prawej strony ciągu znaków:
+Moglibyśmy użyć wycinka linii, aby wypisać wszystkie znaki oprócz ostatniego, ale prostszym podejściem jest użycie metody `rstrip()`, która usuwa spacje z prawej strony napisu:
 
 \VerbatimInput{../code3/search2.py}
 \begin{trinketfiles}
@@ -216,7 +216,7 @@ Pętlę możemy uporządkować tak, aby w następujący sposób trzymała się s
 
 Wynik programu jest taki sam. Mówiąc po ludzku, "nieciekawe" są te linie, które nie rozpoczynają się od "From:", więc pomijamy je, używając `continue`. W przypadku "interesujących" linii (tzn. tych, które zaczynają się od "From:") wykonujemy przetwarzanie danych, czyli wypisujemy ich zawartość na ekran.
 
-Możemy użyć metody ciągów znaków `find()`, tak aby zasymulować wyszukiwanie w edytorze tekstu znajdujące linie, w których poszukiwany tekst jest gdziekolwiek w linii. Ponieważ `find()` szuka wystąpienia ciągu znaków w innym ciągu i albo zwraca jego pozycję, albo -1, jeśli nie zostanie on znaleziony, możemy napisać następującą pętlę, tak by pokazać te linie, które zawierają ciąg znaków "@uct.ac.za" (tzn. pochodzą z Uniwersytetu w Kapsztadzie w RPA):
+Możemy użyć metody tekstowego typu danych `find()`, tak aby zasymulować wyszukiwanie w edytorze tekstu znajdujące linie, w których poszukiwany tekst jest gdziekolwiek w linii. Ponieważ `find()` szuka wystąpienia napisu w innym napisie i albo zwraca jego pozycję, albo -1, jeśli nie zostanie on znaleziony, możemy napisać następującą pętlę, tak by pokazać te linie, które zawierają tekst "@uct.ac.za" (tzn. pochodzą z Uniwersytetu w Kapsztadzie w RPA):
 
 \VerbatimInput{../code3/search4.py}
 \begin{trinketfiles}
@@ -343,7 +343,7 @@ Aby móc zapisywać dane do pliku, musisz otworzyć go w trybie `w` (skrót z an
 
 Jeśli plik już istnieje, otwarcie go w trybie do zapisu usuwa stare dane i tworzy nowy pusty plik, więc bądź ostrożny! Jeśli plik nie istnieje, tworzony jest nowy.
 
-Metoda `write()` obiektu uchwytu pliku umieszcza dane w pliku, zwracając liczbę zapisanych znaków. Domyślnym trybem zapisu jest tryb tekstowy, przeznaczony do zapisu (i odczytu) ciągów znaków. Dodajmy jedną linię do naszego pliku (nie używaj polskich znaków – wrócimy do tego problemu za chwilę):
+Metoda `write()` obiektu uchwytu pliku umieszcza dane w pliku, zwracając liczbę zapisanych znaków. Domyślnym trybem zapisu jest tryb tekstowy, przeznaczony do zapisu (i odczytu) napisów. Dodajmy jedną linię do naszego pliku (nie używaj polskich znaków – wrócimy do tego problemu za chwilę):
 
 ~~~~ {.python}
 >>> line1 = "Oto galaz eukaliptusa,\n"
@@ -506,9 +506,9 @@ W trybie interaktywnym możemy wyświetlić zawartość takiej zmiennej po prost
 
 \index{repr, funkcja}
 \index{funkcja!repr}
-\index{reprezentacja ciągu znaków}
+\index{reprezentacja tekstu}
 
-W przypadku skryptu możemy skorzystać z wbudowanej funkcji `repr()`. Przyjmuje ona dowolny obiekt jako argument i zwraca jego reprezentację w postaci ciągu znaków. Jeśli obiektem jest właśnie ciąg znaków, to białe znaki są przedstawiane w postaci z lewym ukośnikiem:
+W przypadku skryptu możemy skorzystać z wbudowanej funkcji `repr()`. Przyjmuje ona dowolny obiekt jako argument i zwraca jego reprezentację w postaci napisu. Jeśli obiektem jest właśnie napis, to białe znaki są przedstawiane w postaci z lewym ukośnikiem:
 
 ~~~~ {.python}
 print(repr(s))
@@ -546,7 +546,7 @@ Quality Assurance
 :   Osoba lub zespół skoncentrowany na zapewnieniu ogólnej jakości oprogramowania. QA są często zaangażowani w testowanie i identyfikowanie problemów, zanim produkt zostanie wydany.\index{Quality Assurance}\index{zapewnianie jakości}
 
 znak końca linii
-:   Specjalny znak używany w plikach i ciągach znaków do wskazywania końca linii.\index{nowa linia}\index{znak!końca linii}
+:   Specjalny znak używany w plikach i napisach do wskazywania końca linii.\index{nowa linia}\index{znak!końca linii}
 
 Ćwiczenia
 ---------

@@ -41,7 +41,7 @@ Aby utworzyć krotkę z pojedynczym elementem (tzw. *singleton*), należy na ko�
 <type 'tuple'>
 ~~~~
 
-Bez przecinka Python traktuje `('a')` jako wyrażenie z ciągiem znaków w nawiasach, które ewaluuje się do ciągu znaków:
+Bez przecinka Python traktuje `('a')` jako wyrażenie z napisem w nawiasach, które ewaluuje się do napisu:
 
 ~~~~ {.python}
 >>> t2 = ('a')
@@ -60,7 +60,7 @@ Innym sposobem na skonstruowanie krotki jest wbudowana funkcja `tuple()`. Bez ż
 ()
 ~~~~
 
-Jeśli argumentem jest sekwencja (ciąg znaków, lista lub krotka), to wynikiem wywołania funkcji `tuple()` jest krotka z elementami podanej sekwencji:
+Jeśli argumentem jest sekwencja (napis, lista lub krotka), to wynikiem wywołania funkcji `tuple()` jest krotka z elementami podanej sekwencji:
 
 ~~~~ {.python .trinket}
 >>> t = tuple('łubin')
@@ -235,7 +235,7 @@ Liczba zmiennych po lewej stronie i liczba wartości po prawej stronie muszą by
 ValueError: too many values to unpack
 ~~~~
 
-Ogólnie rzecz biorąc, prawa strona może być dowolną sekwencją (ciągiem, listą lub krotką). Na przykład, aby podzielić adres e-mail na nazwę użytkownika i domenę, można napisać poniższy kod:
+Ogólnie rzecz biorąc, prawa strona może być dowolną sekwencją (napisem, listą lub krotką). Na przykład, aby podzielić adres e-mail na nazwę użytkownika i domenę, można napisać poniższy kod:
 
 \index{split, metoda}
 \index{metoda!split}
@@ -412,14 +412,14 @@ for last, first in directory:
 
 Powyższa pętla przechodzi przez klucze w `directory`, które są krotkami. Przypisuje elementy każdej krotki do `last` i `first`, a następnie wypisuje nazwę i odpowiadający jej numer telefonu.
 
-Sekwencje: ciągi znaków, listy i krotki – O rany!
--------------------------------------------------
+Sekwencje: napisy, listy i krotki – O rany!
+-------------------------------------------
 
 \index{sekwencja}
 
 Skupiłem się na listach krotek, ale prawie wszystkie przykłady w tym rozdziale działają również z listami list, krotkami krotek i krotkami list. Aby uniknąć wyliczania możliwych kombinacji, czasem łatwiej jest mówić o sekwencjach sekwencji.
 
-W wielu kontekstach różne rodzaje sekwencji (ciągów znaków, list i krotek) mogą być używane zamiennie. Więc jak i dlaczego wybierasz jedną z nich zamiast innych?
+W wielu kontekstach różne rodzaje sekwencji (napisów, list i krotek) mogą być używane zamiennie. Więc jak i dlaczego wybierasz jedną z nich zamiast innych?
 
 \index{ciąg znaków}
 \index{napis}
@@ -429,13 +429,13 @@ W wielu kontekstach różne rodzaje sekwencji (ciągów znaków, list i krotek) 
 \index{zmienność}
 \index{niezmienność}
 
-Zaczynając od tego, co oczywiste, ciągi znaków są bardziej ograniczone niż inne sekwencje, ponieważ ich elementy muszą być znakami. Są one również niezmienne. Jeśli potrzebujesz możliwości zmiany znaków w takim ciągu (w przeciwieństwie do tworzenia nowego ciągu), możesz w zamian użyć listy znaków.
+Zaczynając od tego, co oczywiste, napisy są bardziej ograniczone niż inne sekwencje, ponieważ ich elementy muszą być znakami. Są one również niezmienne. Jeśli potrzebujesz możliwości zmiany znaków w takim napisie (w przeciwieństwie do tworzenia nowego napisu), możesz w zamian użyć listy znaków.
 
 Listy są popularniejsze w użyciu niż krotki, głównie dlatego, że są zmienne. Jednak jest kilka przypadków, w których możesz preferować krotki:
 
 1.  W niektórych kontekstach, jak np. instrukcja `return`, stworzenie krotki jest składniowo prostsze od stworzenia listy. W innych przepadkach możesz preferować listę.
 
-2.  Jeśli chcesz użyć sekwencji jako klucza w słowniku, musisz użyć typu niezmiennego, takiego jak krotka lub ciąg znaków.
+2.  Jeśli chcesz użyć sekwencji jako klucza w słowniku, musisz użyć typu niezmiennego, takiego jak krotka lub napis.
 
 3.  Jeżeli przekazujesz sekwencję jako argument do funkcji, używanie krotek zmniejsza możliwość nieoczekiwanego działania kodu spowodowanego aliasowaniem.
 
@@ -464,7 +464,7 @@ DSU
 :   Skrót od "dekorowanie-sortowanie-usunięcie dekorowania"; schemat, który polega na budowaniu listy krotek, sortowaniu i wyodrębnianiu części wyniku.\index{DSU, schemat}\index{dekorowanie-sortowanie-usunięcie dekorowania, schemat}\index{schemat!dekorowanie-sortowanie-usunięcie dekorowania}\index{schemat!DSU}
 
 haszowalny
-:   Typ, który posiada funkcję haszowania. Typy niezmienne, takie jak liczby całkowite, zmiennoprzecinkowe i ciągi znaków, są haszowalne; typy zmienne, takie jak listy i słowniki, nie są haszowalne.\index{haszowalny}
+:   Typ, który posiada funkcję haszowania. Typy niezmienne, takie jak liczby całkowite, zmiennoprzecinkowe i napisy, są haszowalne; typy zmienne, takie jak listy i słowniki, nie są haszowalne.\index{haszowalny}
 
 krotka
 :   Niezmienna sekwencja elementów.\index{krotka}
@@ -486,7 +486,7 @@ struktura danych
 
 #### Ćwiczenie 1
 
-Przepisz swój poprzedni program zliczający wysłane wiadomości mailowe w następujący sposób. Wczytaj i przetwórz linie zaczynające się od "From" oraz wyciągnij z nich adresy mailowe. Za pomocą słownika dla każdej osoby zapisz liczbę wysłanych przez nią wiadomości.
+Przepisz swój poprzedni program zliczający wysłane wiadomości mailowe w następujący sposób. Wczytaj i przetwórz linie zaczynające się od "From" oraz wyodrębnij z nich adresy mailowe. Za pomocą słownika dla każdej osoby zapisz liczbę wysłanych przez nią wiadomości.
 
 Po przeczytaniu wszystkich danych utwórz ze słownika listę krotek w postaci *(liczba, adres e-mail)*. Następnie posortuj listę w odwrotnej kolejności i wypisz osobę, która wysłała najwięcej wiadomości.
 
@@ -508,7 +508,7 @@ zqian@umich.edu 195
 
 #### Ćwiczenie 2
 
-Napisz program, który zlicza rozkład godzin dla wszystkich wiadomości. Możesz wyciągnąć godzinę z wiersza "From ", odszukując ciąg znaków związany z czasem, a następnie dzieląc ten ciąg na części za pomocą znaku dwukropka. Kiedy już zgromadzisz wartości dla każdej godziny, wypisz zliczenia, po jednym na wiersz, posortowane według godzin, tak jak pokazano poniżej.
+Napisz program, który zlicza rozkład godzin dla wszystkich wiadomości. Możesz wyodrębnić godzinę z linii zaczynających się od "From " (są to napisy związane z czasem do przeanalizowania), a następnie dzieląc tę linię na części za pomocą znaku dwukropka. Gdy już zgromadzisz wartości dla każdej godziny, wypisz zliczenia, po jednym na wiersz, posortowane według godzin, tak jak pokazano poniżej.
 
 ~~~~
 Podaj nazwę pliku: mbox-short.txt

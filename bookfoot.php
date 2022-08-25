@@ -36,7 +36,7 @@ function onSelect() {
   <option <?= x_sel("03-conditional.php") ?>>Rozdział 3: Wykonanie warunkowe</option>
   <option <?= x_sel("04-functions.php") ?>>Rozdział 4: Funkcje</option>
   <option <?= x_sel("05-iterations.php") ?>>Rozdział 5: Pętle i iteracje</option>
-  <option <?= x_sel("06-strings.php") ?>>Rozdział 6: Ciągi znaków</option>
+  <option <?= x_sel("06-strings.php") ?>>Rozdział 6: Napisy</option>
   <option <?= x_sel("07-files.php") ?>>Rozdział 7: Pliki</option>
   <option <?= x_sel("08-lists.php") ?>>Rozdział 8: Listy</option>
   <option <?= x_sel("09-dictionaries.php") ?>>Rozdział 9: Słowniki</option>
