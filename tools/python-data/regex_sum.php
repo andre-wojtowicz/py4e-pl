@@ -118,7 +118,7 @@ Podstawowy szkic rozwiązania tego zadania to: odczytanie pliku, wyszukanie licz
 <b>Rozwiązanie zadania</b>
 <form method="post">
 Wprowadź poniżej sumę z danych do zadania oraz kod Twojego programu, a następnie kliknij na przycisk "Wyślij rozwiązanie":<br/>
-Suma: <input type="text" size="20" name="sum"> (powinna kończyć się cyframi ...<?= $actual_sum%1000 ?>)
+Suma: <input type="text" size="20" name="sum"> (powinna kończyć się cyframi ...<?= $actual_sum%1000 ?>)<br/>
 Kod programu:<br/>
 <textarea rows="14" style="width: 90%; font-family: monospace" name="code"></textarea><br/>
 <input type="submit" value="Wyślij rozwiązanie"><br/>

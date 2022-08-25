@@ -149,7 +149,7 @@ Suma: 2553
 <form method="post">
 Wprowadź poniżej sumę z danych do zadania oraz kod Twojego programu, a następnie kliknij na przycisk "Wyślij rozwiązanie":<br/>
 Suma: <input type="text" size="20" name="sum">
-(powinna kończyć się cyframi ...<?= $sum%100 ?>)
+(powinna kończyć się cyframi ...<?= $sum%100 ?>)<br/>
 <?php if ( $USER->instructor ) { ?>
 <p style="color:green">Jeśli chcesz przejść w tryb danego kursanta, to poproś 
 go o wyświetlenie kodu źródłowego tej strony i znalezienie w komentarzach 
