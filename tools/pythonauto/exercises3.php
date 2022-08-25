@@ -140,7 +140,7 @@ print("Wynagrodzenie:", p)',
 ),
 
 "5.2" => Array(
-"qtext" => "<b>5.2.</b> Napisz program, który odczytuje liczby całkowite tak długo, aż użytkownik wprowadzi <code>gotowe</code>. Po wpisaniu <code>gotowe</code> wypisz największą i najmniejszą z dotychczas wprowadzonych liczb. Jeśli użytkownik wprowadzi coś innego niż liczbę, obsłuż to przy pomocy <code>try</code>/<code>catch</code>, wypisz odpowiedni komunikat i zignoruj wprowadzoną wartość.<br/><br/>
+"qtext" => "<b>5.2.</b> Napisz program, który odczytuje liczby całkowite tak długo, aż użytkownik wprowadzi <code>gotowe</code>. Po wpisaniu <code>gotowe</code> wypisz największą i najmniejszą z dotychczas wprowadzonych liczb. Jeśli użytkownik wprowadzi coś innego niż liczbę, obsłuż to przy pomocy <code>try</code>/<code>except</code>, wypisz odpowiedni komunikat i zignoruj wprowadzoną wartość.<br/><br/>
 Podczas uruchomienia wprowadź kolejno:
 <pre>7
 2
