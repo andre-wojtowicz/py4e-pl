@@ -14,5 +14,5 @@ $        Dopasowuje koniec linii
 [aeiou]  Dopasowuje pojedynczy znak z podanego zbioru
 [^XYZ]   Dopasowuje pojedynczy znak, który nie znajduje się w zbiorze
 [a-z0-9] Zbiór znaków może zawierać zakresy
-(        Wskazuje początek wyodrębniania podzbioru dopasowanego napisu
-)        Wskazuje koniec wyodrębniania podzbioru dopasowanego napisu
+(        Wskazuje początek wyodrębniania podciągu dopasowanego napisu
+)        Wskazuje koniec wyodrębniania podciągu dopasowanego napisu
