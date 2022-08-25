@@ -72,8 +72,8 @@ if ( $dueDate->message ) {
 W poniższym zadaniu napiszesz program podobny do
 <a href="https://py4e.pl/code3/geojson.py" target="_blank">https://py4e.pl/code3/geojson.py</a>.
 Program będzie prosił o podanie lokalizacji, połączy się z usługą sieciową zawierającą dane Google Maps, 
-pobierze dane w formacie JSON, przeparsuje dane i wyświetli element <code>place_id</code>,
-który jest tekstowym identyfikatorem identyfikującym jakieś miejsce.
+pobierze dane w formacie JSON, przeparsuje dane i ostatecznie wyświetli element <code>place_id</code>,
+który jest tekstowym identyfikatorem danego miejsca.
 </p>
 <p>
 <b>Adresy API</b>
@@ -84,7 +84,7 @@ danych Google:
 <pre>
 <a href="<?= deHttps($api_url).'?' ?>" target="_blank"><?= deHttps($api_url) ?>?</a>
 </pre>
-API przyjmuje taki sam parametr (adresy) jak API Google.
+Powyższe API przyjmuje taki sam parametr (adresy) jak API udostępniane przez Google.
 API nie posiada również limitów wywołań, zatem możesz je testować tyle razy ile chcesz.
 Jeśli wywołasz adres URL bez podanych parametrów, uzyskasz odpowiedź "No address...".
 </p>
@@ -103,7 +103,8 @@ wyniki korzystając z adresów API <code>geojson</code> i <code>json</code>, wi�
 <p><b>Dane testowe i przykładowe uruchomienie</b></p>
 <p>
 Możesz sprawdzić czy Twój program działa poprawnie podając lokalizację
- "<?= $sample_location ?>", której <code>place_id</code> wynosi <code><?= $sample_place ?></code>.
+ "<?= $sample_location ?>", której <code>place_id</code> wynosi <code><?= $sample_place ?></code>.<br/>
+Oto przykładowe uruchomienie programu z rozwiązaniem zadania:
 <pre>
 Podaj lokalizację: <?= $sample_location . "\n" ?>
 Pobieranie: http://...
@@ -113,23 +114,22 @@ place_id: <?= $sample_place ?>
 </p>
 <p><b>Rozwiązanie zadania</b></p>
 <p>
-Uruchom swój program aby uzyskać <code>place_id</code> dla poniższej lokalizacji:
+Uruchom swój program, tak aby uzyskać <code>place_id</code> dla poniższej lokalizacji:
 <pre>
 <?= $actual_location ?>
 </pre>
-Upewnij się, że wprowadziłeś nazwę i wielkość liter dokładnie takie same jak powyżej.
-Umieść <code>place_id</code> i kod rozwiązania poniżej.<br>
-Wskazówka: Pierwsze siedem znaków <code>place_id</code>
-to <code><?= substr($actual_place,0,7) ?>...</code><br/>
-</p>
-<p>
+Wskazówka: pierwsze siedem znaków <code>place_id</code> to <code><?= substr($actual_place,0,7) ?>...</code><br/><br/>
+
 Upewnij się, że pobierasz dane przy pomocy adresu URL podanego powyżej, a nie
-przy pomocy zwykłego Google API. Twój program powinien działać również z płatnego Google API,
-ale uzyskiwane <code>place_id</code> może być różne od tego, które jest wykorzystywane w tym zadaniu.
+przy pomocy zwykłego API Google Maps. Twój program powinien działać również z płatnego API udostępnianego przez Google,
+ale uzyskiwane <code>place_id</code> może być różne od tego, które jest wykorzystywane w tym zadaniu.<br/>
+
+Upewnij się również, że wprowadziłeś poprawną nazwę (wielkość liter ma znaczenie), analogicznie do tego, co znajduje się w powyższym przykładzie.<br/><br/>
+Umieść poniżej uzyskane <code>place_id</code> i kod swojego rozwiązania, a następnie kliknij na przycisk "Wyślij rozwiązanie":<br/>
 </p>
 <form method="post">
-<code>place_id</code>: <input type="text" size="40" name="place_id">
-<input type="submit" value="Wyślij rozwiązanie"><br/>
+<code>place_id</code>: <input type="text" size="40" name="place_id"><br/>
 Kod programu:<br/>
-<textarea rows="20" style="width: 90%; font-family: monospace" name="code"></textarea><br/>
+<textarea rows="15" style="width: 90%; font-family: monospace" name="code"></textarea><br/>
+<input type="submit" value="Wyślij rozwiązanie"><br/>
 </form>

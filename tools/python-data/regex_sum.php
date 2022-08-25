@@ -79,23 +79,23 @@ if ( $dueDate->message ) {
 <p>
 <b>Szukanie liczb w stogu siana</b>
 <p>
-W tym zadaniu odczytasz i przeanalizujesz plik zawierający tekst i liczby. Musisz wyodrębnić wszystkie liczby występujące w pliku i obliczyć ich sumę.
+W tym zadaniu odczytasz i przeanalizujesz plik zawierający tekst i liczby. Musisz wyodrębnić wszystkie występujące w pliku liczby i obliczyć ich sumę.
 </p>
-<b>Pliki danych</b>
+<b>Pliki z danymi</b>
 <p>
-Dostępne są dwa pliki. Pierwszy z nich to przykładowy plik, dla którego dostępna jest również wynikowa suma, natomiast drugi plik to rzeczywiste dane, które musisz przetworzyć w ramach zadania.
+Dostępne są dwa pliki. Pierwszy z nich to przykładowy plik, dla którego dostępna jest również wynikowa suma, natomiast drugi plik to rzeczywiste dane, które musisz przetworzyć w ramach tego zadania. Poniższe linki z danymi otwierają się w nowym oknie:
 <ul>
-<li> Dane przykładowe: <a href="<?= deHttps($sample_url) ?>" target="_blank"><?= deHttps($sample_url) ?></a> 
-(Występuje tam <?= $sample_count ?> liczb, których suma wynosi <?= $sample_sum ?>) </li>
-<li> Dane do zadania: <a href="<?= deHttps($actual_url) ?>" target="_blank"><?= deHttps($actual_url) ?></a> 
-(Występuje tam <?= $actual_count ?> liczb, których suma kończy się cyframi <?= $actual_sum%1000 ?>)<br/> </li>
+<li> dane przykładowe: <a href="<?= deHttps($sample_url) ?>" target="_blank"><?= deHttps($sample_url) ?></a> 
+- jest tam <?= $sample_count ?> liczb, których suma wynosi <?= $sample_sum ?>,</li>
+<li> dane do zadania: <a href="<?= deHttps($actual_url) ?>" target="_blank"><?= deHttps($actual_url) ?></a> 
+- jest tam <?= $actual_count ?> liczb, których suma kończy się cyframi ...<?= $actual_sum%1000 ?>.<br/></li>
 </ul>
-Linki z danymi otwierają się w nowym oknie. Pamiętaj aby zapisać plik w tym samym katalogu, w którym będziesz pisać program.
-<b>Uwaga</b>: każdy kursant ma oddzielny plik danych do zadania, więc do analizy używaj tylko własnego pliku danych.
+Pamiętaj aby każdy plik zapisać w tym samym katalogu, w którym będziesz pisać program z rozwiązaniem zadania.
+<b>Uwaga</b>: każdy uczestnik tego kursu ma oddzielny plik danych do zadania, więc do analizy używaj tylko tego pliku, który możesz pobrać przy pomocy powyższego linku.
 </p>
 <b>Format danych</b>
 <p>
-Plik zawiera pierwsze akapity angielskiej wersji podręcznika, z wyjątkiem tego, że w całym tekście wstawiane są losowe liczby. Oto fragment pliku:
+Plik zawiera kilka pierwszych akapitów angielskiej wersji podręcznika do tego kursu, aczkolwiek w całym tekście zostały losowo powstawiane liczby. Oto przykładowy fragment pliku:
 <pre>
 Why should you learn to write programs? 7746
 12 1929 8827
@@ -107,27 +107,30 @@ someone else solve a problem.  This book assumes that
 everyone needs to know how to program ...
 </pre>
 Suma dla powyższego tekstu wynosi <b>27486</b>.
-Liczby mogą pojawić się w dowolnym miejscu wiersza. W każdym wierszu liczby mogą wystąpić dowolną ilość razy (włączając w to brak wystąpień).
+W każdym wierszu liczby mogą się pojawić w dowolnym miejscu i mogą występować dowolną liczbę razy (włączając w to brak wystąpień).
 </p>
 <b>Przetwarzanie danych</b>
 <p>
-Podstawowy szkic rozwiązania tego problemu to: odczytanie pliku, wyszukanie liczb całkowitych za pomocą funkcji <code>re.findall()</code> i wyrażenia regularnego <code>[0-9]+</code>, a następnie przekonwertowanie wyodrębnionych ciągów znaków na liczby całkowite i ich zsumowanie.
+Podstawowy szkic rozwiązania tego zadania to: odczytanie pliku, wyszukanie liczb całkowitych za pomocą funkcji <code>re.findall()</code> i wyrażenia regularnego <code>[0-9]+</code>, przekonwertowanie wyodrębnionych ciągów znaków na liczby całkowite, a następnie ich zsumowanie.
 </p>
 <p>
 <?php httpsWarning($sample_url); ?>
 <b>Rozwiązanie zadania</b>
 <form method="post">
-Wprowadź poniżej sumę z danych do zadania oraz kod programu:<br/>
-Suma: <input type="text" size="20" name="sum"> (kończy się cyframi <?= $actual_sum%1000 ?>)
-<input type="submit" value="Wyślij rozwiązanie"><br/>
+Wprowadź poniżej sumę z danych do zadania oraz kod Twojego programu, a następnie kliknij na przycisk "Wyślij rozwiązanie":<br/>
+Suma: <input type="text" size="20" name="sum"> (powinna kończyć się cyframi ...<?= $actual_sum%1000 ?>)
 Kod programu:<br/>
-<textarea rows="20" style="width: 90%; font-family: monospace" name="code"></textarea><br/>
+<textarea rows="14" style="width: 90%; font-family: monospace" name="code"></textarea><br/>
+<input type="submit" value="Wyślij rozwiązanie"><br/>
 </form>
 </p>
-<b>Opcjonalnie: po prostu dla zabawy</b>
+<b>Postaw sobie dodatkowe wyzwanie!</b>
 <p>
-Istnieje wiele różnych sposobów rozwiązania tego problemu. Chociaż generalnie nie zalecamy pisania możliwie najbardziej zwartego kodu, dla niektórych osób może to być ciekawe ćwiczenie. Oto schemat dwuwierszowej wersji rozwiązania tego zadania, używająca listy składanej:
+Istnieje wiele różnych sposobów rozwiązania powyższego zadania. Chociaż generalnie nie zalecamy pisania możliwie najbardziej zwartego kodu, dla niektórych osób następujące ćwiczenie może to być bardzo interesujące.
+</p>
+<p>
+Oto schemat dwulinijkowej wersji rozwiązania tego zadania, używająca tzw. listy składanej (ang. <i>list comprehension</i>):
 <pre class="python"><code>import re
-print( sum( [ ****** *** * in **********('[0-9]+',**************************.read()) ] ) )</code></pre>
-Dopóki nie wykonasz zadania, nie trać zbyt dużo czasu na szukanie najkrótszego rozwiązania. Listy składane zostały omówione w rozdziale 10, a metoda <code>read()</code> została omówiona w rozdziale 7.
+print( sum( [ ****** *** * in **********('[0-9]+', **************************.read()) ] ) )</code></pre>
+Spróbuj rozwiązać zadanie tworząc program, który ma 2 linie (dopóki nie wykonasz zadania w dowolny inny sposób, nie trać zbyt dużo czasu na szukanie najkrótszego rozwiązania). Listy składane zostały omówione w rozdziale 10, a metoda <code>read()</code> została omówiona w rozdziale 7.
 </p>

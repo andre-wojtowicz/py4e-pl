@@ -150,8 +150,8 @@
 
 {
   "title":"Ocena współuczestników kursu: Zrzuty ekranu pokazujące instalację i uruchomienia Pythona",
-  "description":"Zainstaluj Pythona i programistyczny edytor tekstu oraz napisz program, który wypisuje jedną linię inną niż \"Witaj świecie!\", a następnie zrób dwa zrzuty ekranu i wgraj je poniżej. Powinieneś użyć wiersza poleceń do wykonania programu Pythona, który napisałeś w edytorze tekstowym. *Nie używaj* edytora IDLE Python Shell, interpretera Pythona (>>>), ani też skrótu w edytorze tekstu, który uruchamia kod. Później podczas kursu, gdy zaczniemy wczytywać pliki, będziemy musieli mieć możliwość uruchamiania programów z poszczególnych katalogów. Możesz obejrzeć filmy aby więcej się dowiedzieć na ten temat.",
-  "grading":"Jest to stosunkowo proste zadanie. Celem jest po prostu pokazanie, że każdy kursant ma zainstalowanego Pythona na swoim komputerze stacjonarnym lub laptopie i może wykonać zrzuty ekranu. Aby pomóc kursantowi, który będzie recenzentem Twojego zadania, dodaj również komentarze.",
+  "description":"Zainstaluj Pythona i programistyczny edytor tekstu (np. Atom lub inne IDE) oraz napisz program, który wypisuje jedną linię inną niż \"Witaj świecie!\", a następnie zrób dwa zrzuty ekranu i wgraj je poniżej. Do uruchomienia programi użyj wiersza poleceń (np. <code>cmd.exe</code> pod Windowsem lub <code>bash</code> pod Linuxem). <b>Nie używaj</b> edytora IDLE Python Shell, interpretera Pythona (<code>&gt;&gt;&gt;</code>), ani też skrótu w edytorze tekstu, który uruchamia kod (w dalszej części kursu, gdy przy pomocy Pythona zaczniemy odczytywać zawartość plików, będziemy musieli mieć możliwość uruchamiania programów w poszczególnych katalogach; w związku z tym musisz wiedzieć jak uruchomić program przy pomocy wiersza poleceń; jeśli nie wiesz jak to zrobić, obejrzyj filmy dołączone do rodziału 1).",
+  "grading":"Jest to stosunkowo proste zadanie. Celem jest po prostu pokazanie, że masz zainstalowanego Pythona na swoim komputerze stacjonarnym lub laptopie i możesz wykonać zrzuty ekranu. Twoje zadanie będzie oceniane przez innych uczestników kursu, zatem możesz dodać komentarze pomocnicze.",
   "assignment":"https://py4e.pl/install",
   "parts":[
     {
@@ -871,7 +871,7 @@
             ]
         },
         {
-            "title" : "Program: Parsowanie danych HTML przy pomocy BeautifulSoup",
+            "title" : "Program: Parsowanie kodu HTML przy pomocy BeautifulSoup",
             "launch" : "tools/python-data/",
             "resource_link_id": "pythondata_03_html",
             "custom" : [
@@ -972,7 +972,7 @@
     ],
     "lti" : [
         {
-            "title" : "Program: Wyodrębnianie danych z XMLa",
+            "title" : "Program: Wyodrębnianie danych z kodu XML",
             "resource_link_id": "pythondata_05_xml",
             "launch" : "tools/python-data/",
             "custom" : [
@@ -988,7 +988,7 @@
             "resource_link_id" : "py4e_13_xml_quiz"
         },
         {
-            "title" : "Program: Wyodrębnianie danych z JSONa",
+            "title" : "Program: Wyodrębnianie danych z kodu JSON",
             "launch" : "tools/python-data/",
             "resource_link_id": "pythondata_06_json",
             "custom" : [
@@ -1142,7 +1142,7 @@
             ]
         },
         {
-            "title" : "Quiz: zapytania SQL na pojedynczej tabeli",
+            "title" : "Quiz: Zapytania SQL na pojedynczej tabeli",
             "launch" : "mod/gift/?quiz=Py4Inf-15-Database-Single.txt",
             "resource_link_id" : "py4e_15_one_quiz"
         },

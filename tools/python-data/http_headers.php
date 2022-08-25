@@ -65,19 +65,19 @@ unset($_SESSION['postdata']);
 
 ?>
 <p>
-<b>Eksploracja protokołu HTTP</b>
+<b>Poznajemy protokół HTTP</b>
 </p>
 <p>
-W poniższym zadaniu będziesz musiał pobrać następujący dokument za pomocą protokołu HTTP w taki sposób, abyś mógł sprawdzić nagłówki odpowiedzi HTTP.
+W poniższym zadaniu musisz pobrać za pomocą protokołu HTTP poniższy plik w taki sposób, by móc sprawdzić nagłówki odpowiedzi HTTP:
 <ul>
 <li><a href="<?= $getUrl ?>" target="_blank"><?= $getUrl ?></a></li>
 </ul>
 </p>
 <p>
-Zmodyfikuj program <a href="<?= $CFG->apphome ?>/code3/socket1.py" target="_blank">socket1.py</a>, tak aby pobrać powyższy adres URL i wypisać nagłówki oraz dane. Pamiętaj aby zmienić kod programu, tak by pobrał powyższy adres URL - wartości nagłówków są różne dla każdego adresu URL.
+Zmodyfikuj program <a href="<?= $CFG->apphome ?>/code3/socket1.py" target="_blank">socket1.py</a> tak, aby pobrać powyższy adres URL i wypisać nagłówki oraz dane. Pamiętaj aby zmienić kod programu tak, aby pobrał powyższy adres URL - wartości nagłówków są różne dla każdego adresu URL.
 </p>
 <p>
-W każdym z poniższych pól wprowadź wartość nagłówka, a następnie naciśnij przycisk "Wyślij rozwiązanie".
+W każdym z poniższych pól wprowadź wartość odpowiadającego mu nagłówka, a następnie naciśnij przycisk "Wyślij rozwiązanie":
 <form method="post">
 <?php
     $count = 0;

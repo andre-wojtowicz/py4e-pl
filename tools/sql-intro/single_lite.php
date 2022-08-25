@@ -88,19 +88,19 @@ if ( isset($_SESSION['debug']) ) {
 ?>
 <p>
 <form method="post">
-Aby otrzymać punkty za to zadanie, wykonaj poniższe instrukcje i wprowadź poniżej uzyskany kod:<br/>
+Aby otrzymać punkty za to zadanie, wykonaj poniższe instrukcje, a następnie wprowadź poniżej uzyskany kod:<br/>
 <input type="text" size="80" name="sha1">
 <input type="submit" value="Wyślij rozwiązanie">
 </form>
-(Wskazówka: kod zaczyna się od <?= substr($goodsha,0,3) ?>)<br/>
+(wskazówka: kod zaczyna się od <?= substr($goodsha,0,3) ?>...)<br/>
 </p>
 <h1>Instrukcje</h1>
 <p>
-Jeśli nie masz jeszcze zainstalowanej aplikacji SQLite Browser, to możesz ją ściągnąć z
+Jeśli nie masz jeszcze zainstalowanej aplikacji SQLite Browser, to możesz ją pobrać ze strony
 <a href="https://sqlitebrowser.org/" target="_blank">
 https://sqlitebrowser.org/</a>.</p>
 <p>
-Następnie utwórz bazę danych SQLite lub użyj jakiejś istniejącej bazy i utwórz
+Następnie utwórz bazę danych SQLite (lub użyj jakiejś istniejącej bazy) i utwórz
 w niej tabelę o nazwie <code>Ages</code>:
 </p>
 <pre class="sql"><code>CREATE TABLE Ages
@@ -122,7 +122,7 @@ Po wstawieniu do tabeli powyższych wierszy, uruchom poniższe polecenie SQL:
 FROM   Ages
 ORDER BY X;</code></pre>
 Znajdź <b>pierwszy</b> wynikowy wiersz i jako odpowiedź do zadania wprowadź ciąg
-znaków, który wygląda mniej więcej jak <code>53656C696E613333</code>.
+znaków, który wygląda mniej więcej tak: <code>53656C696E613333</code>.
 </p>
 <p>
 <b>Uwaga:</b> Zadanie musi być wykonane przy użyciu SQLite. W szczególności powyższe polecenie

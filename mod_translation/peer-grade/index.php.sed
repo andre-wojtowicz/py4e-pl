@@ -28,7 +28,7 @@ Please use PNG or JPG files '.$image_max_text.' max;Wgraj plik PNG lub JPG o mak
 Please upload a PDF '.$pdf_max_text.' max;Wgraj plik PDF o maksymalnym rozmiarze '.$pdf_max_text.'
 Unable to load key/secret for;Nie można załadować klucza/sekretu dla
 Select/Create Item;Wybierz/utwórz element
-Enter optional comments below;Poniżej wprowadź opcjonalny komentarz:
+Enter optional comments below;Poniżej możesz wprowadzić nieobowiązkowy komentarz pomocniczy, który będzie widoczny dla osób oceniających Twoje zgłoszenie:
 value="Submit";value="Wyślij"
 exitButton('Cancel');exitButton('Anuluj')
 Make sure each uploaded image file is smaller than 1M.  Total upload size limited to;Upewnij się, że każdy przesłany plik obrazu jest mniejszy niż 1M.  Całkowity rozmiar wgrywanych plików jest ograniczony do

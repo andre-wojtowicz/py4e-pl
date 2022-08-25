@@ -145,20 +145,20 @@ if ( $dueDate->message ) {
 ?>
 <p>
 <form name="myform" enctype="multipart/form-data" method="post" >
-Aby otrzymać punkty za to zadanie, wykonaj poniższe instrukcje i prześlij poniżej plik z bazą SQLite3: <br/>
+Aby otrzymać punkty za to zadanie, wykonaj poniższe instrukcje i prześlij poniżej plik z bazą SQLite3 (plik musi mieć rozszerzenie <code>.sqlite</code>):<br/>
 <input name="database" type="file"> 
-(Plik musi mieć rozszerzenie <code>.sqlite</code>)<br/>
+<br/>
 <input type="submit" value="Wyślij rozwiązanie">
 <p>
-Nie musisz eksportować ani konwertować bazy - po prostu wyślij utworzony przez Twój program plik <code>.sqlite</code>.
-Przejrzyj przykładowy kod aby zobaczyć w jaki sposób użyć funkcji <code>connect()</code>.
+Nie musisz eksportować ani konwertować bazy; po prostu wyślij utworzony przez Twój program plik <code>.sqlite</code>.
+Przejrzyj przykładowy kod, tak aby zobaczyć w jaki sposób użyć funkcji <code>connect()</code>.
 </p>
 </form>
 </p>
 <h1>Baza danych dotycząca utworów muzycznych</h1>
 <p>
-Aplikacja będzie miała za zadanie odczytać wyeksportowany plik iTunes w formacie XML,
-a następnie będzie musiała utworzyć poprawnie znormalizowaną bazę danych o następującej strukturze:
+Twoja aplikacja będzie miała za zadanie odczytać wyeksportowany plik iTunes zapisany w formacie XML,
+a następnie będzie musiała utworzyć bazę danych o następującej strukturze:
 <pre class="sql"><code>CREATE TABLE Artist
 (
     id   INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
@@ -193,7 +193,7 @@ CREATE TABLE Track
 Jeśli będziesz uruchamiać swój program kilka razy lub będziesz używać różnych plików wejściowych,
 to pamiętaj aby za każdym razem wyczyścić swoją bazę danych.
 <p>
-Możesz rozpocząć prace nad rozwiązaniem zaczynając od analizy i modyfikacji programu zawartego w 
+Możesz rozpocząć prace nad rozwiązaniem tego zadania zaczynając od analizy i modyfikacji programu zawartego w 
 <a href="https://py4e.pl/code3/tracks.zip" target="_blank">
 https://py4e.pl/code3/tracks.zip</a>.  
 Plik <code>.zip</code> zawiera również plik <code>Library.xml</code>, który jest używany do oceniania poprawności przesyłanych rozwiązań.

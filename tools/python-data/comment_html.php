@@ -84,17 +84,18 @@ instructor:  <?= $code ?>
 
 -->
 <p>
-<b>Wyodrębnianie liczb z HTMLa przy użyciu BeautifulSoup</b>
+<b>Wyodrębnianie liczb z kodu HTML przy pomocy BeautifulSoup</b>
 </p>
 <p>
-W poniższym zadaniu napiszesz program w Pythonie podobny do
+W poniższym zadaniu napiszesz program podobny do
 <a href="https://py4e.pl/code3/urllink2.py" target="_blank">https://py4e.pl/code3/urllink2.py</a>.
 
-Program będzie używał modułu <code>urllib</code> do odczytania HTMLa z plików umieszczonych poniżej, przeparsuje dane,
+Program będzie używał modułu <code>urllib</code> do odczytania kodu HTML z poniższych plików, przeparsuje dane,
 wyodrębni liczby oraz obliczy ich sumę.
 </p>
+<b>Pliki z danymi</b>
 <p>
-Dostępne są dwa pliki. Pierwszy z nich to przykładowy plik, dla którego podana jest również wynikowa suma, a drugi plik to rzeczywiste dane, które musisz przetworzyć w ramach zadania.
+Dostępne są dwa pliki. Pierwszy z nich to przykładowy plik, dla którego podana jest również wynikowa suma, a drugi plik to rzeczywiste dane, które musisz przetworzyć w ramach tego zadania:
 <?php
 if ( $override ) {
     echo('<p style="color:red">Znajdujesz się w trybie kursanta z kodem '.$code);
@@ -102,27 +103,27 @@ if ( $override ) {
 }
 ?>
 <ul>
-<li> Dane przykładowe: <a href="<?= deHttps($sample_url) ?>" target="_blank"><?= deHttps($sample_url) ?></a>
-(Suma wynosi <?= $sum_sample ?>) </li>
-<li> Dane do zadania: <a href="<?= deHttps($actual_url) ?>" target="_blank"><?= deHttps($actual_url) ?></a>
-(Suma kończy się cyframi <?= $sum%100 ?>)<br/> </li>
+<li> dane przykładowe: <a href="<?= deHttps($sample_url) ?>" target="_blank"><?= deHttps($sample_url) ?></a>
+- suma wynosi <?= $sum_sample ?>,</li>
+<li> dane do zadania: <a href="<?= deHttps($actual_url) ?>" target="_blank"><?= deHttps($actual_url) ?></a>
+- suma kończy się cyframi ...<?= $sum%100 ?>.<br/></li>
 </ul>
-Nie musisz zapisywać tych plików w swoim katalogu, ponieważ Twój program odczyta dane bezpośrednio z adresu URL.
-<b>Uwaga</b>: każdy kursant ma oddzielny plik danych do zadania, więc do analizy używaj tylko własnego pliku danych.
+Nie musisz zapisywać tych plików w swoim katalogu roboczym, ponieważ Twój program odczyta dane bezpośrednio z podanego przez Ciebie adresu URL.
+<b>Uwaga</b>: każdy kursant ma oddzielny plik danych do tego zadania, więc do analizy używaj tylko własnego pliku danych.
 </p>
 <b>Format danych</b>
 <p>
-Plik jest tabelą składającą się imion i liczb komentarzy. Możesz zignorować większość danych w pliku z wyjątkiem wierszy takich jak:
+Plik HTML zawiera tabelę, której kolumny zawierają imiona oraz liczbę komentarzy. Możesz zignorować większość danych znajdujących się w pliku, z wyjątkiem wierszy takich jak:
 <pre>
 &lt;tr>&lt;td>Modu&lt;/td>&lt;td>&lt;span class="comments">90&lt;/span>&lt;/td>&lt;/tr>
 &lt;tr>&lt;td>Kenzie&lt;/td>&lt;td>&lt;span class="comments">88&lt;/span>&lt;/td>&lt;/tr>
 &lt;tr>&lt;td>Hubert&lt;/td>&lt;td>&lt;span class="comments">87&lt;/span>&lt;/td>&lt;/tr>
 </pre>
-Musisz znaleźć w pliku wszystkie znaczniki <code>&lt;span&gt;</code>, wyciągnąć z nich liczby i na końcu je zsumować.
+Musisz znaleźć w pliku wszystkie znaczniki <code>&lt;span&gt;</code>, wyodrębnić z nich liczby i na końcu je zsumować.
 <p>
 Spójrz na udostępniony
 <a href="http://py4e.pl/code3/urllink2.py" target="_blank">przykładowy kod</a>.
-Pokazuje on jak znaleźć wszystkie znaczniki danego typu, jak przejść w pętli po znacznikach i jak wyodrębnić z nich różne elementy.
+Pokazuje on jak znaleźć wszystkie znaczniki HTML danego typu, jak przejść w pętli po znacznikach i jak wyodrębnić z nich różne elementy.
 <pre class="python"><code>...
 # Pobierz wszystkie znaczniki hiperłączy
 tags = soup('a')
@@ -132,22 +133,23 @@ for tag in tags:
     print('URL:', tag.get('href', None))
     print('Contents:', tag.contents[0])
     print('Attrs:', tag.attrs)</code></pre>
-Musisz dostosować kod w taki sposób, aby wyszukiwał znaczniki <code>&lt;span&gt;</code>, wyciągał z nich zawartość tekstową, którą przekonwertuje potem na liczby całkowite, a na końcu je wszystkie doda.
+Musisz dostosować kod w taki sposób, aby wyszukiwał znaczniki <code>&lt;span&gt;</code>, wyciągał z nich zawartość tekstową, którą przekonwertuje potem na liczby całkowite, a na końcu je wszystkie zsumuje.
 </p>
-<p><b>Przykładowe uruchomienie</b>
+<p><b>Przykładowe uruchomienie programu</b>
 <p>
+Oto przykładowe uruchomienie programu z rozwiązaniem zadania:
 <pre>
 Podaj adres URL: http://py4e-data.dr-chuck.net/comments_42.html
 Ile liczb: 50
-Suma: 2...
+Suma: 2553
 </pre>
 </p>
 
 <p><b>Rozwiązanie zadania</b>
 <form method="post">
-Wprowadź poniżej sumę z danych do zadania oraz kod programu:<br/>
+Wprowadź poniżej sumę z danych do zadania oraz kod Twojego programu, a następnie kliknij na przycisk "Wyślij rozwiązanie":<br/>
 Suma: <input type="text" size="20" name="sum">
-(kończy się cyframi <?= $sum%100 ?>)
+(powinna kończyć się cyframi ...<?= $sum%100 ?>)
 <?php if ( $USER->instructor ) { ?>
 <p style="color:green">Jeśli chcesz przejść w tryb danego kursanta, to poproś 
 go o wyświetlenie kodu źródłowego tej strony i znalezienie w komentarzach 
@@ -155,11 +157,11 @@ wartości <code>code</code>. Następnie w polu dotyczącym sumy wprowadź <code>
 przez kursanta wartość, dzięki czemu przełączysz się na jego widok i zobaczysz 
 przesłany przez niego kod.
 </p>
-<p>
+<p style="color:green">
 Wprowadź <code>code:0</code> aby powrócić do Twojego widoku.
 </p>
 <?php } ?>
-<input type="submit" value="Wyślij rozwiązanie"><br/>
 Kod programu:<br/>
-<textarea rows="20" style="width: 90%; font-family: monospace" name="code"></textarea><br/>
+<textarea rows="15" style="width: 90%; font-family: monospace" name="code"></textarea><br/>
+<input type="submit" value="Wyślij rozwiązanie"><br/>
 </form>
