@@ -590,7 +590,7 @@ Przetestuj swój program na plikach `mbox.txt` i `mbox-short.txt`.
 
 #### Ćwiczenie 3
 
-Czasami, gdy programiści się nudzą lub chcą się trochę zabawić, dodają do swojego programu nieszkodliwy tzw. *Easter Egg*^[<https://pl.wikipedia.org/wiki/Easter_egg>] (dosł. z ang. *jajko wielkanocne*). Zmodyfikuj swój program, który pyta użytkownika o nazwę pliku tak, by wypisał zabawną wiadomość, gdy użytkownik wpisze w nim nazwę pliku "trele morele". Program powinien zachowywać się normalnie dla wszystkich innych plików, które istnieją lub nie. Oto przykładowe wykonanie programu:
+Czasami, gdy programiści się nudzą lub chcą się trochę zabawić, dodają do swojego programu nieszkodliwy tzw. *Easter Egg*^[<https://pl.wikipedia.org/wiki/Easter_egg>] (dosł. z ang. jajko wielkanocne). Zmodyfikuj swój program, który pyta użytkownika o nazwę pliku tak, by wypisał zabawną wiadomość, gdy użytkownik wpisze w nim nazwę pliku "trele morele". Program powinien zachowywać się normalnie dla wszystkich innych plików, które istnieją lub nie. Oto przykładowe wykonanie programu:
 
 ~~~~
 Podaj nazwę pliku: mbox.txt
