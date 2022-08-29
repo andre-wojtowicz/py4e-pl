@@ -76,12 +76,12 @@ W odróżnieniu od napisów, listy są zmienne, ponieważ możesz zmienić kolej
 [17, 5]
 ~~~~
 
-Pierwszym elementem `numbers`, który kiedyś wynosił 123, jest teraz 5.
+W `numbers` na pozycji o indeksie 1, która przed chwilą przechowywała 123, znajduje się teraz 5.
 
 \index{indeks!numerowanie od zera}
 \index{zero, początek numerowania indeksów}
 
-Możesz myśleć o liście jako o relacji między indeksami i elementami. Ta relacja nazywana jest *mapowaniem* (przyporządkowaniem); każdy indeks "mapuje" do jednego z elementów.
+Możesz myśleć o liście jako o relacji między indeksami i elementami. Relacja ta nazywana jest *mapowaniem* (przyporządkowaniem); każdy indeks "mapuje" do jednego z elementów.
 
 \index{element, przypisanie}
 \index{przypisanie!element}
@@ -128,7 +128,7 @@ for cheese in cheeses:
     print(cheese)
 ~~~~
 
-Jest to dobre rozwiązanie, jeśli musisz tylko odczytać elementy z listy. Ale jeśli chcesz coś w niej dopisać lub zaktualizować, to potrzebujesz indeksów. W takiej sytuacji najczęściej wykorzystuje się połączenie funkcji `range()` i `len()`:
+Powyższe rozwiązanie sprawdza się w sytuacji gdy musisz tylko odczytać elementy z listy. Natomiast jeśli chcesz coś do niej dopisać lub w niej zaktualizować, to potrzebujesz indeksów. W takiej sytuacji najczęściej wykorzystuje się połączenie funkcji `range()` i `len()`:
 
 \index{przechodzenie w pętli!po indeksach}
 \index{indeks!przechodzenie w pętli}
@@ -138,7 +138,7 @@ for i in range(len(numbers)):
     numbers[i] = numbers[i] * 2
 ~~~~
 
-Powyższa pętla przechodzi przez listę i aktualizuje każdy element. Funkcja `len()` zwraca liczbę elementów na liście. Natomiast funkcja `range()` zwraca listę indeksów od 0 do $n-1$, gdzie $n$ jest długością listy. Przy każdej iteracji pętli `i` kolejno uzyskuje indeks elementu. Instrukcja przypisania w ciele pętli używa `i` do odczytania starej wartości elementu i przypisania nowej wartości.
+Powyższa pętla przechodzi przez listę i aktualizuje każdy element. Funkcja `len()` zwraca liczbę elementów na liście. Natomiast funkcja `range()` zwraca listę indeksów od 0 do $n-1$, gdzie $n$ jest długością listy. Przy każdej iteracji pętli, zmienna `i` kolejno uzyskuje indeks elementu. Instrukcja przypisania w ciele pętli używa `i` do odczytania starej wartości elementu i przypisania nowej wartości.
 
 \index{element, aktualizacja}
 \index{aktualizacja!element}
@@ -286,7 +286,7 @@ Metoda `sort()` układa elementy listy od najmniejszego do największego:
 ['a', 'b', 'c', 'd', 'e']
 ~~~~
 
-Większość metod listowych nie zwraca żadnej konkretnej wartości; modyfikują one listę i zwracają `None`. Tego typu modyfikacja nazywana jest *modyfikacją w miejscu*. Jeśli przypadkowo napiszesz `t = t.sort()`, zapewne będziesz zawiedziony zwróconym wynikiem.
+Większość metod dla list nie zwraca żadnej konkretnej wartości; modyfikują one listę i zwracają `None`. Tego typu modyfikacja nazywana jest *modyfikacją w miejscu*. Jeśli przypadkowo napiszesz `t = t.sort()`, zapewne będziesz zawiedziony zwróconym wynikiem.
 
 \index{pusta, metoda}
 \index{metoda!pusta}
@@ -377,7 +377,7 @@ Istnieje szereg wbudowanych funkcji, które mogą być używane na listach, pozw
 
 Funkcja `sum()` działa tylko wtedy, gdy elementy listy są liczbami. Pozostałe funkcje (`max()`, `len()` itp.) działają z listami napisów i innych typów danych, które mogą być porównywane.
 
-Moglibyśmy przepisać nasz wcześniejszy program, który teraz obliczyłby średnią z liczb podanych przez użytkownika za pomocą listy.
+Moglibyśmy przepisać nasz wcześniejszy program, który teraz za pomocą listy obliczyłby średnią z liczb podanych przez użytkownika.
 
 Poniżej mamy program, który liczy średnią bez listy:
 
@@ -411,7 +411,7 @@ Napis jest sekwencją znaków, a lista jest sekwencją wartości, ale lista znak
 ['s', 'p', 'a', 'm']
 ~~~~
 
-Ponieważ `list()` jest nazwą wbudowanej funkcji, powinieneś unikać używania jej jako nazwy zmiennej. Unikam również litery "l", ponieważ w wyglądzie jest zbyt podobna do liczby "1". Właśnie dlatego używam "t".
+Ponieważ `list()` jest nazwą wbudowanej funkcji, powinieneś unikać używania jej jako nazwy zmiennej. Unikam również pojedynczej litery `l`, ponieważ w wyglądzie jest zbyt podobna do liczby `1`. Z tego powodu używam `t`.
 
 Funkcja `list()` rozbija napis na pojedyncze litery. Jeśli chcesz rozbić napis na słowa, możesz użyć metody `split()`:
 
@@ -463,7 +463,7 @@ W tym przypadku separator jest znakiem spacji, więc `join()` umieszcza spację 
 Parsowanie linii
 ----------------
 
-Zwykle gdy czytamy z pliku, chcemy zrobić coś innego, niż tylko wyświetlić całą linię. Często chcemy znaleźć "interesujące linie", a następnie *rozdzielić* linię, aby później znaleźć jakąś interesującą *część* tej linii. Co by było, gdybyśmy chcieli wyświetlić dzień tygodnia z tych linii, które zaczynają się od "From "?
+Zwykle gdy czytamy z pliku, chcemy zrobić coś więcej, niż tylko wyświetlić całą linię. Często chcemy znaleźć "interesujące linie", a następnie każdą taką linię *rozdzielić*, tak aby później znaleźć jakąś interesującą *część* takiej linii. Co by było, gdybyśmy chcieli wyświetlić dzień tygodnia z tych linii pliku `mbox-short.txt`, które zaczynają się od "From "?
 
 ~~~~
 From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008
@@ -571,7 +571,7 @@ Jeżeli aliasowany obiekt jest zmienny, to zmiany dokonane przy użyciu jednego 
 [17, 2, 3]
 ~~~~
 
-Chociaż takie zachowanie może być użyteczne, ma ono skłonność do generowania błędów. Ogólnie rzecz biorąc, jeśli pracujesz z obiektami zmiennymi, to bezpieczniej jest unikać tworzenia ich aliasów.
+Chociaż takie zachowanie może być czasami użyteczne, ma ono skłonność do generowania błędów. Ogólnie rzecz biorąc, jeśli pracujesz z obiektami zmiennymi, to bezpieczniej jest unikać tworzenia ich aliasów.
 
 \index{niezmienność}
 
@@ -843,7 +843,7 @@ Nieostrożne korzystanie z list (i innych zmiennych obiektów) może prowadzić 
 
     Dla każdego wiersza wypisujemy listę słów, które otrzymujemy z 
     metody `split()` podczas dzielenia linii na słowa. Gdy program się 
-    wysypie, lista słów jest pusta `[]`. Jeśli otworzymy plik w 
+    wysypuje, lista słów jest pusta (`[]`). Jeśli otworzymy plik w 
     edytorze tekstu i spojrzymy na niego, to zobaczymy następujący 
     widok:
 
@@ -988,7 +988,7 @@ Mamy 27 linii, w których From jest pierwszym wyrazem
 
 #### Ćwiczenie 6
 
-Napisz ponownie program, który poprosi użytkownika o listę liczb i wypisze na końcu największą i najmniejszą z nich, gdy użytkownik wpisze "gotowe". Napisz program w ten sposób, że zapisze on wprowadzone przez użytkownika liczby na liście i użyje funkcji `max()` oraz `min()` do znalezienia największej i najmniejszej liczby po zakończeniu pętli.
+Napisz ponownie program, który poprosi użytkownika o listę liczb, natomiast gdy użytkownik wpisze "gotowe", wypisze na końcu największą i najmniejszą z nich. Napisz program w ten sposób, że zapisze on wprowadzone przez użytkownika liczby na liście i użyje funkcji `max()` oraz `min()` do znalezienia największej i najmniejszej liczby po zakończeniu pętli.
 
 ~~~~
 Wprowadź liczbę: 6

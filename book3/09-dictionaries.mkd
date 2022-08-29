@@ -141,7 +141,7 @@ Każda z tych opcji wykonuje to samo obliczenie, ale każda z nich implementuje 
 
 \index{implementacja}
 
-*Implementacja* to sposób przeprowadzenia obliczeń; niektóre implementacje są lepsze od innych. Na przykład zaletą implementacji poprzez słownik jest to, że nie musimy z góry wiedzieć, które litery pojawiają się w napisie, i musimy tylko zrobić miejsce na te, które faktycznie się pojawiają.
+*Implementacja* to sposób przeprowadzenia obliczeń; niektóre implementacje są lepsze od innych. Na przykład zaletą implementacji poprzez słownik jest to, że nie musimy z góry wiedzieć, które litery pojawiają się w napisie, a ponadto musimy tylko zrobić miejsce na te, które faktycznie się pojawiają.
 
 Oto jak może wyglądać kod:
 
@@ -162,7 +162,7 @@ W praktyce obliczamy *histogram*, który jest statystycznym terminem określają
 \index{częstość}
 \index{przejście}
 
-Pętla `for` przechodzi po napisie. Za każdym razem gdy przechodzimy przez pętlę, jeśli znak zawarty w `c` nie występuje w słowniku, tworzymy nową pozycję z kluczem `c` i wartością początkową 1 (ponieważ widzieliśmy tę literę raz). Jeśli `c` znajduje się już w słowniku, zwiększamy wartość `d[c]`.
+Pętla `for` przechodzi po napisie. Za każdym razem gdy przechodzimy przez pętlę, jeśli znak zawarty w `c` nie występuje w słowniku, tworzymy nową pozycję z kluczem `c` i wartością początkową 1 (ponieważ widzimy tę literę pierwszy raz). Jeśli `c` znajduje się już w słowniku, zwiększamy wartość `d[c]`.
 
 \index{histogram}
 
@@ -197,7 +197,7 @@ for c in word:
 print(d)
 ~~~~
 
-Użycie metody `get()` do uproszczenia tej pętli zliczania kończy się bardzo często używanym "idiomem" w Pythonie i będziemy go używać wiele razy w pozostałej części książki. Powinieneś poświęcić chwilę na porównanie pętli przy użyciu instrukcji `if` i operatora `in` z pętlą przy użyciu metody `get()`. Robią dokładnie to samo, ale drugi sposób jest bardziej zwięzły.
+Użycie metody `get()` do uproszczenia tej pętli zliczania kończy się bardzo często używanym "idiomem" w Pythonie i będziemy go używać wiele razy w pozostałej części książki. Powinieneś poświęcić chwilę na porównanie pętli przy użyciu instrukcji `if` i operatora `in` z pętlą przy użyciu metody `get()`. Robią one dokładnie to samo, ale drugi sposób jest bardziej zwięzły.
 
 \index{idiom}
 
@@ -245,7 +245,7 @@ Podaj nazwę pliku: romeo.txt
  'grief': 1}
 ~~~~
 
-Trochę niewygodne jest przeglądanie słownika w celu znalezienia najczęściej używanych słów i ich wystąpień, więc musimy dodać trochę więcej kodu Pythona, tak aby uzyskać wynik, które będzie bardziej pomocny.
+Przeglądanie słownika w celu znalezienia najczęściej używanych słów i ich liczby wystąpień jest dość niewygodne. Aby to poprawić, będziemy musieli dodać trochę więcej kodu Pythona.
 
 Pętle i słowniki
 ----------------
@@ -254,7 +254,7 @@ Pętle i słowniki
 \index{przechodzenie w pętli!po słownikach}
 \index{przejście}
 
-Jeśli używasz słownika jako sekwencji w instrukcji `for`, pętla przechodzi wtedy przez klucze słownika. Poniższa pętla wyświetla każdy klucz i odpowiadającą mu wartość:
+Jeśli używasz w instrukcji `for` słownika jako sekwencji, pętla przechodzi wtedy przez klucze słownika. Poniższa pętla wyświetla każdy klucz i odpowiadającą mu wartość:
 
 ~~~~ {.python}
 counts = { 'chuck' : 1, 'annie' : 42, 'jan' : 100 }
@@ -329,7 +329,7 @@ Arise, fair sun, and kill the envious moon,
 Who is already sick and pale with grief,
 ~~~~
 
-Ponieważ funkcja `split()` szuka spacji i traktuje słowa jako tokeny oddzielone spacjami, traktowalibyśmy słowa "soft!" i "soft" jako *różne* słówa i dla każdego z nich tworzylibyśmy osobny wpis w słowniku.
+Ponieważ funkcja `split()` szuka spacji i traktuje słowa jako tokeny oddzielone spacjami, traktowalibyśmy słowa "soft!" i "soft" jako *różne* słowa i dla każdego z nich tworzylibyśmy osobny wpis w słowniku.
 
 Również ze względu na to, że plik ma tekst pisany dużymi literami, traktowalibyśmy "who" i "Who" jako różne słowa o różnej liczności.
 
@@ -402,7 +402,7 @@ Stopniowe redukowanie danych wejściowych
 Sprawdź podsumowania i typy
 :   Zamiast wyświetlać i sprawdzać cały zbiór danych, spróbuj wyświetlić podsumowanie danych: na przykład liczbę pozycji w słowniku lub sumę liczb.
 
-    Często błędy czasu wykonania powoduje wartość, która nie jest właściwego typu. Do debugowania tego typu błędów często wystarczy wydrukować typ wartości.
+    Często błędy czasu wykonania powoduje wartość, która nie jest właściwego typu. Do debugowania tego typu błędów często wystarczy wypisać typ wartości.
 
 Napisz mechanizm do samokontroli
 :   Czasami warto napisać kod do automatycznego sprawdzania błędów. Na przykład, jeśli obliczasz średnią z listy liczb, możesz sprawdzić, czy wynik nie jest większy od największego elementu na liście lub mniejszy od najmniejszego. Nazywa się to "sprawdzaniem poczytalności" (ang. *sanity check*), ponieważ wykrywa wyniki, które są "zupełnie nielogiczne".
@@ -455,7 +455,7 @@ wyszukiwanie
 
 #### Ćwiczenie 2
 
-Napisz program, który skategoryzowałby każdą wiadomość mailową według dni tygodnia. Aby to zrobić, poszukaj wierszy rozpoczynających się od "From", a następnie poszukaj trzeciego słowa i zachowaj bieżące zliczenia dla każdego dnia. Na koniec programu wyświetl zawartość swojego słownika (kolejność nie ma znaczenia).
+Napisz program, który każdą wiadomość mailową (zapisaną w pliku w formacie Mbox) skategoryzowałby według dni tygodnia. Aby to zrobić, poszukaj wierszy rozpoczynających się od "From", a następnie poszukaj trzeciego słowa i zachowaj bieżące zliczenia dla każdego dnia. Na koniec programu wyświetl zawartość swojego słownika (kolejność nie ma znaczenia).
 
 Przykładowa linia:
 

@@ -10,7 +10,7 @@ Napis jest sekwencją
 \index{nawias kwadratowy, operator}
 \index{operator!nawias kwadratowy}
 
-Napis jest *sekwencją* znaków. Możesz uzyskać dostęp do poszczególnych znaków za pomocą operatora w postaci nawiasów kwadratowych:
+Napis jest *sekwencją* znaków. Dostęp do poszczególnych znaków możesz uzyskać za pomocą operatora w postaci nawiasów kwadratowych:
 
 ~~~~ {.python}
 >>> fruit = 'banan'
@@ -24,15 +24,14 @@ Druga instrukcja wyodrębnia ze zmiennej `fruit` znak z pozycji o indeksie 1 i p
 
 Wyrażenie w nawiasach kwadratowych nazywane jest *indeksem*. Indeks wskazuje, który chcesz znak z zadanej sekwencji.
 
-Ale prawdopodobnie nie otrzymasz tego, czego oczekujesz:
+Wynik powyższego pobrania litery z napisu może być nieco zaskakujący:
 
 ~~~~ {.python}
 >>> print(letter)
 a
 ~~~~
 
-
-Dla większości ludzi pierwsza litera słowa "banan" to "b", a nie "a". Jednak w Pythonie indeks oznacza przesunięcie od początku napisu, a przesunięcie od pierwszej litery wynosi zero.
+Dla większości ludzi pierwsza litera słowa "banan" to "b", a nie "a". Jednak w Pythonie indeks oznacza *przesunięcie od początku* napisu, a przesunięcie od pierwszej litery wynosi zero.
 
 ~~~~ {.python}
 >>> letter = fruit[0]
@@ -59,7 +58,7 @@ Możesz użyć dowolnego wyrażenia, w tym zmiennych i operatorów, jako indeksu
 TypeError: string indices must be integers
 ~~~~
 
-Uzyskanie długości napisu przy użyciu `len()`
+Uzyskanie długości napisu przy pomocy `len()`
 ---------------------------------------------
 
 \index{len, funkcja}
@@ -73,7 +72,7 @@ Uzyskanie długości napisu przy użyciu `len()`
 5
 ~~~~
 
-Może Cię kusić, by spróbować czegoś takiego, aby otrzymać ostatnią literę napisu:
+Jeśli chciałbyś otrzymać ostatnią literę, to może Cię kusić, by spróbować czegoś takiego:
 
 \index{wyjątek!IndexError}
 \index{IndexError}
@@ -84,7 +83,7 @@ Może Cię kusić, by spróbować czegoś takiego, aby otrzymać ostatnią liter
 IndexError: string index out of range
 ~~~~
 
-Powodem błędu `IndexError` jest to, że w słowie "banan" nie ma litery z indeksem 5. Odkąd zaczęliśmy liczyć od zera, pięć liter jest oznaczonych numerami od 0 do 4. Aby otrzymać ostatni znak, musisz odjąć 1 od `length`:
+Powodem błędu `IndexError` jest to, że w słowie "banan" nie ma litery z indeksem 5. Odkąd zaczęliśmy liczyć od zera, pięć liter jest oznaczonych liczbami od 0 do 4. Aby otrzymać ostatni znak, musisz odjąć 1 od `length`:
 
 ~~~~ {.python}
 >>> last = fruit[length-1]
@@ -100,6 +99,7 @@ Opcjonalnie możesz użyć ujemnych indeksów, które liczą wstecz od końca na
 Przejście przez napis przy użyciu pętli
 ---------------------------------------
 
+\index{schemat!przejście}
 \index{przejście}
 \index{pętla!przejście}
 \index{for, pętla}
@@ -143,7 +143,7 @@ Wycinki napisów
 \index{wycinanie!napis}
 \index{wycinek}
 
-Segment napisu nazywany jest *wycinkiem* lub *kawałkiem*. Wybranie wycinka jest podobne do wybrania znaku:
+Fragment napisu nazywany jest *wycinkiem* lub *kawałkiem*. Wybranie wycinka jest podobne do wybrania pojedynczego znaku:
 
 ~~~~ {.python}
 >>> s = 'Monty Python'
@@ -177,7 +177,7 @@ Jeśli pierwszy indeks jest większy lub równy drugiemu, wynikiem jest *pusty n
 ''
 ~~~~
 
-Pusty napis nie zawiera żadnych znaków i ma długość 0, ale poza tym jest tym samym, co każdy inny napis.
+Pusty napis nie zawiera żadnych znaków i ma długość 0 (ale poza tym jest tym samym, co każdy inny napis).
 
 #### Ćwiczenie 2
 
@@ -193,7 +193,7 @@ Napisy są niezmienne
 \index{niezmienność}
 \index{napis!niezmienność}
 
-Kuszące jest skorzystanie z operatora przypisania z zamiarem zmiany jakiegoś znaku w napisie. Na przykład:
+Jeśli będziemy mieli potrzebę zmiany jakiegoś znaku w napisie, to może być kuszące skorzystanie z operatora przypisania. Na przykład:
 
 \index{TypeError}
 \index{wyjątek!TypeError}
@@ -274,7 +274,7 @@ Porównywanie napisów
 \index{napis!porównywanie}
 \index{porównywanie!napis}
 
-Operatory porównania działają również na napisach. Aby sprawdzić, czy dwa napisy są równe:
+Operatory porównania działają również na napisach. Aby sprawdzić, czy dwa napisy są równe, możemy wykonać:
 
 ~~~~ {.python}
 if word == 'banan':
@@ -313,7 +313,7 @@ Python posiada funkcję o nazwie `dir()`, która zawiera listę metod dostępnyc
 <class 'str'>
 ~~~~
 
-Natomiast funkcja `dir()` pokazuje dostępne dla niego metody:
+Natomiast funkcja `dir()` pokazuje dostępne dla niego metody. Możesz też użyć `help()`, by uzyskać prostą dokumentację jakiejś metody:
 
 ~~~~
 >>> dir(stuff)
@@ -337,7 +337,7 @@ capitalize(...)
 >>>
 ~~~~
 
-Funkcja `dir()` wyświetla listę metod, a Ty możesz użyć `help()`, by uzyskać prostą dokumentację jakiejś metody. Natomiast w przypadku metod związanych z napisami, lepszym źródłem dokumentacji jest <https://docs.python.org/library/stdtypes.html#string-methods>.
+W przypadku metod związanych z napisami, dobrym źródłem dokumentacji jest również <https://docs.python.org/library/stdtypes.html#string-methods>.
 
 Wywołanie *metody* jest podobne do wywołania funkcji (przyjmuje ona argumenty i zwraca wartość), ale składnia jest nieco inna. Metodę wywołujemy poprzez dołączenie nazwy metody do nazwy zmiennej, używając przy tym kropki jako separatora.
 
@@ -376,14 +376,14 @@ Na przykład dla napisów istnieje metoda o nazwie `find()`, która szuka pozycj
 
 W powyższym przykładzie wywołujemy metodę `find()` na `word` i przekazujemy szukaną literę jako argument.
 
-Metoda `find()` może znaleźć zarówno podciągi, jak i znaki:
+Metoda `find()` może znaleźć zarówno pojedyncze znaki, jak i dłuższe sekwencje znaków (podciągi):
 
 ~~~~ {.python}
 >>> word.find('an')
 1
 ~~~~
 
-Jako drugi argument może przyjąć indeks, od którego powinien zacząć szukać:
+Metoda ta jako drugi argument może przyjąć indeks, od którego powinien zacząć szukać:
 
 \index{opcjonalny argument}
 \index{argument!opcjonalny}
@@ -411,7 +411,7 @@ True
 False
 ~~~~
 
-Możesz zauważyć, że `startswith()` wymaga dopasowania wielkości liter, więc czasami zanim zrobimy jakiekolwiek sprawdzenie, konwertujemy wszystkie znaki w linii na małe litery przy użyciu metody `lower()`.
+Możesz zauważyć, że `startswith()` wymaga dopasowania wielkości liter, więc czasami zanim zrobimy jakiekolwiek sprawdzenie, konwertujemy wszystkie znaki na małe litery przy użyciu metody `lower()`.
 
 ~~~~ {.python}
 >>> line = 'Miłego dnia'
@@ -439,7 +439,7 @@ Napisz wywołanie metody, które zliczy, ile razy litera "a" występuje w słowi
 Parsowanie napisów
 ------------------
 
-Często chcemy zajrzeć do napisu i znaleźć pewien podciąg. Na przykład, jeśli przedstawiono nam serię linii sformatowanych w następujący sposób:
+Często chcemy zajrzeć do zmiennej przechowującej tekst po to, aby znaleźć w nim pewien podciąg. Na przykład, jeśli przedstawiono nam serię wierszy tekstowych sformatowanych w następujący sposób:
 
 `From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008`
 
@@ -463,9 +463,7 @@ uct.ac.za
 
 Używamy tej wersji metody `find()`, która pozwala nam określić w napisie pozycję, od której metoda ta ma rozpocząć przeszukiwanie. Wyodrębniamy znaki od "znaku będącego zaraz za @ aż do *ale nie włączając w to* znaku spacji".
 
-Dokumentacja dotycząca metody `find()` jest dostępna na stronie:
-
-<https://docs.python.org/library/stdtypes.html#string-methods>
+Dokumentacja dotycząca metody `find()` jest dostępna na stronie <https://docs.python.org/library/stdtypes.html#string-methods>.
 
 Operator formatowania
 ---------------------
@@ -481,7 +479,7 @@ Pierwszy operand jest *napisem formatującym*, który zawiera jedną lub więcej
 
 \index{sekwencja formatująca}
 
-Na przykład sekwencja formatująca `%d` oznacza, że drugi operand powinien być sformatowany jako liczba całkowita ("d" pochodzi od angielskiego słowa "decimal", czyli "dziesiętny"):
+Na przykład sekwencja formatująca `%d` oznacza, że drugi operand powinien być sformatowany jako liczba całkowita ("d" pochodzi od angielskiego słowa *decimal*, czyli "dziesiętny"):
 
 ~~~~ {.python}
 >>> camels = 42
@@ -499,7 +497,7 @@ Sekwencja formatowania może pojawić się w dowolnym miejscu napisu, więc moż
 'Zauważyłem 42 wielbłądy.'
 ~~~~
 
-Jeśli w napisie znajduje się więcej niż jedna sekwencja formatująca, to drugim argumentem musi być krotka^[Krotka to sekwencja wartości oddzielonych przecinkami wewnątrz pary nawiasów. Omówimy krotki w rozdziale 10.]. Każda sekwencja formatująca jest dopasowywana do kolejnego elementu krotki.
+Jeśli w napisie znajduje się więcej niż jedna sekwencja formatująca, to drugim argumentem musi być krotka^[Krotka to sekwencja wartości oddzielonych przecinkami wewnątrz pary nawiasów okrągłych. Omówimy krotki w rozdziale 10.]. Każda sekwencja formatująca jest dopasowywana do kolejnego elementu krotki.
 
 Poniższy przykład używa `%d` do formatowania liczby całkowitej, `%g` do formatowania liczby zmiennoprzecinkowej (nie pytaj, dlaczego), a `%s` do formatowania napisu^["s" od angielskiego "string", czyli napis.]:
 
@@ -522,7 +520,7 @@ TypeError: %d format: a number is required, not str
 
 W pierwszym przykładzie nie ma wystarczającej liczby elementów, w drugim – element ma niewłaściwy typ.
 
-Operator formatowania niesie ze sobą wiele możliwości, ale czasami może być trudny w użyciu. Możesz przeczytać więcej na ten temat na stronie:
+Operator formatowania niesie ze sobą wiele możliwości, ale czasami może być trudny w użyciu. Możesz przeczytać więcej na ten temat na stronie z dokumentacją:
 
 <https://docs.python.org/library/stdtypes.html#printf-style-string-formatting>
 
@@ -620,7 +618,7 @@ Mamy następujący kod Pythona, który przechowuje napis w zmiennej `text`:
 
 `text = 'X-DSPAM-Confidence: 0.8475'`
 
-Użyj `find()` i wycinków napisów, tak aby wyodrębnić część tekstu po znaku dwukropka, a następnie użyj funkcji `float()`, żeby przekształcić wyodrębniony napis na liczbę zmiennoprzecinkową.
+Użyj `find()` i wycinków napisów, tak aby wyodrębnić część tekstu po znaku dwukropka, a następnie użyj funkcji `float()`, żeby przekształcić wyodrębniony fragment na liczbę zmiennoprzecinkową.
 
 \index{napis!metoda}
 \index{metoda!napis}

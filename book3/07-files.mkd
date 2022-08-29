@@ -17,7 +17,7 @@ Przypomnij sobie naszą dyskusję na temat architektury sprzętowej. Po wyłącz
 
 ![Pamięć pomocnicza](height=2.5in@../images/arch)
 
-W tym rozdziale rozpoczynamy pracę z *pamięcią pomocniczą* (lub plikami). Pamięć pomocnicza nie jest czyszczona po wyłączeniu zasilania. W przypadku pendrive'a dane, które zapisujemy z naszych programów, mogą zostać usunięte z systemu i przeniesione do innego systemu.
+W tym rozdziale rozpoczynamy pracę z *pamięcią pomocniczą* (a dokładniej, to z plikami). Pamięć pomocnicza nie jest czyszczona po wyłączeniu zasilania. W przypadku pendrive'a dane, które zapisujemy z naszych programów, mogą zostać usunięte z systemu i przeniesione do innego systemu.
 
 Skupimy się przede wszystkim na odczycie i zapisie plików tekstowych, takich jak te, które tworzymy w edytorze tekstu. Później zobaczymy, jak pracować z plikami bazodanowymi, które są plikami binarnymi, przeznaczonymi specjalnie do odczytu i zapisu przez oprogramowanie bazodanowe.
 
@@ -38,7 +38,7 @@ Kiedy chcemy odczytać lub zapisać plik (np. na dysku twardym), musimy najpierw
 
 \index{uchwyt pliku}
 
-Jeśli funkcja `open()` się powiedzie, system operacyjny zwróci nam  *uchwyt pliku*. Uchwyt pliku nie jest rzeczywistymi danymi zawartymi w tym pliku, lecz "uchwytem", który możemy użyć do odczytania danych. Otrzymujesz uchwyt, jeśli żądany plik istnieje i masz odpowiednie uprawnienia do jego odczytania.
+Jeśli funkcja `open()` się powiedzie, system operacyjny zwróci nam tzw. uchwyt pliku (ang. *file handle*). Uchwyt pliku nie jest rzeczywistymi danymi zawartymi w tym pliku, lecz – trzymając się jednego z możliwych tłumaczeń angielskiego słowa *handle* – klamką do drzwi, za którymi znajdują się interesujące nas dane. Uchwyt jest swego rodzaju przedmiotem, który możemy użyć do odczytania danych. Podczas próby otwarcia pliku do odczytu otrzymasz uchwyt wtedy, gdy żądany plik istnieje i masz odpowiednie uprawnienia do jego odczytania.
 
 ![Uchwyt pliku](height=2.0in@../images/handle)
 
@@ -115,18 +115,18 @@ Czytanie plików
 \index{plik!czytanie}
 \index{licznik}
 
-Podczas gdy *uchwyt pliku* nie zawiera danych pliku, to całkiem łatwo jest skonstruować pętlę `for` do jego odczytu i zliczyć linie występujące w pliku:
+Podczas gdy *uchwyt pliku* nie zawiera danych pliku, to całkiem łatwo jest skonstruować pętlę `for` do jego odczytu i zliczyć występujące w nim linie:
 
 \VerbatimInput{../code3/open.py}
 \begin{trinketfiles}
 ../code3/mbox-short.txt
 \end{trinketfiles}
 
-Możemy użyć uchwytu pliku jako sekwencji w naszej pętli `for`. Nasza pętla `for` po prostu zlicza linie w pliku i wyświetla sumę. Tłumaczenie treści pętli `for` na polski jest z grubsza następujące: "dla każdej linii w pliku reprezentowanej przez uchwyt pliku, dodaj jeden do zmiennej `count`".
+W naszej pętli `for` możemy użyć uchwytu pliku jako sekwencji. Nasza pętla `for` po prostu zlicza linie w pliku i wyświetla sumę. Tłumaczenie treści pętli `for` na polski jest z grubsza następujące: "dla każdej linii w pliku reprezentowanej przez uchwyt pliku, dodaj jeden do zmiennej `count`".
 
 Powodem, dla którego funkcja `open()` nie odczytuje całego pliku jest to, że plik może być dość duży i zawierać wiele gigabajtów danych. Funkcja `open()` zajmuje zawsze tyle samo czasu, niezależnie od wielkości pliku. Pętla `for` w rzeczywistości powoduje, że dane są odczytywane z pliku.
 
-Gdy plik jest w ten sposób odczytywany przy użyciu pętli `for`, Python zajmuje się podziałem danych z pliku na osobne linie przy użyciu znaku końca linii. Python w każdej iteracji pętli `for` czyta każdą linię od początku aż do wystąpienia znaku końca linii i dołącza go jako ostatni znak w zmiennej `line`.
+Gdy plik jest odczytywany w ten sposób przy użyciu pętli `for`, Python zajmuje się podziałem danych z pliku na osobne linie przy użyciu znaku końca linii. Python w każdej iteracji pętli `for` czyta każdą linię od początku aż do wystąpienia znaku końca linii i dołącza go jako ostatni znak w zmiennej `line`.
 
 Ponieważ pętla `for` odczytuje z danych jeden wiersz na raz, może efektywnie czytać i zliczać wiersze w bardzo dużych plikach, bez obawy, że w pamięci głównej skończy się miejsce na dane. Powyższy program przy użyciu bardzo małej ilości pamięci może zliczać linie w plikach o dowolnym rozmiarze, ponieważ każda linia jest odczytywana, zliczana, a następnie porzucana.
 
@@ -143,7 +143,7 @@ From stephen.marquar
 
 W powyższym przykładzie cała zawartość (wszystkie 94 626 znaków) pliku `mbox-short.txt` jest wczytywana bezpośrednio do zmiennej `inp`. Do wyświetlenia pierwszych 20 znaków z napisu przechowywanego w zmiennej `inp` używamy operacji wycinana podciągu znaków, czyli wycinków.
 
-Gdy plik zostanie odczytany w ten sposób, to wszystkie znaki, łącznie ze wszystkimi liniami i znakami końca linii, są jednym dużym napisem znajdującym się w zmiennej `inp`. Dobrym pomysłem jest przechowywanie wyniku funkcji `read()` jako zmiennej, ponieważ każde wywołanie `read()` wykorzystuje zasoby pamięci:
+Gdy plik zostanie odczytany w ten sposób, to wszystkie znaki, łącznie ze wszystkimi liniami i znakami końca linii, są jednym dużym napisem znajdującym się w zmiennej `inp`. Dobrym pomysłem jest przechowywanie wyniku funkcji `read()` jako zmiennej, ponieważ kolejne wywołanie `read()` na tym samym uchwycie nie zwróci nam już danych (podczas pierwszego odczytania został osiągnięty koniec pliku, więc kolejne wywołanie tej metody zwraca pusty napis):
 
 ~~~~ {.python}
 >>> fhand = open('mbox-short.txt')
@@ -205,7 +205,7 @@ From: cwen@iupui.edu
 ...
 ~~~~
 
-W miarę jak Twoje programy do przetwarzania plików będą stawać się coraz bardziej skomplikowane, możesz chcieć uporządkować swoje pętle wyszukiwania za pomocą `continue`. Podstawową ideą pętli wyszukiwania jest to, że szukasz "interesujących" linii i skutecznie pomijasz "nieciekawe". A potem, gdy znajdziemy interesującą linię, coś z nią robimy.
+W miarę jak Twoje programy przetwarzające pliki będą stawać się coraz bardziej skomplikowane, możesz chcieć uporządkować swoje pętle wyszukiwania za pomocą `continue`. Podstawową ideą pętli wyszukiwania jest to, że szukasz "interesujących" linii i skutecznie pomijasz "nieciekawe". A gdy znajdujesz interesującą linię, to coś z nią robisz.
 
 Pętlę możemy uporządkować tak, aby w następujący sposób trzymała się schematu pomijania "nieciekawych" linii:
 
@@ -216,7 +216,7 @@ Pętlę możemy uporządkować tak, aby w następujący sposób trzymała się s
 
 Wynik programu jest taki sam. Mówiąc po ludzku, "nieciekawe" są te linie, które nie rozpoczynają się od "From:", więc pomijamy je, używając `continue`. W przypadku "interesujących" linii (tzn. tych, które zaczynają się od "From:") wykonujemy przetwarzanie danych, czyli wypisujemy ich zawartość na ekran.
 
-Możemy użyć metody tekstowego typu danych `find()`, tak aby zasymulować wyszukiwanie w edytorze tekstu znajdujące linie, w których poszukiwany tekst jest gdziekolwiek w linii. Ponieważ `find()` szuka wystąpienia napisu w innym napisie i albo zwraca jego pozycję, albo -1, jeśli nie zostanie on znaleziony, możemy napisać następującą pętlę, tak by pokazać te linie, które zawierają tekst "@uct.ac.za" (tzn. pochodzą z Uniwersytetu w Kapsztadzie w RPA):
+Możemy użyć metody tekstowego typu danych `find()`, tak aby zasymulować wyszukiwanie w edytorze tekstu znajdujące linie, w których poszukiwany tekst jest gdziekolwiek w linii. `find()` szuka wystąpienia napisu w innym napisie i albo zwraca jego pozycję, albo -1 (jeśli nie zostanie on znaleziony), więc możemy napisać następującą pętlę, tak by pokazać te linie, które zawierają tekst "@uct.ac.za" (tzn. pochodzą z Uniwersytetu w Kapsztadzie w RPA):
 
 \VerbatimInput{../code3/search4.py}
 \begin{trinketfiles}
@@ -270,7 +270,7 @@ Używanie `try`, `except` i `open()`
 
 Mówiłem Ci, żebyś nie podglądał. To Twoja ostatnia szansa.
 
-A co, jeśli nasz użytkownik wpisze coś, co nie jest nazwą pliku?
+No dobrze. A co, jeśli nasz użytkownik wpisze coś, co nie jest nazwą pliku?
 
 ~~~~
 Podaj nazwę pliku: missing.txt
@@ -281,19 +281,19 @@ FileNotFoundError: [Errno 2] No such file or directory: 'missing.txt'
 ~~~~
 
 ~~~~
-Podaj nazwę pliku: szurum-burum
+Podaj nazwę pliku: programista 15k, dobre sobie!
 Traceback (most recent call last):
   File "search6.py", line 2, in <module>
     fhand = open(fname)
-FileNotFoundError: [Errno 2] No such file or directory: 'szurum-burum'
+FileNotFoundError: [Errno 2] No such file or directory: 'programista 15k, dobre sobie!'
 ~~~~
 
-Nie śmiej się. Użytkownicy czasem robią wszystko, co w ich mocy, by wysypać Twoje programy – albo przypadkiem, albo w złych zamiarach. W rzeczywistości ważną częścią każdego zespołu zajmującego się tworzeniem oprogramowania jest osoba lub grupa o nazwie *Quality Assurance* (w skrócie QA; zespół *zapewniania jakości*), której zadaniem jest robienie najbardziej szalonych rzeczy w celu wysypania oprogramowania stworzonego przez programistów.
+Użytkownicy czasem robią wszystko, co w ich mocy, by wysypać Twoje programy – albo przypadkiem, albo w złych zamiarach. W rzeczywistości ważną częścią każdego zespołu zajmującego się tworzeniem oprogramowania jest osoba lub grupa o nazwie *Quality Assurance* (w skrócie QA; zespół *zapewniania jakości*), której zadaniem jest robienie najbardziej szalonych rzeczy w celu wysypania oprogramowania stworzonego przez programistów.
 
 \index{Quality Assurance}
 \index{zapewnianie jakości}
 
-Zespół QA jest odpowiedzialny za znalezienie wad w programach, zanim dostarczymy je użytkownikom końcowym, którzy mogą je zakupić lub zapłacić nam za napisanie programu. Tak więc zespół QA jest najlepszym przyjacielem programisty.
+Zespół QA jest odpowiedzialny za znalezienie wad w programie, zanim dostarczymy go użytkownikom końcowym, którzy mogą go z kolei zakupić lub zapłacić nam za jego napisanie. Tak więc zespół QA jest najlepszym przyjacielem programisty.
 
 \index{try, instrukcja}
 \index{instrukcja!try}
@@ -303,7 +303,7 @@ Zespół QA jest odpowiedzialny za znalezienie wad w programach, zanim dostarczy
 \index{IOError}
 \index{lzapanie wyjatkow@łapanie wyjątku}
 
-Więc teraz, gdy widzimy wadę w programie, możemy ją elegancko naprawić, używając struktury `try`/`except`. Musimy przyjąć, że `open()` może się nie powieść, więc dodamy kod naprawczy, który zadziała, gdy tak się stanie:
+Teraz, gdy widzimy wadę w programie, możemy ją elegancko naprawić, używając  `try`/`except`. Musimy przyjąć, że `open()` może się nie powieść, więc dodamy kod naprawczy, który zadziała dokładnie w takim momencie:
 
 \VerbatimInput{../code3/search7.py}
 \begin{trinketfiles}
@@ -326,7 +326,7 @@ Nie można otworzyć pliku: szurum-burum
 
 Ochrona wywołania `open()` jest dobrym przykładem prawidłowego użycia `try` i `except` w programie Pythona. W języku angielskim używamy terminu *pythonic* ("pythonowy") wtedy, gdy robimy coś "w stylu Pythona". Możemy powiedzieć, że powyższy przykład jest "pythonowym" sposobem na otwarcie pliku.
 
-Kiedy będziesz bardziej biegły w Pythonie, będziesz mógł brać udział w błyskotliwej wymianie zdań z innymi programistami Pythona, tak aby zdecydować, które z dwóch równoważnych rozwiązań problemu jest "bardziej pythonowe". Bycie "bardziej pythonowym" wynika z idei, że programowanie jest zarówno inżynierią, jak i sztuką. Nie zawsze jesteśmy zainteresowani tym, aby coś po prostu działało; chcemy również, by nasze rozwiązanie było eleganckie, co zauważą i docenią równi nam programiści.
+Gdy będziesz już bardziej biegły w Pythonie, będziesz mógł brać udział w błyskotliwej wymianie zdań z innymi programistami Pythona, tak aby zdecydować, które z dwóch równoważnych rozwiązań problemu jest "bardziej pythonowe". Bycie "bardziej pythonowym" wynika z idei, że programowanie jest zarówno inżynierią, jak i sztuką. Nie zawsze jesteśmy zainteresowani tym, aby coś po prostu działało; chcemy również, by nasze rozwiązanie było eleganckie, co zauważą i docenią inni, równi nam programiści.
 
 Pisanie do plików
 -----------------
@@ -370,7 +370,7 @@ Kiedy skończysz pisać, musisz zamknąć plik, aby upewnić się, że ostatni b
 >>> fout.close()
 ~~~~
 
-Możemy zamknąć również pliki, które otwieramy do odczytu, ale pozwolić sobie na odrobinę nieuwagi, jeśli otwieramy tylko kilka plików. Python sprawi, że po zakończeniu programu wszystkie otwarte pliki zostaną zamknięte. Kiedy zapisujemy dane do plików, lepiej osobiście zadbać o ich zamknięcie, tak aby niczego nie pozostawić przypadkowi.
+Możemy zamykać również pliki, które otwieramy do odczytu, ale jeśli otwieramy tylko kilka plików, to w zasadzie możemy pozwolić sobie na odrobinę nieuwagi. Python sprawi, że po zakończeniu programu wszystkie otwarte pliki zostaną zamknięte. Natomiast gdy zapisujemy dane do plików, lepiej osobiście zadbać o ich zamknięcie, tak aby niczego nie pozostawić przypadkowi.
 
 \index{close, metoda}
 \index{metoda!close}
@@ -391,9 +391,7 @@ Kodowanie plików
 
 Przechowując dane tekstowe w plikach, należy określić, ile bitów potrzeba na zapisanie jednego znaku. Przez ostatnie lata zostało wypracowanych wiele systemów kodowania, np. klasyczny siedmiobitowy ASCII^[<https://pl.wikipedia.org/wiki/ASCII>], obecnie będący standardem UTF-8^[<https://pl.wikipedia.org/wiki/UTF-8>], popularny w naszej części Europy ISO-8859-2^[<https://pl.wikipedia.org/wiki/ISO_8859-2>] (znany również jako Latin-2) oraz CP-1250 (znany również jako Windows-1250^[<https://pl.wikipedia.org/wiki/CP-1250>]). Często informacja o kodowaniu pliku nie jest dostępna, a niektóre programy przetwarzające dane z góry zakładają jakieś kodowanie (np. UTF-8). W takich sytuacjach przetwarzanie pliku wejściowego w niepoprawnym kodowaniu da nam złe wyniki. W konsekwencji, pewną trudność może sprawić obsługa znaków diakrytycznych podczas odczytu i zapisu do pliku.
 
-Dla przykładu użyjemy pliku `polski.txt`, który jest do ściągnięcia z poniższej strony:
-
-<https://py4e.pl/code3/polski.txt>
+Dla przykładu użyjemy pliku `polski.txt`, który jest do pobrania z adresu <https://py4e.pl/code3/polski.txt>.
 
 Standardowo możemy otworzyć plik bez podawania żadnych argumentów:
 
@@ -488,7 +486,7 @@ Debugowanie
 \index{debugowanie}
 \index{białe znaki}
 
-Kiedy odczytujesz dane lub zapisujesz dane do plików, możesz mieć problemy z białymi znakami. Tego typu błędy mogą być trudne do debugowania, ponieważ spacje, tabulacje i znaki końca linii są zazwyczaj niewidoczne:
+Gdy odczytujesz dane lub zapisujesz dane do plików, możesz mieć problemy z białymi znakami. Tego typu błędy mogą być trudne do debugowania, ponieważ zgrupowania spacji, tabulacje i znaki końca linii są zazwyczaj nieodróżnialne i/lub niewidoczne:
 
 ~~~~ {.python}
 >>> s = '1 2\t 3\n 4'
@@ -564,11 +562,11 @@ RECEIVED: FROM MURDER (MAIL.UMICH.EDU [141.211.14.90])
      SAT, 05 JAN 2008 09:14:16 -0500
 ~~~~
 
-Plik możesz pobrać z adresu <https://py4e.pl/code3/mbox-short.txt>
+Plik do odczytu możesz pobrać z adresu <https://py4e.pl/code3/mbox-short.txt>
 
 #### Ćwiczenie 2
 
-Napisz program proszący o podanie nazwy pliku, a następnie przeszukaj plik w celu znalezienia linii podobnych do poniższej:
+Napisz program proszący o podanie nazwy pliku, a następnie przeszukaj ten plik w celu znalezienia linii podobnych do poniższej:
 
 ~~~~
 X-DSPAM-Confidence: 0.8475
