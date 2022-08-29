@@ -12,7 +12,7 @@ Wyrażenia logiczne
 
 *Wyrażenie logiczne* to wyrażenie, które jest prawdziwe lub fałszywe. Poniższe 
 przykłady używają operatora `==`, który porównuje dwa operandy i zwraca `True`,
- jeśli są one równe, lub `False` w przeciwnym wypadku:
+jeśli są one równe, lub `False` w przeciwnym wypadku:
 
 ~~~~ {.python .trinket}
 >>> 5 == 5
@@ -50,8 +50,8 @@ x is y               # x jest tym samym co y
 x is not y           # x nie jest tym samym co y
 ~~~~
 
-Choć te operacje są pewnie Ci znane, symbole Pythona różnią się od symboli 
-matematycznych dla tych samych operacji. Częstym błędem jest użycie pojedynczego
+Choć powyższe operacje pewnie już znasz, symbole używane przez Pythona różnią się od symboli 
+matematycznych. Częstym błędem jest użycie pojedynczego
 znaku równości (`=`) zamiast znaku podwójnej równości (`==`). Pamiętaj, że `=`
 jest operatorem przypisania, a `==` jest operatorem porównania. Nie ma znaków takich jak `=<` lub `=>`.
 
@@ -91,7 +91,7 @@ liczba całkowita jest interpretowana jako "prawdziwa".
 True
 ~~~~
 
-Ta elastyczność może być użyteczna, ale istnieją pewne niuanse, które mogą być 
+Taka elastyczność może być użyteczna, ale istnieją pewne niuanse, które mogą być 
 mylące. Lepiej ich unikać, dopóki nie będziesz pewien, że 
 wiesz, co robisz.
 
@@ -116,7 +116,7 @@ if x > 0 :
 ~~~~
 
 Wyrażenie logiczne po instrukcji `if` jest nazywane *warunkiem*. Kończymy
-wyrażenie `if` znakiem dwukropka (:), a linia lub linie po wyrażeniu `if` są
+wyrażenie `if` znakiem dwukropka (`:`), a linia lub linie po wyrażeniu `if` są
 wcięte.
 
 ![Logika instrukcji if](height=1.5in@../images/if)
@@ -132,13 +132,13 @@ Jeśli warunek logiczny jest fałszywy, to wyrażenie we wcięciu jest pomijane.
 
 Instrukcje `if` mają taką samą strukturę jak definicje funkcji lub pętle
 `for`^[Dowiemy się o funkcjach w rozdziale 4, a o pętlach w rozdziale 5.].
-Instrukcja składa się z linii nagłówka, która kończy się znakiem dwukropka (:),
-po którym następuje wcięty blok (ciało instrukcji `if`). Takie instrukcje
+Instrukcja składa się z linii nagłówka, która kończy się znakiem dwukropka (`:`),
+po którym następuje wcięty blok (tzw. *ciało* instrukcji `if`). Takie instrukcje
 nazywane są *instrukcjami złożonymi*, ponieważ rozciągają się na więcej niż
 jedną linię.
 
-Nie ma ograniczenia co do liczby instrukcji, które mogą pojawić się w ciele
-instrukcji `if`, ale musi być co najmniej jedno. Czasami warto przygotować 
+Nie ma górnego ograniczenia co do liczby instrukcji, które mogą pojawić się w ciele
+instrukcji `if`, ale musi być co najmniej jedna instrukcja. Czasami warto przygotować 
 ciało `if` bez instrukcji (zazwyczaj jako miejsce na kod, którego jeszcze nie
 napisałeś). W takim przypadku możesz użyć `pass`, który nie robi nic.
 
@@ -198,13 +198,12 @@ else :
 ~~~~
 
 Jeśli reszta z dzielenia `x` przez 2 jest równa 0, to wiemy, że zmienna `x` jest
-parzysta, i program wyświetli stosowny komunikat. Jeśli warunek jest fałszywy, to wykonywany jest drugi zestaw poleceń.
+parzysta, a program wyświetli stosowny komunikat. Jeśli warunek jest fałszywy, to wykonywany jest drugi zestaw poleceń.
 
 ![Logika if-else](height=1.5in@../images/if-else)
 
 Ponieważ warunek musi być albo prawdziwy, albo fałszywy, dokładnie jedna z
-alternatyw zostanie wykonana. Te alternatywy nazywane są *gałęziami*, ponieważ
-są gałęziami w przepływie wykonania programu.
+alternatyw zostanie wykonana. Te alternatywy nazywane są *gałęziami* w przepływie wykonania programu.
 
 \index{gałąź}
 
@@ -319,7 +318,7 @@ ValueError: invalid literal for int() with base 10:
 >>>
 ~~~~
 
-Kiedy wykonamy te polecenia w interpreterze Pythona, otrzymujemy od niego prośbę
+Gdy wykonamy te polecenia w interpreterze Pythona, otrzymujemy od niego prośbę
 o wprowadzenie danych, interpreter pomyśli "ups!" i przejdzie do naszej
 następnej instrukcji.
 
@@ -483,7 +482,7 @@ użyteczne są zazwyczaj informacje o tym:
 Błędy składniowe są zazwyczaj łatwe do znalezienia, ale jest kilka podstępnych
 przypadków. Błędy związane z tzw. białymi znakami^[Należą do nich spacje, znaki
 tabulacji, znaki końca linii oraz dowolne inne znaki niemające kształtu na
-ekranie.] mogą być trudne, ponieważ np. spacje i tabulacje są niewidoczne i
+ekranie.] mogą być dla nas trudne do wychwycenia, ponieważ np. spacje i tabulacje są mało widoczne i
 jesteśmy przyzwyczajeni do ich ignorowania.
 
 \index{białe znaki}
@@ -522,7 +521,7 @@ instrukcja warunkowa
 
 instrukcja złożona
 :   Instrukcja składająca się z nagłówka i ciała. Nagłówek kończy się
-    dwukropkiem (:). Ciało jest wcięte w stosunku do nagłówka.\index{złożona, instrukcja}\index{instrukcja!złożona}
+    dwukropkiem (`:`). Ciało jest wcięte w stosunku do nagłówka.\index{złożona, instrukcja}\index{instrukcja!złożona}
 
 minimalna ewaluacja
 :   Kiedy Python jest w trakcie ewaluacji złożonego wyrażenia logicznego i

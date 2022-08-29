@@ -9,19 +9,20 @@ Wartości i typy
 \index{typ}
 \index{napis}
 \index{ciąg znaków}
+\index{tekst}
 \index{lzancuch znakow@łańcuch znaków}
 
 *Wartość* jest jedną z podstawowych rzeczy, z którymi pracuje program. Wartości, takie jak litery czy cyfry, które widzieliśmy do tej pory, to np. 6 i "Witaj
 świecie!".
 
 Wartości te należą do różnych *typów*: 6 jest liczbą całkowitą, a "Witaj
-świecie!" jest *napisem*, *tekstem*, *ciągiem znaków*, lub *łańcuchem znaków* (ang. *string*). Ty (i interpreter) możesz 
+świecie!" jest *napisem*, *tekstem*, *ciągiem znaków* lub *łańcuchem znaków* (ang. *string*). Ty (i interpreter) możesz 
 rozpoznać napisy, ponieważ są one zawarte między apostrofami lub w cudzysłowie.
 
 \index{apostrof}
 \index{cudzysłów}
 
-Do uruchomienia interpretera używamy komendy `python3`:
+Do uruchomienia interpretera w terminalu lub wierszu poleceń używamy komendy `python3`:
 
 ~~~~ {.python}
 $ python3
@@ -45,7 +46,7 @@ podpowiedzieć:
 <class 'int'>
 ~~~~
 
-Nic dziwnego, że napisy należą do tekstowego typu danych `str`, a liczby całkowite (ang.
+Nic dziwnego, że napisy (ang. *strings*) należą do tekstowego typu danych `str`, a liczby całkowite (ang.
 *integers*) należą do typu `int`. Mniej oczywiste jest, że liczby z kropką
 dziesiętną należą do typu `float`; liczby te są reprezentowane w
 formacie nazywanym *liczbą zmiennoprzecinkową*^[Mimo że nazwa wskazuje na
@@ -162,8 +163,8 @@ konwencji i ich nie używać.]
 Znak podkreślenia ( \_ ) może pojawić się w nazwie. Jest on często używany w
 nazwach zawierających wiele słów, takich jak `moje_imie` lub 
 `predkosc_jaskolki_bez_obciazenia`. Nazwy zmiennych mogą zaczynać się od znaku
-podkreślenia, ale generalnie unikamy tego, chyba że piszemy kod biblioteki, która 
-docelowo będzie używana przez inne osoby.
+podkreślenia, ale generalnie tego unikamy (chyba że piszemy kod biblioteki, która 
+docelowo będzie używana przez inne osoby).
 
 \index{znak!podkreślenia}
 
@@ -181,7 +182,9 @@ SyntaxError: invalid syntax
 `76trombones` jest niepoprawne, ponieważ zaczyna się od cyfry. `more@` jest
 niepoprawne, ponieważ zawiera niepoprawny znak `@`. Ale co jest złego w `class`?
 
-Okazuje się, że `class` jest jednym ze *słów kluczowych* Pythona. Interpreter 
+Okazuje się, że `class` jest jednym ze *słów kluczowych* Pythona.^[W poprzednim rozdziale
+nazywaliśmy je *słowami zastrzeżonymi* języka Python; nazwa tego zbioru słów nie jest dla nas istotna;
+po prostu chcemy podkreślić, że pewna grupa słów ma szczególne znaczenie dla interpretera.] Interpreter 
 używa słów kluczowych do rozpoznania struktury programu, przez co nie można ich
 używać jako nazw zmiennych.
 
@@ -308,7 +311,7 @@ Wyrażenia
 *Wyrażenie* jest kombinacją wartości, zmiennych i operatorów. Wartość sama w
 sobie jest uważana za wyrażenie, podobnie jak zmienna, a więc wszystkie poniższe
 przykłady są poprawnymi wyrażeniami (przy założeniu, że zmiennej `x` przypisano wcześniej
-jakąś wartość):
+jakąś wartość liczbową):
 
 \index{wyrażenie}
 \index{ewaluacja}
@@ -329,7 +332,7 @@ Jeśli wpiszesz wyrażenie w trybie interaktywnym, interpreter dokona jego
 ~~~~
 
 Natomiast w skrypcie wyrażenie samo w sobie nic nie robi! Dla początkujących 
-to częsty powód konsternacji. 
+jest to częsty powód konsternacji. 
 
 #### Ćwiczenie 1
 
@@ -400,12 +403,12 @@ procentu (`%`). Składnia jest taka sama jak w przypadku innych operatorów:
 Tak więc 7 podzielone przez 3 to 2 z resztą 1.
 
 Operator modulo okazuje się być zaskakująco użyteczny. Na przykład możesz 
-sprawdzić, czy jedna liczba jest podzielna przez drugą: jeśli `x % y` wynos
+sprawdzić, czy jedna liczba jest podzielna przez drugą: jeśli `x % y` wynosi
 zero, to `x` jest podzielne przez `y`.
 
 \index{podzielność}
 
-Możesz również wyodrębnić ostatnią cyfrę po prawej stronie cyfry z liczby.
+Możesz również wyodrębnić ostatnią cyfrę liczby całkowitej.
 Na przykład `x % 10` zwraca ostatnią cyfrę po prawej stronie z `x` (w systemie
 dziesiętnym). Podobnie `x % 100` zwraca dwie ostatnie cyfry.
 
@@ -451,10 +454,9 @@ Proszenie użytkownika o wprowadzenie danych
 Czasami chcielibyśmy ustawić wartość zmiennej poprzez pobranie tej wartości od
 użytkownika za pomocą jego klawiatury. Python udostępnia wbudowaną funkcję o
 nazwie `input()`, która pobiera dane z klawiatury^[W Pythonie 2 funkcja ta 
-nazywa się `raw_input()`.]. Kiedy funkcja ta jest wywoływana, program zatrzymuje
-się i czeka, aż użytkownik coś wpisze. Gdy użytkownik naciśnie klawisz `<Enter>`, program wznawia działanie, a `input()` zwraca to, co użytkownik
-wpisał jako napis.
-
+nazywa się `raw_input()`.]. Gdy funkcja ta jest wywoływana, program zatrzymuje
+się i czeka, aż użytkownik coś wpisze. Gdy użytkownik naciśnie klawisz `<Enter>`,
+program wznawia działanie, a `input()` zwraca jako napis to, co wpisał użytkownik.
 
 \index{Python 2}
 
@@ -465,7 +467,7 @@ Jakieś bzdury
 Jakieś bzdury
 ~~~~
 
-Przed otrzymaniem danych wejściowych od użytkownika dobrze jest wyświetlić
+Przed otrzymaniem danych wejściowych od użytkownika, dobrze jest wyświetlić
 komunikat informujący użytkownika o tym, co należy wprowadzić. Możesz przekazać
 napis do `input()`, który zostanie wyświetlony użytkownikowi przed
 wstrzymaniem działania na czas wprowadzania danych:
@@ -480,8 +482,9 @@ Chuck
 Chuck
 ~~~~
 
-Sekwencja `\n` na końcu komunikatu reprezentuje *nową linię*, specjalny znak, który powoduje przejście do nowej linii. Dlatego dane
-wprowadzane przez użytkownika znajdują się pod komunikatem.
+Sekwencja `\n` na końcu komunikatu reprezentuje *nową linię* (ang. *new line*), 
+specjalny znak, który powoduje przejście do nowej linii. Z tego powodu dane wprowadzane przez 
+użytkownika znajdują się pod komunikatem.
 
 \index{nowa linia}
 \index{znak!końca linii}
@@ -520,12 +523,12 @@ Komentarze
 
 \index{komentarz}
 
-W miarę jak programy stają się coraz większe i bardziej skomplikowane, stają się
-również coraz trudniejsze do odczytania. Formalne języki są skomplikowane i
-często trudno jest spojrzeć na kawałek kodu i zrozumieć, co lub dlaczego on robi.
+W miarę jak programy stają się coraz większe i bardziej skomplikowane, równolegle
+stają się też coraz trudniejsze do odczytania. Formalne języki są skomplikowane, więc
+zwykle trudno jest rzucić okiem na kawałek kodu i zrozumieć, co on robi lub dlaczego to robi.
 
-Z tego powodu dobrym pomysłem jest dodawanie do programów notatek wyjaśniających,
-co robi program, pisanych w języku naturalnym. Te notatki nazywane są
+Z tego powodu dobrym pomysłem jest dodawanie do programów notatek (pisanych w języku naturalnym)
+wyjaśniających, co robi program. Te notatki nazywane są
 *komentarzami*, a w Pythonie zaczynają się od symbolu `#`:
 
 ~~~~ {.python}
@@ -572,9 +575,9 @@ Wybór mnemonicznych nazw zmiennych
 \index{mnemonika}
 
 Tak długo, jak stosujesz się do prostych zasad nazewnictwa zmiennych i unikasz
-zastrzeżonych słów, masz duży wybór przy nadawaniu nazw swoim zmiennym. Na
+kluczowych (zastrzeżonych) słów Pythona, masz duży wybór przy nadawaniu nazw swoim zmiennym. Na
 początku może to utrudniać zarówno czytanie, jak i pisanie 
-kodu programu. Na przykład następujące trzy
+kodu programu. Na przykład, następujące trzy
 programy są identyczne pod względem tego, co robią, ale bardzo różne, gdy je
 czytasz i starasz się zrozumieć.
 
@@ -608,14 +611,14 @@ przechowywane w każdej z nich.
 Te mądrze wybrane nazwy zmiennych nazywamy "mnemonicznymi nazwami zmiennych".
 Słowo *mnemonika* oznacza "zespół sposobów ułatwiających zapamiętywanie nowego
 materiału"^[<https://sjp.pwn.pl/sjp/mnemotechnika;2568165.html>]. Wybieramy
-mnemoniczne nazwy zmiennych, aby pomóc sobie przypomnieć, po co stworzyliśmy
+mnemoniczne nazwy zmiennych po to, aby pomóc sobie przypomnieć dlaczego stworzyliśmy
 daną zmienną.
 
 Mimo że to wszystko brzmi świetnie i bardzo dobrym pomysłem jest używanie
 mnemonicznych nazw zmiennych, to mogą one przeszkadzać
 początkującemu programiście w analizowaniu i rozumieniu kodu. Dzieje się tak
 dlatego, że początkujący nie zapamiętali jeszcze zastrzeżonych słów
-(jest ich tylko 33) i czasami zmienne o nazwach zbyt opisowych zaczynają
+(jest ich "tylko" kilkadziesiąt) i czasami zmienne o nazwach zbyt opisowych zaczynają
 wyglądać jak część języka, a nie jak dobrze dobrane nazwy zmiennych.
 
 Spójrzmy na poniższy przykładowy kod Pythona, który przechodzi w pętli po 
@@ -642,16 +645,16 @@ for slice in pizza:
 
 Początkującemu programiście łatwiej jest spojrzeć na ten kod i dowiedzieć się,
 które części są zastrzeżonymi słowami zdefiniowanymi przez Pythona, a które są
-po prostu zmiennymi nazwami wybranymi przez programistę. Jest całkiem 
+po prostu nazwami zmiennych wybranymi przez programistę. Jest całkiem 
 zrozumiałe, że Python nie ma podstawowego pojęcia o pizzy i jej kawałkach oraz
 o tym, że pizza składa się z zestawu jednego lub więcej kawałków.
 
-Ale jeśli nasz program naprawdę zajmuje się czytaniem danych i szukaniem słów w
-danych, `pizza` i `slice` to bardzo niemnemoniczne nazwy zmiennych. Wybranie ich
+Ale jeśli nasz program naprawdę zajmuje się odczytywaniem danych i szukaniem w nich słów,
+`pizza` i `slice` to bardzo niemnemoniczne nazwy zmiennych. Wybranie ich
 jako nazw zmiennych odwraca uwagę od znaczenia programu.
 
 Dość szybko zapamiętasz najczęstsze zastrzeżone słowa i zaczniesz widzieć, 
-jak Cię atakują:
+jak atakują Twoje oczy:
 
 <pre>
 <b>for</b> word <b>in</b> words<b>:</b>
@@ -661,7 +664,7 @@ jak Cię atakują:
 Części kodu, które są zdefiniowane przez Pythona (`for`, `in`, `print` i `:`) 
 są tutaj pogrubione, a zmienne wybrane przez programistę (`word` i `words`) – nie.
 Wiele edytorów tekstu jest świadomych składni Pythona i inaczej
-pokoloruje zastrzeżone słowa, tak aby pomóc ci odróżnić zmienne od
+pokoloruje zastrzeżone słowa, tak aby pomóc Ci odróżnić zmienne od
 zastrzeżonych słów. Po pewnym czasie zaczniesz biegle czytać kod Pythona i
 będziesz szybko określać, co jest zmienną, a co słowem zastrzeżonym.^[Dodatkowo
 warto zwrócić uwagę, że zgodnie z przyjętą konwencją programistyczną nazwy
@@ -676,7 +679,7 @@ Debugowanie
 \index{debugowanie}
 
 W tym momencie najbardziej prawdopodobnym błędem składniowym jest niepoprawna
-nazwa zmiennej, np. `class` i `yield`, które są słowami kluczowymi, lub
+nazwa zmiennej, np. `class` i `yield`, które są słowami zastrzeżonymi, lub
 `odd~job` i `US$`, które zawierają niedozwolone znaki.
 
 \index{błąd!składniowy}
@@ -691,7 +694,7 @@ SyntaxError: invalid syntax
 
 W przypadku błędów składniowych komunikaty o błędach nie są zbyt pomocne.
 Najczęstszym komunikatem jest `SyntaxError: invalid syntax`. Czasem jednak
-można trafić na bardziej pomocny komunikat o błędzie składniowym
+można trafić na bardziej pomocny komunikat o błędzie składniowym:
 
 ~~~~ {.python}
 >>> month = 09
@@ -703,7 +706,7 @@ SyntaxError: leading zeros in decimal integer literals are not permitted;
 ~~~~
 
 Widzimy tutaj, że zera wiodące w liczbach całkowitych są niedozwolone,
-a Python podpowiada, że może chodzi nam o zapis w systemie ósemkowym, gdzie
+a Python podpowiada, że być może chodzi nam o zapis w systemie ósemkowym, gdzie
 liczby zaczynają się od `0o`.
 
 \index{komunikat błędu}
@@ -768,7 +771,7 @@ komentarz
     osób czytających kod źródłowy) i nie ma wpływu na wykonanie programu.\index{komentarz}
 
 konkatenacja
-:   Połączenie dwóch napisów.\index{konkatenacja}
+:   Połączenie (sklejenie) dwóch napisów.\index{konkatenacja}
 
 liczba całkowita
 :   Typ danych `int`, który reprezentuje liczby całkowite.\index{liczba całkowita}
@@ -780,7 +783,7 @@ mnemonika
 :   Pomoc pamięciowa. Często nadajemy zmiennym nazwy mnemoniczne, tak aby łatwiej zapamiętać, co jest przechowywane w zmiennej.\index{mnemonika}\index{mnemoniczne nazwy zmiennych}
 
 napis
-:   Typ danych `str`, który reprezentuje sekwencje znaków; inaczej ciąg znaków lub łańcuch znaków.\index{napis}\index{ciąg znaków}\index{lzancuch znakow@łańcuch znaków}
+:   Typ danych `str`, który reprezentuje sekwencje znaków; inaczej tekst, ciąg znaków lub łańcuch znaków.\index{napis}\index{tekst}\index{ciąg znaków}\index{lzancuch znakow@łańcuch znaków}
 
 operand
 :   Jedna z wartości, na której działa operator.\index{operand}

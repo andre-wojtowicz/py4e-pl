@@ -258,11 +258,11 @@ Zanim będziesz mógł rozmawiać z Pythonem, musisz najpierw zainstalować na s
 komputerze oprogramowanie Pythona oraz nauczyć się, jak je uruchomić. Jest to 
 zbyt wiele szczegółów jak na ten rozdział, więc *koniecznie* wejdź na stronę
 <https://py4e.pl/install>, gdzie umieściłem instrukcje dotyczące konfiguracji i 
-uruchamiania Pythona 3 na systemach Windows i macOS oraz w linuxowym środowisku chmurowym PythonAnywhere.
+uruchamiania Pythona 3 na systemach Windows i macOS oraz w Linuxowym środowisku chmurowym PythonAnywhere.
 W każdym wariancie, poza samą instalacją Pythona, zwróć szczególną uwagę na sekcje *Uruchomienie wiersza poleceń*,
 *Uruchomienie skryptu Pythona* i *Uruchomienie sesji interaktywnej Pythona*, w których jest mowa 
 m.in. o katalogu roboczym, który jest istotny z punktu widzenia uruchamiania skryptów z poziomu wiersza
-poleceń. Przećwicz opisane tam warianty i przykłady, a nastpnie wróć do dalszej lektury tej książki.
+poleceń. Przećwicz opisane tam warianty i przykłady, a następnie wróć do dalszej lektury tej książki.
 
 Zrobione? No to jedziemy dalej!
 
@@ -516,7 +516,7 @@ print('Witaj świecie!')
 Wyświetlmy w terminalu zawartość pliku^[W przypadku systemu Windows i wiersza
 poleceń `cmd.exe` wpisalibyśmy `type hello.py`; w zależności od ustawień systemu
 polecenie to mogłoby wyświetlić nam, zamiast polskich liter, tzw. krzaki, więc
-konieczna byłaba również uprzednia zmiana aktywnej strony kodowej wiersza
+konieczna byłaby również uprzednia zmiana aktywnej strony kodowej wiersza
 poleceń na UTF-8 poprzez wydanie polecenia `chcp 65001`.]:
 
 ~~~~ {.bash}
@@ -526,7 +526,7 @@ print('Witaj świecie!')
 
 Symbol `$` to znak zachęty systemu operacyjnego, a `cat hello.py` wyświetla
 nam zawartość pliku `hello.py`, który składa się z jednej linii^[W przypadku systemu Windows
-i wiersza poleceń `cmd.exe` mielibyśmy odpowiednio `>` i `type hello.py`].
+i wiersza poleceń `cmd.exe` mielibyśmy odpowiednio `>` i `type hello.py`.].
 
 Aby uruchomić skrypt, musimy podać interpreterowi Pythona nazwę pliku:
 

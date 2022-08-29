@@ -9,9 +9,9 @@ Wywoływanie funkcji
 \index{funkcja, wywołanie}
 
 W kontekście programowania *funkcja* to nazwana sekwencja instrukcji, która
-wykonuje pewne obliczenia. Kiedy definiujesz funkcję, określasz jej nazwę i
+wykonuje pewne obliczenia. Gdy definiujesz funkcję, określasz jej nazwę i
 kolejność instrukcji. Później możesz "wywołać" funkcję po jej nazwie. 
-Widzieliśmy już jeden przykład *wywołania funkcji*:
+Widzieliśmy już przykłady *wywołania funkcji*, np.:
 
 ~~~~ {.python}
 >>> type(32)
@@ -51,7 +51,7 @@ występujące w liście:
 ~~~~
 
 Funkcja `max()` mówi nam o "największym znaku" w napisie (który okazuje się 
-być literą "w"), a funkcja `min()` pokazuje nam najmniejszy znak (który okazuje 
+być literą "w"), a funkcja `min()` pokazuje nam "najmniejszy znak" (który okazuje 
 się być spacją). 
 
 Inną bardzo często używaną funkcją jest funkcja `len()`, która mówi nam, ile 
@@ -79,7 +79,7 @@ Funkcje konwersji typu
 
 Python oferuje również funkcje wbudowane, które konwertują wartości z jednego 
 typu na drugi. Funkcja `int()` przyjmuje dowolną wartość i konwertuje ją na liczbę 
-całkowitą, jeśli może, lub skarży się, jeśli nie:
+całkowitą (jeśli to możliwe) lub skarży się, jeśli nie wie jak dokonać takiej konwersji:
 
 \index{int, funkcja}
 \index{funkcja!int}
@@ -91,8 +91,8 @@ całkowitą, jeśli może, lub skarży się, jeśli nie:
 ValueError: invalid literal for int() with base 10: 'Halo'
 ~~~~
 
-Funkcja `int()` może zamieniać wartości zmiennoprzecinkowe na liczby całkowite, ale nie 
-zaokrągla ich (ucina część ułamkową): 
+Funkcja `int()` może zamieniać wartości zmiennoprzecinkowe na liczby całkowite, ale ich nie 
+zaokrągla (ucina część ułamkową):
 
 ~~~~ {.python}
 >>> int(3.99999)
@@ -194,8 +194,8 @@ należy ją podzielić przez 360 i pomnożyć przez $2 \pi$:
 0.7071067811865476
 ~~~~
 
- Wyrażenie `math.pi` pobiera zmienną `pi` z modułu matematycznego. Wartość tej 
- zmiennej jest przybliżeniem $\pi$ z dokładnością do około 15 cyfr. 
+Wyrażenie `math.pi` pobiera zmienną `pi` z modułu matematycznego. Wartość tej 
+zmiennej jest przybliżeniem $\pi$ z dokładnością do około 15 cyfr. 
 
 \index{pi}
 
@@ -291,7 +291,7 @@ całkowitą pomiędzy `low` i `high` (włączając w to obydwie te liczby).
 9
 ~~~~
 
-Aby wybrać losowo element z jakiejś sekwencji, możesz użyć `choice()`: 
+Aby wybrać losowo element z jakiejś sekwencji, możesz użyć `choice()`^[W poniższym kodzie zmienna `t` jest listą; przyjrzymy się listom bardziej szczegółowo w dalszych rozdziałach.]: 
 
 \index{choice, funkcja}
 \index{funkcja!choice}
@@ -403,7 +403,7 @@ def repeat_lyrics():
     print_lyrics()
 ~~~~
 
-Następnie wywołujemy `repeat_lyrics()`:
+Następnie wywołujemy `repeat_lyrics()`^[Tak naprawdę piosenka o drwalu idzie zupełnie inaczej.]:
 
 ~~~~ {.python}
 >>> repeat_lyrics()
@@ -412,8 +412,6 @@ Pracuję w dzień i śpię całą noc.
 Jestem sobie drwal i równy chłop.
 Pracuję w dzień i śpię całą noc.
 ~~~~
-
-No ale tak naprawdę to nie tak idzie ta piosenka.
 
 Definiowanie i używanie
 -----------------------
@@ -427,7 +425,7 @@ następująco:
 \VerbatimInput{../code3/lyrics.py}
 
 Program ten zawiera dwie definicje funkcji: `print_lyrics()` i `repeat_lyrics()`. 
-Definicje funkcji wykonywane są tak samo jak inne polecenia, ale efektem jest 
+Definicje te wykonywane są tak samo jak inne polecenia, ale efektem jest 
 tworzenie obiektów funkcji. Polecenia wewnątrz funkcji są wykonywane dopiero po 
 jej wywołaniu, a definicja funkcji nie generuje danych wyjściowych.
 
@@ -472,8 +470,8 @@ którym przerwał.
 
 Brzmi to całkiem prosto, dopóki nie przypomnisz sobie, że jedna funkcja 
 może wywołać inną. Będąc w środku jednej funkcji, program może być zmuszony do 
-wykonania poleceń w innej funkcji. Ale może podczas wykonywania tej nowej funkcji 
-program będzie musiał wykonać jeszcze jedną funkcję!
+wykonania poleceń w innej funkcji. Co więcej, być może podczas wykonywania tej nowej funkcji 
+program będzie musiał wykonać jeszcze inną funkcję!
 
 Na szczęście Python jest dobry w śledzeniu, gdzie się znajduje, więc za każdym 
 razem, gdy funkcja się kończy, program wznawia działanie tam, gdzie przerwał, 
@@ -689,16 +687,15 @@ które znają specyfikę Pythona, robi to domyślnie.
 
 \index{białe znaki}
 
-Tabulacje i spacje są zazwyczaj niewidoczne, co utrudnia ich debugowanie, więc
-postaraj się znaleźć edytor, który zarządza wcięciami za Ciebie.
+Zazwyczaj ciężko odróżnić pojedynczą tabulację od grupy czterech spacji, 
+co utrudnia proces debugowania, więc postaraj się znaleźć taki edytor, który zarządza wcięciami za Ciebie.
 
 Nie zapomnij również zapisać swojego programu, zanim go uruchomisz. Niektóre
 środowiska programistyczne robią to automatycznie, a niektóre nie. W takim
 przypadku program, który oglądasz w edytorze tekstu, nie jest taki sam jak
 program, który uruchamiasz.
 
-Debugowanie może trwać bardzo długo, jeśli będziesz ciągle uruchamiać ten sam
-nieprawidłowy program!
+Jeśli będziesz ciągle uruchamiać ten sam nieprawidłowy program, to debugowanie może zająć Ci bardzo dużo czasu!
 
 Upewnij się, że kod, na który patrzysz, jest tym samym kodem, który uruchamiasz.
 Jeśli nie jesteś pewien, umieść coś w rodzaju `print("hello")` na początku
@@ -742,12 +739,8 @@ funkcja pusta
 funkcja owocna
 :   Funkcja zwracająca wartość.\index{funkcja owocna}\index{owocna, funkcja}
 
-instrukcja import
+import
 :   Instrukcja, która wczytuje plik modułu i tworzy obiekt modułu.\index{import, instrukcja}\index{instrukcja!import}
-
-obiekt modułu
-:   Wartość utworzona przez instrukcję `import`, która zapewnia dostęp do danych
-    i kodu zdefiniowanego w module.\index{moduł}\index{obiekt modułu}
 
 nagłówek funkcji
 :   Pierwszy wiersz definicji funkcji.\index{nagłówek funkcji}\index{funkcja!nagłówek}
@@ -759,6 +752,10 @@ notacja kropkowa
 obiekt funkcji
 :   Wartość utworzona przez definicję funkcji. Nazwa funkcji jest zmienną, która
     odnosi się do obiektu funkcji.\index{obiekt funkcji}\index{funkcja, obiekt}\index{funkcja, definicja}\index{definicja funkcji}
+
+obiekt modułu
+:   Wartość utworzona przez instrukcję `import`, która zapewnia dostęp do danych
+    i kodu zdefiniowanego w module.\index{moduł}\index{obiekt modułu}
 
 parametr
 :   Nazwa używana wewnątrz funkcji do odwoływania się do wartości przekazanej
