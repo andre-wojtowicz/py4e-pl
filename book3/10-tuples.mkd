@@ -22,7 +22,7 @@ Składniowo krotka jest oddzieloną przecinkami listą wartości:
 >>> t = 'a', 'b', 'c', 'd', 'e'
 ~~~~
 
-Chociaż nie jest to konieczne, krotki często ogranicza się nawiasami, tak aby pomóc nam szybko je zidentyfikować podczas przeglądania kodu Pythona:
+Chociaż nie jest to konieczne, krotki często ogranicza się nawiasami okrągłymi, tak aby pomóc nam szybko je zidentyfikować podczas przeglądania kodu Pythona:
 
 \index{nawiasy okrągłe!krotki}
 
@@ -189,7 +189,7 @@ W poniższym przykładzie mamy dwuelementową listę (która jest sekwencją) i 
 >>>
 ~~~~
 
-To nie jest magia, Python *z grubsza* tłumaczy składnię przypisania krotek na następującą:^[Python nie tłumaczy składni dosłownie. Na przykład, jeśli spróbujesz takiej operacji na słownikach, to nie będzie to działać tak, jak można by się tego spodziewać].
+To nie magia – Python *z grubsza* tłumaczy składnię przypisania krotek na następującą:^[Python nie tłumaczy składni dosłownie. Na przykład, jeśli spróbujesz takiej operacji na słownikach, to nie będzie to działać tak, jak można by się tego spodziewać].
 
 ~~~~ {.python .trinket}
 >>> m = [ 'miłej', 'zabawy' ]
@@ -225,7 +225,7 @@ Sprytne zastosowanie operacji przypisania krotki pozwala nam na *zamianę* warto
 
 Obie strony tego wyrażenia są krotkami, ale lewa strona jest krotką zmiennych; prawa strona jest krotką wyrażeń. Każda wartość po prawej stronie jest przypisana do odpowiadającej jej zmiennej po lewej stronie. Wszystkie wyrażenia po prawej stronie są ewaluowane przed każdym z przypisań.
 
-Liczba zmiennych po lewej stronie i liczba wartości po prawej stronie muszą być takie same:
+Liczba zmiennych po lewej stronie i liczba wartości po prawej stronie musi być taka sama:
 
 \index{wyjątek!ValueError}
 \index{ValueError}
@@ -289,7 +289,7 @@ Wielokrotne przypisanie w słownikach
 \index{przejście!słownik}
 \index{słownik!przejście}
 
-Używając razem `items()`, przypisania krotki oraz `for`, możesz zobaczyć ciekawy schemat kodu do przechodzenia po kluczach i wartościach słownika w jednej pętli:
+Używając razem `items()`, przypisania krotki oraz `for`, możesz zobaczyć ciekawy schemat kodu do przechodzenia w jednej pętli po kluczach i wartościach słownika:
 
 ~~~~ {.python}
 d = {'c': 22, 'a': 10, 'b': 1}
@@ -362,7 +362,7 @@ Tak więc teraz wynik programu w końcu wygląda tak, jak tego oczekujemy od nas
 24 thee
 ~~~~
 
-Fakt, że takie skomplikowane parsowanie i analiza danych mogą być wykonane za pomocą łatwego do zrozumienia 19-wierszowego programu Pythona, jest jednym z powodów, dla których Python jako język do eksploracji informacji to dobry wybór.
+Fakt, że takie skomplikowane parsowanie i analiza danych mogą być wykonane za pomocą łatwego do zrozumienia ok. 20-wierszowego programu Pythona, jest jednym z powodów, dla których Python jako język do eksploracji informacji to dobry wybór.
 
 Listy składane
 --------------
@@ -455,7 +455,7 @@ Debugowanie
 \index{błąd!kształtu}
 \index{kształt struktury danych}
 
-Listy, słowniki i krotki są ogólnie znane jako *struktury danych*; w tym rozdziale zaczęliśmy zauważać złożone struktury danych, takie jak listy krotek oraz słowniki, które zawierają krotki jako klucze i listy jako wartości. Złożone struktury danych są użyteczne, ale są podatne na to, co nazywam *błędami kształtu*, tzn. błędy spowodowane niewłaściwym typem, rozmiarem lub zawartością struktury danych; być może piszesz też jakiś kod i zapominasz o kształcie swoich danych, przez co nieświadomie umieszczasz błąd w swoim programie. Na przykład, jeśli oczekujesz listy składającej się z jednej liczby całkowitej, a ja daję Ci po prostu zwykłą liczbę całkowitą (która nie jest opakowana listą), Twój kod nie będzie działać.
+Listy, słowniki i krotki są ogólnie znane jako *struktury danych*; w tym rozdziale zaczęliśmy zauważać złożone struktury danych, takie jak listy krotek oraz słowniki, które zawierają krotki jako klucze i listy jako wartości. Złożone struktury danych są użyteczne, ale są podatne na to, co nazywam *błędami kształtu*, tzn. błędy spowodowane niewłaściwym typem, rozmiarem lub zawartością struktury danych; być może piszesz też jakiś kod i zapominasz o kształcie swoich danych, przez co nieświadomie umieszczasz błąd w swoim programie. Na przykład, jeśli oczekujesz listy składającej się z jednej liczby całkowitej, a ja daję Ci po prostu zwykłą liczbę całkowitą (która nie jest opakowana listą), to Twój kod nie będzie działać.
 
 Słowniczek
 ----------
@@ -486,7 +486,7 @@ struktura danych
 
 #### Ćwiczenie 1
 
-Przepisz swój poprzedni program zliczający wysłane wiadomości mailowe w następujący sposób. Wczytaj i przetwórz linie zaczynające się od "From" oraz wyodrębnij z nich adresy mailowe. Za pomocą słownika dla każdej osoby zapisz liczbę wysłanych przez nią wiadomości.
+Przepisz swój poprzedni program zliczający wysłane wiadomości mailowe w następujący sposób. Wczytaj i przetwórz linie zaczynające się od "From" oraz wyodrębnij z nich adresy mailowe. Za pomocą słownika, dla każdej osoby zapisz liczbę wysłanych przez nią wiadomości.
 
 Po przeczytaniu wszystkich danych utwórz ze słownika listę krotek w postaci *(liczba, adres e-mail)*. Następnie posortuj listę w odwrotnej kolejności i wypisz osobę, która wysłała najwięcej wiadomości.
 
@@ -508,7 +508,7 @@ zqian@umich.edu 195
 
 #### Ćwiczenie 2
 
-Napisz program, który zlicza rozkład godzin dla wszystkich wiadomości. Możesz wyodrębnić godzinę z linii zaczynających się od "From " (są to napisy związane z czasem do przeanalizowania), a następnie dzieląc tę linię na części za pomocą znaku dwukropka. Gdy już zgromadzisz wartości dla każdej godziny, wypisz zliczenia, po jednym na wiersz, posortowane według godzin, tak jak pokazano poniżej.
+Napisz program, który zlicza rozkład godzin dla wszystkich wiadomości mailowych. Możesz wyodrębnić godzinę z linii zaczynających się od "From " (są to napisy związane z czasem do przeanalizowania), a następnie dzieląc tę linię na części za pomocą znaku dwukropka. Gdy już zgromadzisz wartości dla każdej godziny, wypisz zliczenia, po jednym na wiersz, posortowane według godzin, tak jak pokazano poniżej.
 
 ~~~~
 Podaj nazwę pliku: mbox-short.txt
