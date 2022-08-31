@@ -2,7 +2,7 @@
 
 # Clean directory
 mkdir -p ../html3
-rm ../html3/[0-9]*.php
+rm ../html3/[A0-9]*.php
 
 # Get page titles
 mapfile -t titles < <(jq '.modules[].title' ../lessons.json | head -n -1 | nl -n rz -w 2 | sed -e 's/"//g' -e 's/\
@@ -10,6 +10,9 @@ t/ - /g' -e 's/$/ - Python dla wszystkich/g')
 
 cp 01-intro.mkd 01-intro.mkd.orig
 sed -i "3s/.*/% Ostatnia aktualizacja: $(date '+%Y-%m-%d')/" 01-intro.mkd
+
+cp A0-preface.mkd A0-preface.mkd.orig
+sed -i '/Przedmowa/,$!d' A0-preface.mkd
 
 # Convert all mkd into html
 i=0
@@ -34,6 +37,7 @@ for fn in [A0-9]*.mkd; do
 done
 
 mv 01-intro.mkd.orig 01-intro.mkd
+mv A0-preface.mkd.orig A0-preface.mkd
 
 sed -i 's~alt="Klasa i dwa obiekty"~alt="Klasa i dwa obiekty" style="width: 50%"~' ../html3/14-objects.php
 sed -i 's~alt="Związki między tabelami"~alt="Związki między tabelami" style="width: 50%"~' ../html3/15-database.php
