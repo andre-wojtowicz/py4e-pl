@@ -2,7 +2,7 @@
 
 # EPUB and MOBI versions
 
-cat epub-metadata.txt  <(sed "s/^Copyright 2009– /Copyright 2009–$(date +%Y) /" A0-preface.mkd) 0*.mkd 1*.mkd AA*.mkd AB*.mkd | grep -v '^%' | python2 pre-html.py | python2 verbatim.py | pandoc --default-image-extension=svg --css=stylesheet.css -o x.epub
+cat epub-metadata.txt  <(sed -e "s/^Copyright 2009– /Copyright 2009–$(date +%Y) /" -e "s/^Wydanie \(.*\), 20..$/Wydanie \\1, $(date '+%Y-%m-%d')/" A0-preface.mkd) 0*.mkd 1*.mkd AA*.mkd AB*.mkd | grep -v '^%' | python2 pre-html.py | python2 verbatim.py | pandoc --default-image-extension=svg --css=stylesheet.css -o x.epub
 
 # make the mobi if it works (add verbose for debugging)
 if hash ebook-convert 2>/dev/null; then
@@ -23,7 +23,7 @@ rm ../photos/*-eps-converted-to.pdf 2> /dev/null
 
 # PDF print color version
 
-pandoc <(sed "s/^Copyright 2009– /Copyright 2009–$(date +%Y) /" A0-preface.mkd) -o tmp-1.prefacex.tex
+pandoc <(sed -e "s/^Copyright 2009– /Copyright 2009–$(date +%Y) /" -e "s/^Wydanie \(.*\), 20..$/Wydanie \\1, $(date '+%Y-%m-%d')/" A0-preface.mkd) -o tmp-1.prefacex.tex
 sed < tmp-1.prefacex.tex 's/section{/section*{/' > tmp-1.preface.tex
 
 cat [0-9]*.mkd | python2 verbatim.py | tee tmp-1.verbatim | pandoc -s -N -f markdown+definition_lists -t latex --toc --default-image-extension=eps -V pdfversionprint -V fontsize:10pt -V documentclass:book -V lang:pl-PL -V langbabel:polish -V "author:Dr Charles R. Severance" -V "title:Python dla wszystkich" -V "subtitle:Odkrywanie danych z Python 3" -V colorlinks:false -V citecolor:black -V urlcolor:black -V linkcolor:black -V numbersections -V printbook -V typeinclude_t1 --syntax-definition=sql.xml --template=template.latex -o tmp-1.tex
@@ -54,7 +54,7 @@ rm ../photos/*-eps-converted-to.pdf 2> /dev/null
 
 # PDF print A4
 
-pandoc <(sed "s/^Copyright 2009– /Copyright 2009–$(date +%Y) /" A0-preface.mkd) -o tmp-2.prefacex.tex
+pandoc <(sed -e "s/^Copyright 2009– /Copyright 2009–$(date +%Y) /" -e "s/^Wydanie \(.*\), 20..$/Wydanie \\1, $(date '+%Y-%m-%d')/" A0-preface.mkd) -o tmp-2.prefacex.tex
 sed < tmp-2.prefacex.tex 's/section{/section*{/' > tmp-2.preface.tex
 
 cp 01-intro.mkd 01-intro.mkd.orig
@@ -88,7 +88,7 @@ rm ../photos/*-eps-converted-to.pdf 2> /dev/null
 
 # PDF print b/w version (disabled color syntax highlighting)
 
-pandoc <(sed "s/^Copyright 2009– /Copyright 2009–$(date +%Y) /" A0-preface.mkd) -o tmp-3.prefacex.tex
+pandoc <(sed -e "s/^Copyright 2009– /Copyright 2009–$(date +%Y) /" -e "s/^Wydanie \(.*\), 20..$/Wydanie \\1, $(date '+%Y-%m-%d')/" A0-preface.mkd) -o tmp-3.prefacex.tex
 sed < tmp-3.prefacex.tex 's/section{/section*{/' > tmp-3.preface.tex
 
 cat [0-9]*.mkd | python2 verbatim.py | tee tmp-3.verbatim | pandoc -s -N -f markdown+definition_lists -t latex --toc --default-image-extension=eps -V pdfversionprint -V fontsize:10pt -V documentclass:book -V lang:pl-PL -V langbabel:polish -V "author:Dr Charles R. Severance" -V "title:Python dla wszystkich" -V "subtitle:Odkrywanie danych z Python 3" -V colorlinks:false -V citecolor:black -V urlcolor:black -V linkcolor:black -V numbersections -V printbook --highlight-style=monochrome -V typeinclude_t3 --template=template.latex --syntax-definition=sql.xml -o tmp-3.tex
@@ -130,7 +130,7 @@ rm ../photos/*-eps-converted-to.pdf 2> /dev/null
 
 # PDF electronic A4
 
-pandoc <(sed "s/^Copyright 2009– /Copyright 2009–$(date +%Y) /" A0-preface.mkd) -o tmp-4.prefacex.tex
+pandoc <(sed -e "s/^Copyright 2009– /Copyright 2009–$(date +%Y) /" -e "s/^Wydanie \(.*\), 20..$/Wydanie \\1, $(date '+%Y-%m-%d')/" A0-preface.mkd) -o tmp-4.prefacex.tex
 sed < tmp-4.prefacex.tex 's/section{/section*{/' > tmp-4.preface.tex
 
 cp 01-intro.mkd 01-intro.mkd.orig
