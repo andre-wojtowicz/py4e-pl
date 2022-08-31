@@ -49,6 +49,7 @@ zipedit_svg(){
     unzip "$1" "$2" -d /tmp 
     cd /tmp
     sed -i '2d' "$2"
+    sed -i 's/xl:href/href/' "$2"
     zip --update "$curdir/$1"  "$2" 
     # remove this line to just keep overwriting files in /tmp
     rm -f "$2" # or remove -f if you want to confirm
