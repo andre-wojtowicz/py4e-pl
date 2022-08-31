@@ -2,14 +2,14 @@
 Korzystanie z usług sieciowych
 ==============================
 
-Kiedy już pozyskiwanie dokumentów przez HTTP i ich przetwarzanie stało się łatwe, ludzie szybko opracowali sposoby na tworzenie dokumentów specjalnie zaprojektowanych do wykorzystania przez inne programy (w odróżnieniu od HTML, który ma być wyświetlany w przeglądarce).
+Kiedy pozyskiwanie dokumentów przez HTTP i ich przetwarzanie stało się łatwe, ludzie szybko opracowali sposoby na tworzenie dokumentów specjalnie zaprojektowanych do wykorzystania przez inne programy (w odróżnieniu od kodu HTML, który ma być wyświetlany w przeglądarce).
 
-Istnieją dwa popularne formaty, których używamy przy wymianie danych w sieci. eXtensible Markup Language (XML, z ang. rozszerzalny język znaczników) jest używany od bardzo dawna i najlepiej nadaje się do wymiany danych w formie dokumentów. Gdy programy chcą tylko wymieniać ze sobą słowniki, listy lub inne wewnętrzne informacje, używają JavaScript Object Notation (JSON, z ang. notacja obiektowa JavaScript, patrz <https://www.json.org>). Przyjrzymy się obu formatom.
+Istnieją dwa popularne formaty, których używamy przy wymianie danych w sieci. Format XML (eXtensible Markup Language, z ang. rozszerzalny język znaczników) jest używany od bardzo dawna i najlepiej nadaje się do wymiany danych w formie dokumentów. Gdy programy chcą tylko wymieniać ze sobą słowniki, listy lub inne wewnętrzne informacje, używają formatu JSON (JavaScript Object Notation, z ang. notacja obiektowa JavaScript, patrz <https://www.json.org>). Przyjrzymy się obu formatom.
 
 XML
 ---
 
-XML wygląda bardzo podobnie do HTMLa, ale jest bardziej uporządkowany. Oto fragment dokumentu XML:
+Kod XML wygląda bardzo podobnie do kodu HTML, ale jest od niego nieco bardziej uporządkowany. Oto fragment dokumentu XML:
 
 ~~~~ {.xml}
 <osoba>
@@ -21,7 +21,7 @@ XML wygląda bardzo podobnie do HTMLa, ale jest bardziej uporządkowany. Oto fra
 </osoba>
 ~~~~
 
-Każda para znaczników: otwierający (np. `<osoba>`) i zamykający (np. `</osoba>`), reprezentuje *element* lub *węzeł* (ang. *node*) o tej samej nazwie co znacznik (np. `osoba`). Każdy element może zawierać jakiś tekst, pewne atrybuty (np. `ukryty`) i inne zagnieżdżone elementy. Jeśli element XML jest pusty (tzn. nie ma treści), to może być przedstawiony za pomocą samozamykającego się tagu (np. `<email />`).
+Każda para znaczników: otwierający (np. `<osoba>`) i zamykający (np. `</osoba>`), reprezentuje *element* lub *węzeł* (ang. *node*) o tej samej nazwie co znacznik (np. `osoba`). Każdy element może zawierać jakiś tekst, pewne atrybuty (np. `ukryty`) i inne zagnieżdżone elementy. Jeśli element XML jest pusty (tzn. nie ma treści), to może być przedstawiony za pomocą samozamykającego się znacznika (np. `<email />`).
 
 Często pomocne jest myślenie o dokumencie XML jako o strukturze drzewa, w którym znajduje się najwyższy element (tutaj: `osoba`), a inne znaczniki (np. `telefon`) są oznaczane jako *dzieci* elementów będących ich *rodzicami*.
 
@@ -34,20 +34,20 @@ Parsowanie XML
 \index{ElementTree!fromstring}
 \index{ElementTree!find}
 
-Oto prosta aplikacja, która przetwarza część XMLa i wyodrębnia z niego niektóre elementy danych:
+Oto prosta aplikacja, która przetwarza część kodu XML i wyodrębnia z niego niektóre elementy danych:
 
 \VerbatimInput{../code3/xml1.py}
 
 Potrójny apostrof (`'''`), jak również potrójny cudzysłów (`"""`) pozwalają na tworzenie napisów, które obejmują wiele linii.
 
-Wywołanie `fromstring()` zamienia reprezentację kodu XML z napisu na "drzewo" elementów XML. Gdy element XML znajduje się w drzewie, mamy wiele metod, które możemy wywołać, by wyodrębnić interesujące nas dane z tekstu w kodzie XML. Funkcja `find()` przeszukuje drzewo XML i wyciąga element, który pasuje do określonego znacznika.
+Wywołanie `fromstring()` zamienia reprezentację kodu XML z napisu na "drzewo" elementów XML. Gdy element XML znajduje się w drzewie, mamy wiele metod, które możemy wywołać po to, by wyodrębnić interesujące nas dane z tekstu w kodzie XML. Funkcja `find()` przeszukuje drzewo XML i wyciąga element, który pasuje do określonego znacznika.
 
 ~~~~
 Imię: Chuck
 Attr: tak
 ~~~~
 
-Użycie parsera XML takiego jak `ElementTree` ma tę zaletę, że choć XML w tym przykładzie jest dość prosty, to okazuje się, że istnieje wiele reguł dotyczących poprawności składni XML, a użycie `ElementTree` pozwala nam na wydobycie danych z XML bez przejmowania się nimi.
+Użycie parsera XML takiego jak `ElementTree` ma tę zaletę, że choć XML w tym przykładzie jest dość prosty, to okazuje się, że istnieje wiele reguł dotyczących poprawności składni XML, a użycie `ElementTree` pozwala nam na wydobycie danych z XML bez przejmowania się tymi regułami.
 
 Przechodzenie w pętli po węzłach
 --------------------------------
@@ -55,7 +55,7 @@ Przechodzenie w pętli po węzłach
 \index{ElementTree!findall}
 \index{ElementTree!get}
 
-Często XML ma wiele węzłów i musimy napisać pętlę, żeby je wszystkie przetworzyć. Przyjmijmy, że mamy do przeanalizowania prostą bazę użytkowników, która jest zapisana w postaci XMLa. W poniższym programie przechodzimy w pętli przez wszystkie elementy o nazwie `user`:
+Często XML ma wiele węzłów i żeby je wszystkie przetworzyć musimy napisać pętlę. Przyjmijmy, że mamy do przeanalizowania prostą bazę użytkowników, która jest zapisana w postaci dokumentu XML. W poniższym programie przechodzimy w pętli przez wszystkie elementy o nazwie `user`:
 
 \VerbatimInput{../code3/xml2.py}
 
@@ -114,7 +114,7 @@ JSON
 
 Format JSON został zainspirowany obiektowym i tablicowym formatem używanym w języku JavaScript. Ponieważ Python został wymyślony przed JavaScriptem, składnia Pythona dla słowników i list wpłynęła na składnię JSON. Format JSON jest więc prawie identyczny z połączeniem list i słowników Pythona.
 
-Oto kodowanie JSON, które w przybliżeniu odpowiada prostemu XMLowi, który widzieliśmy wcześniej:
+Oto przykładowy kod JSON, który w przybliżeniu odpowiada prostemu, widzianemu przez nas wcześniej dokumentowi XML:
 
 ~~~~ {.json}
 {
@@ -129,24 +129,24 @@ Oto kodowanie JSON, które w przybliżeniu odpowiada prostemu XMLowi, który wid
 }
 ~~~~
 
-Zapewne zauważysz kilka różnic. Przede wszystkim w XMLu możemy dodać do znacznika "telefon" atrybuty takie jak "miedzynar". W JSON mamy po prostu pary klucz-wartość. Również znacznik XML "osoba" zniknął i został zastąpiony zestawem zewnętrznych nawiasów klamrowych.
+Zapewne zauważysz kilka różnic. Przede wszystkim w kodzie XML możemy dodać do znacznika `telefon` atrybuty takie jak `miedzynar`. W JSON mamy po prostu pary klucz-wartość. Znacznik XML `osoba` również zniknął i został zastąpiony zestawem zewnętrznych nawiasów klamrowych.
 
 Ogólnie rzecz biorąc, struktury JSON są prostsze niż XML, ponieważ JSON ma mniej możliwości niż XML. Ale ma tę zaletę, że mapuje *bezpośrednio* do jakiegoś połączenia słowników i list. A ponieważ prawie wszystkie języki programowania mają coś w rodzaju słowników i list Pythona, JSON jest bardzo naturalnym formatem wymiany danych pomiędzy dwoma współpracującymi ze sobą programami.
 
-JSON szybko staje się najczęściej wybieranym formatem dla prawie wszystkich danych wymienianych między aplikacjami, właśnie ze względu na swoją relatywną prostotę w porównaniu do XMLa.
+JSON szybko staje się najczęściej wybieranym formatem dla prawie wszystkich danych wymienianych między aplikacjami, właśnie ze względu na swoją relatywną prostotę w porównaniu do kodu XML.
 
 Parsowanie JSONa
 ----------------
 
-Budujemy naszego JSONa poprzez dowolne zagnieżdżanie słowników i list. W poniższym przykładzie przedstawiamy listę użytkowników, gdzie każdy użytkownik jest zestawem par klucz-wartość (czyli słownikiem). Mamy więc listę słowników.
+Budujemy nasz kod JSON poprzez dowolne zagnieżdżanie słowników i list. W poniższym przykładzie przedstawiamy listę użytkowników, gdzie każdy użytkownik jest zestawem par klucz-wartość (czyli słownikiem). Mamy więc listę słowników.
 
-W poniższym programie wykorzystujemy wbudowany w Pythona moduł `json` do parsowania JSONa i odczytywania z niego danych. Porównaj kod z wcześniejszym przykładem pracującym na XMLu. JSON ma mniej detali, więc musimy z góry wiedzieć, że otrzymujemy listę, i że lista ta składa się z użytkowników, a każdy użytkownik jest zestawem par klucz-wartość. JSON jest bardziej zwięzły (zaleta), ale mniej samoopisowy (wada).
+W poniższym programie wykorzystujemy wbudowany w Pythona moduł `json` do parsowania kodu JSON i odczytywania z niego danych. Porównaj kod z wcześniejszym przykładem pracującym na kodzie XML. JSON ma mniej detali, więc musimy z góry wiedzieć, że otrzymujemy listę, i że lista ta składa się z użytkowników, a każdy użytkownik jest zestawem par klucz-wartość. JSON jest bardziej zwięzły (zaleta), ale mniej samoopisowy (wada).
 
 \VerbatimInput{../code3/json2.py}
 
-Jeśli porównasz kod wyodrębniający dane z JSONa i XMLa, to zauważysz w tym przykładzie, że to, co otrzymujemy z `json.loads()`, jest listą Pythona, po której przechodzimy pętlą `for`, a każda pozycja na tej liście jest słownikiem Pythona. Kiedy już JSON zostanie przeparsowany, możemy użyć operatora indeksu, tak by wyodrębnić różne fragmenty danych związane z użytkownikiem. Nie musimy korzystać z biblioteki JSON, by przekopać się przez parsowanego JSONa, ponieważ zwracane dane są po prostu natywnymi strukturami Pythona.
+Jeśli porównasz kod wyodrębniający dane z kodu JSON i kodu XML, to zauważysz w tym przykładzie, że to, co otrzymujemy z `json.loads()`, jest listą Pythona, po której przechodzimy pętlą `for`, a każda pozycja na tej liście jest słownikiem Pythona. Kiedy już JSON zostanie przeparsowany, możemy użyć operatora indeksu, tak by wyodrębnić różne fragmenty danych związane z użytkownikiem. Nie musimy korzystać z biblioteki JSON, by przekopać się przez parsowany kod JSON, ponieważ zwracane dane są po prostu natywnymi strukturami Pythona.
 
-Wynik powyższego programu jest dokładnie taki sam jak wersji z XMLem.
+Wynik powyższego programu jest dokładnie taki sam jak wersji z dokumentem XML.
 
 ~~~~
 Liczba użytkowników: 2
@@ -158,12 +158,12 @@ Id 009
 Attribute 7
 ~~~~
 
-Ogólnie rzecz biorąc, w obrębie usług sieciowych istnieje branżowy trend polegający na odchodzeniu od XMLa i zmierzaniu w kierunku JSONa. JSON jest prostszy i bardziej bezpośrednio mapuje do natywnych struktur danych, które mamy już w językach programowania, więc kod parsujący JSONa i wyodrębniający dane jest w takim przypadku zazwyczaj prostszy i bardziej czytelny. Z drugiej strony XML jest bardziej samoopisowy niż JSON, a więc są pewne zastosowania, w których to XML ma przewagę. Na przykład większość edytorów tekstu przechowuje dokumenty wewnętrznie przy użyciu XMLa, a nie JSONa.
+Ogólnie rzecz biorąc, w obrębie usług sieciowych istnieje branżowy trend polegający na odchodzeniu od dokumentów XML i zmierzaniu w kierunku kodu JSON. Jest on prostszy i bardziej bezpośrednio mapuje do natywnych struktur danych, które mamy już w językach programowania, więc kod parsujący JSON i wyodrębniający dane jest w takim przypadku zazwyczaj prostszy i bardziej czytelny. Z drugiej strony XML jest bardziej samoopisowy niż JSON, a więc są pewne zastosowania, w których to XML ma przewagę. Na przykład większość edytorów tekstu przechowuje dokumenty wewnętrznie przy użyciu kodu XML, a nie JSON.
 
 API – Interfejsy programowania aplikacji
 ----------------------------------------
 
-Mamy teraz możliwość wymiany danych pomiędzy aplikacjami przy użyciu protokołu HTTP oraz sposób na reprezentowanie skomplikowanych danych, które wysyłamy tam i z powrotem między aplikacjami przy użyciu XMLa lub JSONa.
+Mamy teraz możliwość wymiany danych pomiędzy aplikacjami przy użyciu protokołu HTTP oraz sposób na reprezentowanie skomplikowanych danych, które wysyłamy tam i z powrotem między aplikacjami przy użyciu kodu XML lub JSON.
 
 Następnym krokiem jest rozpoczęcie definiowania i dokumentowania "umów" pomiędzy aplikacjami wykorzystującymi powyższe techniki. Ogólna nazwa takiej umowy to *interfejsy programowania aplikacji* (ang. *Application Program Interfaces*, API). Kiedy używamy API, zazwyczaj jeden z programów udostępnia zestaw *usług* do wykorzystania przez inne aplikacje i publikuje API (tzn. "zasady"), których należy przestrzegać, by uzyskać dostęp do tych usług.
 
@@ -233,9 +233,9 @@ Możesz zapoznać się z dokumentacją online dotyczącą tej usługi^[<https://
 
 \index{GeoJSON}
 
-Usługa zwraca nam dane w formacie GeoJSON. Jest to otwarty standard formatu danych przeznaczony do przedstawiania prostych obiektów geograficznych wraz z ich atrybutami nieprzestrzennymi i bazuje on na JSONie.
+Usługa zwraca nam dane w formacie GeoJSON. Jest to otwarty standard formatu danych przeznaczony do przedstawiania prostych obiektów geograficznych wraz z ich atrybutami nieprzestrzennymi i bazuje on na formacie JSON.
 
-Poniżej znajduje się prosta aplikacja wyszukująca informacje geograficzne na temat wprowadzonej przez użytkownika nazwy miejsca. Aplikacja wywołuje API geokodowania OpenStreetMap i pobiera informacje ze zwróconego JSONa.
+Poniżej znajduje się prosta aplikacja wyszukująca informacje geograficzne na temat wprowadzonej przez użytkownika nazwy miejsca. Aplikacja wywołuje API geokodowania OpenStreetMap i pobiera informacje ze zwróconego kodu JSON.
 
 \VerbatimInput{../code3/geojson.py} 
 
@@ -286,11 +286,11 @@ Pobrano: 594
         }
     ]
 }
-szer. geogr. 42.2681569 dł. geogr. -83.7312291
-Ann Arbor, Washtenaw County, Michigan, 48104, United States of America
 ~~~~
 
 ~~~~
+szer. geogr. 42.2681569 dł. geogr. -83.7312291
+Ann Arbor, Washtenaw County, Michigan, 48104, United States of America
 Podaj nazwę miejsca:
 ~~~~
 
@@ -360,9 +360,9 @@ Pozostało 177
 Podaj nazwę konta na Twitterze:
 ~~~~
 
-Wraz z danymi zwróconymi z osi czasu Twitter zwraca również w nagłówkach odpowiedzi HTTP metadane dotyczące żądania. Nagłówek `x-rate-limit-remaining` informuje nas o tym, ile jeszcze żądań możemy wysłać, zanim zostaniemy zablokowani na pewien krótki czas. Jak widać, nasze kolejne wywołania API powodują zmniejszenie tej wartości o jeden.
+Wraz z danymi zwróconymi z osi czasu, Twitter zwraca również w nagłówkach odpowiedzi HTTP metadane dotyczące żądania. Nagłówek `x-rate-limit-remaining` informuje nas o tym, ile jeszcze żądań możemy wysłać, zanim zostaniemy zablokowani na pewien krótki czas. Jak widać, nasze kolejne wywołania API powodują zmniejszenie tej wartości o jeden.
 
-W poniższym przykładzie pobieramy znajomych użytkownika na Twitterze, analizujemy zwrócony JSON i wyodrębniamy niektóre informacje o znajomych. Po przeparsowaniu JSONa do postaci list i słowników ponownie zamieniamy go do zwykłej postaci tekstowej, ale tym razem nadajemy mu po dwie spacje na wcięcie i "ładnie" wypisujemy na ekranie, tak aby umożliwić nam dalsze zgłębianie otrzymanych danych (co może być przydatne, jeśli będziemy chcieli wyodrębnić więcej pól).
+W poniższym przykładzie pobieramy znajomych użytkownika na Twitterze, analizujemy zwrócony JSON i wyodrębniamy niektóre informacje o znajomych. Po przeparsowaniu kodu JSON do postaci list i słowników, ponownie zamieniamy go do zwykłej postaci tekstowej, ale tym razem nadajemy mu po dwie spacje na wcięcie i "ładnie" wypisujemy na ekranie, tak aby umożliwić nam dalsze zgłębianie otrzymanych danych (co może być przydatne, jeśli będziemy chcieli wyodrębnić więcej pól).
 
 \VerbatimInput{../code3/twitter2.py} 
 \begin{trinketfiles}
@@ -426,6 +426,6 @@ scweeker
 Podaj nazwę konta na Twitterze:
 ~~~~
 
-W ostatnim fragmencie wyniku programu widzimy pętlę `for`, która odczytuje pięciu ostatnich "znajomych" konta *@drchuck* na Twitterze i wypisuje najnowszy status dla każdego z nich. W zwróconym JSONie znajduje się dużo więcej danych. Jeśli spojrzysz na wynik programu, to zobaczysz również, że operacja "znalezienia znajomych" danego konta ma inny limit wywołań niż dozwolona liczba zapytań dotycząca osi czasu.
+W ostatnim fragmencie wyniku programu widzimy pętlę `for`, która odczytuje pięciu ostatnich "znajomych" konta *@drchuck* na Twitterze i wypisuje najnowszy status dla każdego z nich. W zwróconym kodzie JSON znajduje się dużo więcej danych. Jeśli spojrzysz na wynik programu, to zobaczysz również, że operacja "znalezienia znajomych" danego konta ma inny limit wywołań niż dozwolona liczba zapytań dotycząca osi czasu.
 
 Korzystanie z bezpiecznych kluczy API daje Twitterowi pewność, kto i w jakim zakresie korzysta z jego API i danych. Podejście oparte na ustanawianiu limitów zapytań pozwala na proste wyszukiwanie danych osobowych, ale nie na zbudowanie produktu, który pobierałby przez API Twittera jakieś dane miliony razy dziennie.

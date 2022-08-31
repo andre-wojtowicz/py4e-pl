@@ -17,7 +17,7 @@ Na początku książki omówiliśmy cztery podstawowe wzorce programowania, któ
 
 W późniejszych rozdziałach analizowaliśmy proste zmienne, jak również struktury danych, takie jak listy, krotki i słowniki.
 
-Podczas tworzenia programów projektujemy struktury danych i piszemy kod służący do operowania tymi strukturami danych. Istnieje wiele sposobów pisania programów i prawdopodobnie do tej pory napisałeś już kilka programów, które nie są "zbyt eleganckie", oraz kilka innych programów, które są "bardziej eleganckie". Mimo że Twoje programy mogą być małe, to zapewne zaczynasz dostrzegać, że pisanie kodu wymaga odrobiny artyzmu i estetyki.
+Podczas tworzenia programów projektujemy struktury danych i piszemy kod służący do operowania tymi strukturami. Istnieje wiele sposobów pisania programów i prawdopodobnie do tej pory napisałeś już kilka programów, które nie są "zbyt eleganckie", oraz kilka innych programów, które są "bardziej eleganckie". Mimo że Twoje programy mogą być małe, to zapewne zaczynasz dostrzegać, że pisanie kodu wymaga odrobiny artyzmu i estetyki.
 
 W miarę jak programy rozrastają się do milionów wierszy, coraz ważniejsze staje się pisanie kodu, który jest łatwy do zrozumienia. Jeśli pracujesz nad programem o długości miliona linii, nigdy nie dasz rady mieć w głowie całego programu naraz. Potrzebujemy sposobów, aby rozbić duże programy na wiele mniejszych kawałków, tak abyśmy mieli mniej kodu do przeglądania, rozwiązując jakiś problem, naprawiając błędy lub dodając nowe funkcje.
 
@@ -40,7 +40,7 @@ Jak się okazuje, w tej książce przez cały czas używaliśmy obiektów. Pytho
 
 \VerbatimInput{../code3/party1.py}
 
-Zamiast skupiać się na tym, ostatecznym wyniku działania tych linii, spójrzmy na to, co *naprawdę* dzieje się w tym kodzie z punktu widzenia programowania obiektowego. Nie martw się, jeśli poniższe akapity nie będą miały dla Ciebie żadnego sensu po pierwszym przeczytaniu – nie zdefiniowaliśmy jeszcze wszystkich użytych tam terminów.
+Zamiast skupiać się na ostatecznym wyniku działania powyższych linii, spójrzmy na to, co *naprawdę* dzieje się w tym kodzie z punktu widzenia programowania obiektowego. Nie martw się, jeśli poniższe akapity nie będą miały dla Ciebie żadnego sensu po pierwszym przeczytaniu – nie zdefiniowaliśmy jeszcze wszystkich użytych tam terminów.
 
 Pierwsza linia *konstruuje* obiekt typu `list`, druga i trzecia *wywołuje metodę* `append()`, czwarta linia wywołuje metodę `sort()`, a piąta linia *pobiera* (*wyszukuje*) element z pozycji 0.
 
@@ -58,7 +58,7 @@ print (list.__getitem__(stuff,0))
 
 W powyższym fragmencie kodu wywołujemy metodę `__getitem__` w klasie `list` i *przekazujemy* jako parametry listę oraz pozycję elementu, który chcemy pobrać z tej listy.
 
-Ostatnie trzy wiersze programu są równoważne, ale wygodniej jest po prostu użyć składni z nawiasami kwadratowymi, żeby wyszukać element znajdujący się na konkretnym miejscu listy.
+Ostatnie trzy wiersze programu są równoważne, ale wygodniej jest po prostu użyć składni z nawiasami kwadratowymi po to, aby wyszukać element znajdujący się na konkretnym miejscu listy.
 
 Możemy przyjrzeć się możliwościom danego obiektu, patrząc na wynik funkcji `dir()`:
 
@@ -151,7 +151,7 @@ an = PartyAnimal()
 \index{instancja}
 \index{klasa}
 
-Tutaj instruujemy Pythona, by skonstruował (tzn. stworzył) *obiekt* lub *instancję* klasy `PartyAnimal`. Wygląda to jak wywołanie funkcji o nazwie klasy. Python konstruuje obiekt z odpowiednimi danymi i metodami i zwraca obiekt, który jest następnie przypisany do zmiennej `an`. W pewnym sensie jest to dość podobne do poniższej linii, której używaliśmy często już wcześniej:
+Tutaj instruujemy Pythona, by skonstruował (tzn. stworzył) *obiekt* lub *instancję* klasy `PartyAnimal`. Wygląda to jak wywołanie funkcji o nazwie klasy. Python konstruuje obiekt z odpowiednimi danymi i metodami oraz zwraca ten obiekt, który jest następnie przypisany do zmiennej `an`. W pewnym sensie jest to dość podobne do poniższej linii, której już wcześniej używaliśmy często:
 
 ~~~~ {.python}
 counts = dict()
@@ -258,7 +258,7 @@ Wiele instancji
 
 Jak do tej pory zdefiniowaliśmy klasę, stworzyliśmy pojedynczy obiekt, użyliśmy go, a następnie porzuciliśmy. Jednak prawdziwa moc programowania obiektowego ujawnia przy tworzeniu wielu instancji naszej klasy.
 
-Gdy tworzymy wiele obiektów na podstawie jednej klasy, możemy potrzebować  dla każdego z nich ustawić różne wartości początkowe. Dane te możemy przekazać do konstruktorów, tak aby nadać każdemu z obiektów inną wartość początkową:
+Gdy tworzymy wiele obiektów na podstawie jednej klasy, możemy potrzebować dla każdego z nich ustawić różne wartości początkowe. Dane te możemy przekazać do konstruktorów, tak aby nadać każdemu z obiektów inną wartość początkową:
 
 \VerbatimInput{../code3/party5.py}
 
@@ -331,9 +331,9 @@ Druga i trzecia linia wywołują metodę `append()` z jednym parametrem, żeby d
 
 W kolejnym kroku wypisujemy pierwszą pozycję z listy za pomocą nawiasów kwadratowych, które są skrótem do wywołania metody `__getitem__()` w ramach `stuff`. Jest to równoważne z wywołaniem metody `__getitem__()` w ramach *klasy* `list` oraz przekazaniem obiektu `stuff` jako pierwszego, a szukanej pozycji jako drugiego parametru.
 
-Na końcu programu obiekt `stuff` jest porzucany, ale nie przed wywołaniem *destruktora* (o nazwie `__del__()`), żeby obiekt, o ile jest to konieczne, mógł pod koniec swego istnienia wyczyścić wszystkie niepotrzebne już elementy.
+Na końcu programu obiekt `stuff` jest porzucany, ale nie przed wywołaniem *destruktora* (o nazwie `__del__()`), tak aby obiekt (o ile jest to konieczne) mógł pod koniec swego istnienia wyczyścić wszystkie niepotrzebne już elementy.
 
-Omówiliśmy tutaj podstawy programowania obiektowego. Jest wiele innych dodatkowych tematów, np. jak najlepiej używać podejścia obiektowego podczas tworzenia dużych aplikacji i bibliotek, jednak wykraczają one poza temat tego rozdziału.^[Jeśli jesteś ciekaw, gdzie jest zdefiniowana klasa `list`, to zajrzyj pod adres (miejmy nadzieję, że adres URL się nie zmieni) <https://github.com/python/cpython/blob/master/Objects/listobject.c> – klasa listy jest napisana w języku "C". Jeśli przejrzysz wspomniany kod źródłowy i okaże się on dla Ciebie interesujący, to być może powinieneś zrobić dodatkowo kilka kursów z dziedziny informatyki.].
+Omówiliśmy tutaj podstawy programowania obiektowego. Jest wiele innych dodatkowych tematów, np. jak najlepiej używać podejścia obiektowego podczas tworzenia dużych aplikacji i bibliotek, jednak wykraczają one poza temat tego rozdziału.^[Jeśli jesteś ciekaw, gdzie jest zdefiniowana klasa `list`, to zajrzyj pod adres (miejmy nadzieję, że adres URL się nie zmieni) <https://github.com/python/cpython/blob/master/Objects/listobject.c> – klasa listy jest napisana w języku C. Jeśli przejrzysz wspomniany kod źródłowy i okaże się on dla Ciebie interesujący, to być może powinieneś zrobić dodatkowo kilka kursów z dziedziny informatyki.].
 
 Słowniczek
 ----------

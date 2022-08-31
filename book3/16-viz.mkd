@@ -92,7 +92,7 @@ Wizualizacja sieci i połączeń
 \index{wizualizacja!sieci}
 \index{wizualizacja!PageRank}
 
-W poniższej aplikacji będziemy wykonywać niektóre funkcje znajdujące się w mechaniźmie wyszukiwarki internetowej. Najpierw przeczeszemy mały fragment sieci internetowej, uruchomimy uproszczoną wersję algorytmu Google PageRank, by określić strony, do których jest najwięcej odniesień z innych stron (czyli by wskazać, które strony są potencjalnie najistotniejsze), a następnie zwizualizujemy rangę strony i połączenia w naszym małym zakątku sieci. Aby tworzyć wizualizacje, wykorzystamy bibliotekę JavaScript D3^[<https://d3js.org/>].
+W poniższej aplikacji będziemy wykonywać niektóre funkcje znajdujące się w mechanizmie wyszukiwarki internetowej. Najpierw przeczeszemy mały fragment sieci internetowej, uruchomimy uproszczoną wersję algorytmu Google PageRank, by określić strony, do których jest najwięcej odniesień z innych stron (czyli by wskazać, które strony są potencjalnie najistotniejsze), a następnie zwizualizujemy rangę strony i połączenia w naszym małym zakątku sieci. Aby tworzyć wizualizacje, wykorzystamy bibliotekę JavaScript D3^[<https://d3js.org/>].
 
 Możesz pobrać i rozpakować poniższą aplikację:
 
@@ -141,7 +141,7 @@ Jeżeli chcesz wyświetlić zawartość bazy `spider.sqlite`, możesz uruchomić
 
 Dla danej strony program pokazuje liczbę przychodzących linków, stary współczynnik PageRank, nowy współczynnik PageRank, id strony oraz adres URL. Program `spdump.py` pokazuje tylko te strony, które mają co najmniej jedno odniesienie z innych stron.
 
-Gdy będziesz już miał kilka stron w swojej bazie danych, to za pomocą programu `sprank.py` możesz uruchomić algorytm obliczania współczynnika PageRank. Musisz tylko podać, ile iteracji algorytmu program ma wykonać. 
+Gdy będziesz już mieć w swojej bazie danych kilka stron, to za pomocą programu `sprank.py` możesz uruchomić algorytm obliczania współczynnika PageRank. Musisz tylko podać, ile iteracji algorytmu program ma wykonać. 
 
 ~~~~
 Ile iteracji: 2

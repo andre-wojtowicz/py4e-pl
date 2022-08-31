@@ -266,7 +266,7 @@ $if(printbook)$
           
           \vspace{0.8cm}
           
-          {\large\sffamily{}Wydanie drugie, poprawione}
+          {\large\sffamily{}Wydanie drugie}
           
       \end{center}
   \end{titlepage}

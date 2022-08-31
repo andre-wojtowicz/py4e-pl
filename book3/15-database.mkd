@@ -98,9 +98,9 @@ Kiedy mamy już kursor, przy użyciu metody `execute()` możemy rozpocząć wyko
 
 Komendy bazy danych są wyrażone w specjalnym języku, który został ustandaryzowany u wielu różnych dostawców baz danych, tak aby wystarczyło nauczyć się tylko jednego języka bazy danych. Nazywa się on  *Structured Query Language* (z ang. strukturalny język zapytań) lub w skrócie *SQL*^[<https://pl.wikipedia.org/wiki/SQL>].
 
-W powyższym przykładzie na naszej bazie danych wykonujemy dwa polecenia SQL. Przyjmuje się, że słowa kluczowe SQL pisze się dużymi literami, a części polecenia, które my dodajemy (takie jak nazwy tabel i kolumn), pisze się małymi lub dużymi literami.
+W powyższym przykładzie na naszej bazie danych wykonujemy dwa polecenia SQL. Przyjmuje się, że słowa kluczowe SQL pisze się dużymi literami, a części polecenia, które my dodajemy (takie jak nazwy tabel i kolumn), pisze się małymi lub dużymi literami^[Istnieje wiele stylów pisania poleceń SQL i często zależą one od osobistych preferencji programisty; jedną z takich przykładowych wytycznych jest podręcznik Simona Holywella dostępny pod adresem <https://www.sqlstyle.guide/pl/>.].
 
-Pierwsze polecenie SQL usuwa  z bazy danych tabelę `Utwory`, jeśli ta tabela istnieje. Taki wzorzec postępowania ma po prostu pozwolić nam na wielokrotne uruchamianie tego samego programu do tworzenia tabeli `Utwory`, bez generowania błędu. Zauważ, że polecenie `DROP TABLE` usuwa z bazy danych tabelę i całą jej zawartość (i nie ma tutaj żadnej operacji typu "cofnij").
+Pierwsze polecenie SQL usuwa z bazy danych tabelę `Utwory`^[Prawdę mówiąc, nazwy tabel i atrybuty, zgodnie z przyjętą konwencją programistyczną, powinny być po angielsku; w książce zastosujemy polskie nazwy, co powinno nadać nieco więcej przejrzystości w nowo poznanym języku SQL.], jeśli ta tabela istnieje. Taki wzorzec postępowania ma po prostu pozwolić nam na wielokrotne uruchamianie tego samego programu do tworzenia tabeli `Utwory`, bez generowania błędu. Zauważ, że polecenie `DROP TABLE` usuwa z bazy danych tabelę i całą jej zawartość (i nie ma tutaj żadnej operacji typu "cofnij").
 
 ~~~~ {.python}
 cur.execute('DROP TABLE IF EXISTS Utwory')
@@ -122,7 +122,7 @@ Najpierw wstawiamy poprzez `INSERT` dwa wiersze do naszej tabeli i używamy `com
 
 ![Wiersze w tabeli](height=1.5in@../images/tracks)
 
-Następnie używamy polecenia `SELECT` do pobrania wierszy, które właśnie wstawiliśmy w tabeli. W poleceniu `SELECT` wskazujemy, z których kolumn `(tytuł, odtworzenia)` oraz z której tabeli chcemy pobrać dane. Po wykonaniu polecenia `SELECT` możemy przejść po kursorze pętlą `for`. Aby zachować wydajność, kursor po wykonaniu polecenia `SELECT` nie odczytuje od razu wszystkich danych z bazy danych. Zamiast tego dane są odczytywane na żądanie, czyli w tym wypadku, gdy idziemy kolejno przez wiersze w instrukcji `for`.
+Następnie używamy polecenia `SELECT` do pobrania wierszy, które właśnie wstawiliśmy w tabeli. W poleceniu `SELECT` wskazujemy, z których kolumn `(tytuł, odtworzenia)` oraz z której tabeli chcemy pobrać dane. Po wykonaniu polecenia `SELECT` możemy przejść po kursorze pętlą `for`. Aby zachować wydajność, kursor po wykonaniu polecenia `SELECT` nie odczytuje od razu wszystkich danych z bazy. Zamiast tego dane są odczytywane na żądanie, czyli w tym wypadku, gdy idziemy kolejno przez wiersze w instrukcji `for`.
 
 Wynik działania programu jest następujący:
 
@@ -200,7 +200,7 @@ W poniższej sekcji stworzymy prostego robota internetowego, który przejdzie pr
 
 Jednym z problemów związanych z każdym rodzajem robota internetowego jest to, że czasami musimy go wielokrotnie zatrzymywać i uruchamiać ponownie, a jednocześnie nie chcemy utracić danych, które do tej pory pobraliśmy. Nie chcemy, by ponowne uruchomienie procesu zbierania danych zaczynało się w tym samym punkcie startowym, więc podczas pobierania danych musimy je przechowywać tak, aby nasz program mógł rozpocząć działanie w tym miejscu, w którym ostatnio zakończył pracę.
 
-Zaczniemy od pobrania z Twittera listy znajomych jakiegoś użytkownika i ich statusów, przejrzenia tej listy i dodania każdego ze znajomych do bazy danych, która zostanie użyta w przyszłości do dalszego pobierania danych. Po przetworzeniu znajomych jednej osoby sprawdzamy naszą bazę danych i bierzemy jednego ze znajomych tego użytkownika. Robimy tak w kółko, wybierając "nieprzetworzną" osobę, pobierając jej listę znajomych i dodając tych znajomych, których jeszcze nie widzieliśmy, do naszej listy do odwiedzenia w przyszłości.
+Zaczniemy od pobrania z Twittera listy znajomych jakiegoś użytkownika i ich statusów, przejrzenia tej listy i dodania każdego ze znajomych do bazy danych, która zostanie użyta w przyszłości do dalszego pobierania danych. Po przetworzeniu znajomych jednej osoby sprawdzamy naszą bazę danych i bierzemy jednego ze znajomych tego użytkownika. Robimy tak w kółko, wybierając "nieprzetworzoną" osobę, pobierając jej listę znajomych i dodając tych znajomych, których jeszcze nie widzieliśmy, do naszej listy do odwiedzenia w przyszłości.
 
 Śledzimy również, ile razy widzieliśmy danego znajomego w bazie danych, aby uzyskać jakiś wskaźnik jego "popularności".
 
@@ -218,7 +218,7 @@ W głównej pętli programu prosimy o podanie nazwy konta Twittera lub "koniec",
 
 Jeśli użytkownik naciśnie klawisz `<Enter>`, to szukamy w bazie danych kolejnego konta na Twitterze, którego jeszcze nie odwiedziliśmy, pobieramy znajomych tego konta i ich statusy, dodajemy znajomych do bazy danych lub aktualizujemy ich liczbę zwiększając wartość w zmiennej `friends`.
 
-Kiedy pozyskamy już listę znajomych i statusy, idziemy w pętli przez wszystkie elementy `user` występujące w zwróconym JSONie i dla każdego użytkownika pobieramy `screen_name`. Następnie używamy instrukcji `SELECT`, by sprawdzić, czy ta konkretna wartość `screen_name` została już zapisana w bazie danych, i pobieramy liczbę znajomych (zmienna `friends`), jeśli dany rekord istnieje.
+Kiedy pozyskamy już listę znajomych i statusy, idziemy w pętli przez wszystkie elementy `user` występujące w zwróconym kodzie JSON i dla każdego użytkownika pobieramy `screen_name`. Następnie używamy instrukcji `SELECT`, by sprawdzić, czy ta konkretna wartość `screen_name` została już zapisana w bazie danych, i pobieramy liczbę znajomych (zmienna `friends`), jeśli dany rekord istnieje.
 
 ~~~~ {.python}
 countnew = 0
@@ -294,7 +294,6 @@ Podaj nazwę konta na Twitterze lub wprowadź 'koniec': koniec
 ~~~~
 
 Ponieważ wcisnęliśmy `<Enter>` (tzn. nie określiliśmy nazwy konta na Twitterze), wykonywany jest następujący kod:
-
 
 ~~~~ {.python}
 if (len(acct) < 1):
@@ -551,7 +550,7 @@ Obserwuje:
 300 wierszy.
 ~~~~
 
-Możesz zauważyć pola `id`, `nazwa` i `pobrana` z tabeli `Osoby` oraz  numery opisujące związki z tabeli `Obserwuje`. W tabeli `Osoby` widzimy, że pierwsze trzy osoby zostały już odwiedzone i ich dane zostały pobrane. Dane w tabeli `Obserwuje` wskazują, że `drchuck` (użytkownik 1) jest znajomym wszystkich osób pokazanych w pierwszych trzech wierszach. Ma to sens, ponieważ pierwszymi danymi, które pobraliśmy i przechowywaliśmy, byli znajomi użytkownika `drchuck`. Jeśli wyświetlisz u siebie wszystkie wiersze tabeli `Obserwuje`, to zobaczysz również znajomych użytkowników o `id` równych 2 i 3.
+Możesz zauważyć pola `id`, `nazwa` i `pobrana` z tabeli `Osoby` oraz numery opisujące związki z tabeli `Obserwuje`. W tabeli `Osoby` widzimy, że pierwsze trzy osoby zostały już odwiedzone i ich dane zostały pobrane. Dane w tabeli `Obserwuje` wskazują, że `drchuck` (użytkownik 1) jest znajomym wszystkich osób pokazanych w pierwszych trzech wierszach. Ma to sens, ponieważ pierwszymi danymi, które pobraliśmy i przechowywaliśmy, byli znajomi użytkownika `drchuck`. Jeśli wyświetlisz u siebie wszystkie wiersze tabeli `Obserwuje`, to zobaczysz również znajomych użytkowników o `id` równych 2 i 3.
 
 Trzy rodzaje kluczy
 -------------------
@@ -657,9 +656,9 @@ Debugowanie
 
 Jednym z powszechnych schematów postępowania podczas tworzenia w Pythonie programu do łączenia się z bazą danych SQLite jest uruchomienie programu i sprawdzenie wyników za pomocą przeglądarki bazy danych SQLite. Przeglądarka pozwala na szybkie sprawdzenie, czy Twój program działa poprawnie.
 
-Musisz być tutaj ostrożny, ponieważ SQLite dba o to, by dwa programy nie zmieniały jednocześnie tych samych danych. Na przykład jeśli otworzysz bazę danych w przeglądarce i dokonasz zmiany w bazie danych, ale w przeglądarce nie naciśniesz jeszcze przycisku "zapisz", to przeglądarka "zablokuje" plik bazy danych i uniemożliwi dostęp do niego innym programom. Czyli Twój program napisany Pythonie nie będzie w stanie uzyskać dostępu do zablokowanego pliku.
+Musisz być tutaj ostrożny, ponieważ SQLite dba o to, by dwa programy nie zmieniały jednocześnie tych samych danych. Na przykład jeśli otworzysz bazę danych w przeglądarce i dokonasz zmiany w bazie danych, ale w przeglądarce nie naciśniesz jeszcze przycisku "zapisz", to przeglądarka "zablokuje" plik bazy danych i uniemożliwi dostęp do niego innym programom. W konsekwencji Twój program napisany Pythonie nie będzie w stanie uzyskać dostępu do zablokowanego pliku.
 
-Rozwiązaniem jest więc zamknięcie przeglądarki bazy danych lub skorzystanie z menu *File*, tak aby zamknąć bazę danych w przeglądarce przed próbą dostępu do bazy danych z Pythona. Dzięki temu można uniknąć niepowodzenia kodu Pythona, ponieważ baza danych będzie wtedy odblokowana.
+Rozwiązaniem powyższej sytuacji jest zamknięcie przeglądarki bazy danych lub skorzystanie z menu *File*, tak aby zamknąć bazę danych w przeglądarce przed próbą dostępu do bazy danych z Pythona. Dzięki temu można uniknąć niepowodzenia kodu Pythona, ponieważ baza danych będzie wtedy odblokowana.
 
 Słowniczek
 ----------
