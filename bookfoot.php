@@ -31,6 +31,7 @@ function onSelect() {
 </script>    
 <div style="float:right">
 <select id="chapters" onchange="onSelect();">
+  <option <?= x_sel("A0-preface.php") ?>>Przedmowa</option>
   <option <?= x_sel("01-intro.php") ?>>Rozdział 1: Wstęp</option>
   <option <?= x_sel("02-variables.php") ?>>Rozdział 2: Zmienne, wyrażenia i instrukcje</option>
   <option <?= x_sel("03-conditional.php") ?>>Rozdział 3: Wykonanie warunkowe</option>

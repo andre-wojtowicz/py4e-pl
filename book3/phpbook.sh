@@ -13,7 +13,7 @@ sed -i "3s/.*/% Ostatnia aktualizacja: $(date '+%Y-%m-%d')/" 01-intro.mkd
 
 # Convert all mkd into html
 i=0
-for fn in [0-9]*.mkd; do
+for fn in [A0-9]*.mkd; do
     echo "the next file is $fn"
     x=`basename $fn .mkd`
     echo $x
