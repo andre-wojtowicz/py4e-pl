@@ -22,13 +22,11 @@ O tym, co autor uważa za komercyjne i niekomercyjne wykorzystanie tego materia�
 jak również wyłączenia licencyjne, można przeczytać w dodatku zatytułowanym
 "Szczegóły dotyczące praw autorskich".
 
-ISBN (wersja drukowana): 978-83-960176-0-4
+ISBN (wersja drukowana): 9798570347014
 
-ISBN (wersja elektroniczna): 978-83-960176-1-1
+ISBN (wersja elektroniczna): 9788396017628
 
-Wydanie drugie, 2022
-
-Wydawca: Andrzej Wójtowicz
+Wydanie trzecie, 2022
 
 \cleardoublepage
 \pdfbookmark{Przedmowa}{preface}
