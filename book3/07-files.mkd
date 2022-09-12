@@ -281,11 +281,11 @@ FileNotFoundError: [Errno 2] No such file or directory: 'missing.txt'
 ~~~~
 
 ~~~~
-Podaj nazwę pliku: programista 15k, dobre sobie!
+Podaj nazwę pliku: programista 15k
 Traceback (most recent call last):
   File "search6.py", line 2, in <module>
     fhand = open(fname)
-FileNotFoundError: [Errno 2] No such file or directory: 'programista 15k, dobre sobie!'
+FileNotFoundError: [Errno 2] No such file or directory: 'programista 15k'
 ~~~~
 
 Użytkownicy czasem robią wszystko, co w ich mocy, by wysypać Twoje programy – albo przypadkiem, albo w złych zamiarach. W rzeczywistości ważną częścią każdego zespołu zajmującego się tworzeniem oprogramowania jest osoba lub grupa o nazwie *Quality Assurance* (w skrócie QA; zespół *zapewniania jakości*), której zadaniem jest robienie najbardziej szalonych rzeczy w celu wysypania oprogramowania stworzonego przez programistów.
