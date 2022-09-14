@@ -28,21 +28,21 @@
 </style>
 <div style="float: right; border-left:0px; border-right:0px; border-bottom:0px; max-width:150px; border-top: 2px solid #f90; padding: 8px 0; margin: 0; line-height: 11px;">
     <div style="text-align: center;">
-        <img style="max-width: 150px;" src="book-cover3d.png" />
+        <img style="max-width: 150px;" src="https://py4e.pl/book-cover3d.png" />
     </div>
     <div style="text-align: center; margin-top: 3px;">
-        <span style="color:#333333; font: normal 12px/17px Arial,Helvetica,sans-serif;">Wersja drukowana:</span>
+        <span style="color:#333333; font: normal 12px/17px Arial,Helvetica,sans-serif;">Kup książkę w wersji drukowanej:</span>
     </div>
     <div class="book-primary-btn" style="margin-top: 5px; padding: 3px; width: 100%; border-width: 1px 0;">
         <a rel="nofollow" href="https://amzn.to/3eNb3wp" target="_blank" style="text-decoration: none; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; margin: 0; padding: 0; width: 100%; font: normal 14px/17px Arial,Helvetica,sans-serif; color: #333; font-size: 12px; text-align: center; display: flex; justify-content: space-between;">
-            <div style=""><img src="book-amz.png" style="height: 20px;" /></div>
+            <div style=""><img src="https://py4e.pl/book-amz.png" style="height: 20px;" /></div>
             <div style="align-self: center;">miękka oprawa</div>
             <div style="width: 20px"></div>
         </a>
     </div>
     <div class="book-primary-btn" style="margin-top: 5px; padding: 3px; width: 100%; border-width: 1px 0;">
         <a rel="nofollow" href="https://amzn.to/3QM0ZBc" target="_blank" style="text-decoration: none; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; margin: 0; padding: 0; width: 100%; font: normal 14px/17px Arial,Helvetica,sans-serif; color: #333; font-size: 12px; text-align: center; display: flex; justify-content: space-between;">
-            <div style=""><img src="book-amz.png" style="height: 20px;" /></div>
+            <div style=""><img src="https://py4e.pl/book-amz.png" style="height: 20px;" /></div>
             <div style="align-self: center;">twarda oprawa</div>
             <div style="width: 20px"></div>
         </a>
