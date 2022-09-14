@@ -31,12 +31,17 @@
         <img style="max-width: 150px;" src="book-cover3d.png" />
     </div>
     <div style="text-align: center; margin-top: 3px;">
-        <span style="color:#333333; font: normal 12px/17px Arial,Helvetica,sans-serif;">Wersja dostępna w druku na żądanie:</span>
+        <span style="color:#333333; font: normal 12px/17px Arial,Helvetica,sans-serif;">Wersja drukowana:</span>
     </div>
     <div class="book-primary-btn" style="margin-top: 5px; padding: 3px; width: 100%; border-width: 1px 0;">
-        <a rel="nofollow" href="https://amzn.to/3rxx3Nw" target="_blank" style="text-decoration: none; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; margin: 0; padding: 0; width: 100%; font: normal 14px/17px Arial,Helvetica,sans-serif; color: #333; font-size: 12px; text-align: center; display: flex; justify-content: space-between;">
+        <a rel="nofollow" href="https://amzn.to/3eNb3wp" target="_blank" style="text-decoration: none; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; margin: 0; padding: 0; width: 100%; font: normal 14px/17px Arial,Helvetica,sans-serif; color: #333; font-size: 12px; text-align: center; display: flex; justify-content: space-between;">
             <div style=""><img src="book-amz.png" style="height: 20px;" /></div>
-            <div style="align-self: center;">Amazon.pl</div>
+            <div style="align-self: center;">miękka oprawa</div>
+            <div style="width: 20px"></div>
+        </a>
+        <a rel="nofollow" href="https://amzn.to/3QM0ZBc" target="_blank" style="text-decoration: none; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; margin: 0; padding: 0; width: 100%; font: normal 14px/17px Arial,Helvetica,sans-serif; color: #333; font-size: 12px; text-align: center; display: flex; justify-content: space-between;">
+            <div style=""><img src="book-amz.png" style="height: 20px;" /></div>
+            <div style="align-self: center;">twarda oprawa</div>
             <div style="width: 20px"></div>
         </a>
     </div>
@@ -47,7 +52,7 @@
 </p>
 <ul>
     <li>
-        <a rel="nofollow" href="https://amzn.to/3rxx3Nw" target="_blank">Python dla wszystkich: Odkrywanie danych z Python 3</a>:
+        <a rel="nofollow" href="https://amzn.to/3eNb3wp" target="_blank">Python dla wszystkich: Odkrywanie danych z Python 3</a>:
         <ul class="menu vertical nested is-active">
             <li class="menu-text">ostatnia aktualizacja: <?php exec('git log -1 --format="%at" | xargs -I{} date -d @{} "+%Y-%m-%d"', $commit_date); echo($commit_date[0]); ?></li>
             <li class="menu-text">
@@ -69,7 +74,7 @@
 
 <p>Slajdy do wykładów znajdują się w katalogu <a href="lectures3" target="_blank">lectures3</a>.</p>
 
-<p>Materiały uzupełniające dotyczące ćwiczeń programistycznych znajdują się w serwisie <a href="https://leanpub.com/python-dla-wszystkich-rozwiazania" target="_blank">Leanpub</a>.</p>
+<p>Rozwiązania zadań programistycznych dostępne są w wersji drukowanej (<a href="https://amzn.to/3dee6xq" target="_blank">Amazon</a>) lub w postaci e-booka (<a href="https://leanpub.com/python-dla-wszystkich-rozwiazania" target="_blank">Leanpub</a>).</p>
 
 <p>
 Rozdziały 2-10 są mocno zaczerpnięte z otwartej książki zatytułowanej "<a href="https://greenteapress.com/wp/learning-with-python/" target="_blank">Think Python: How to Think like a Computer Scientist</a>" autorstwa
