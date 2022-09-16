@@ -39,7 +39,7 @@ Funkcja `print()`, poza wyświetlaniem tekstu, działa również w przypadku lic
 Jeśli nie jesteś pewien, jaki typ ma dana wartość, interpreter może Ci to
 podpowiedzieć:
 
-~~~~ {.python .trinket height="160"}
+~~~~ {.python .trinket}
 >>> type('Witaj świecie!')
 <class 'str'>
 >>> type(17)
@@ -64,7 +64,7 @@ programowania używamy kropki.] (ang. *floating point*):
 \index{typ!zmiennoprzecinkowy}
 \index{klasa!float}
 
-~~~~ {.python .trinket height="120"}
+~~~~ {.python .trinket}
 >>> type(3.2)
 <class 'float'>
 ~~~~
@@ -74,7 +74,7 @@ tak jak napisy, są zawarte między apostrofami:
 
 \index{apostrof}
 
-~~~~ {.python .trinket  height="160"}
+~~~~ {.python .trinket}
 >>> type('17')
 <class 'str'>
 >>> type('3.2')
@@ -88,7 +88,7 @@ między grupami trzycyfrowymi, np. jak w przypadku 1,000,000.^[Jest to zapis
 częściej stosowany w USA.] W Pythonie nie jest to poprawna liczba całkowita, ale
 sam zapis jest całkowicie prawidłowy:
 
-~~~~ {.python .trinket height="120"}
+~~~~ {.python .trinket}
 >>> print(1,000,000)
 1 0 0
 ~~~~
@@ -170,7 +170,7 @@ docelowo będzie używana przez inne osoby).
 
 Jeśli nadasz zmiennej niepoprawną nazwę, otrzymasz błąd składniowy:
 
-~~~~ {.python .trinket height="450"}
+~~~~ {.python .trinket}
 >>> 76trombones = 'big parade'
 SyntaxError: invalid syntax
 >>> more@ = 1000000
@@ -273,7 +273,7 @@ Jeśli pisałeś programy w Pythonie 2, to musisz wiedzieć, że w Pythonie 3
 nastąpiła zmiana w operatorze dzielenia. W Pythonie 3 wynik takiego dzielenia
 jest wynikiem zmiennoprzecinkowym:
 
-~~~~ {.python .trinket height="160"}
+~~~~ {.python .trinket}
 >>> minute = 59
 >>> minute/60
 0.9833333333333333
@@ -291,7 +291,7 @@ wynik do liczby całkowitej:
 Aby uzyskać taki sam wynik w Pythonie 3, należy użyć dzielenia
 całkowitoliczbowego `//`, zaokrąglającego w dół:
 
-~~~~ {.python .trinket  height="160"}
+~~~~ {.python .trinket}
 >>> minute = 59
 >>> minute//60
 0
@@ -391,7 +391,7 @@ Operator modulo
 pierwszego operandu przez drugi. W Pythonie operator modulo jest znakiem
 procentu (`%`). Składnia jest taka sama jak w przypadku innych operatorów:
 
-~~~~ {.python .trinket height="240"}
+~~~~ {.python .trinket}
 >>> quotient = 7 // 3
 >>> print(quotient)
 2

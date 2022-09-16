@@ -26,7 +26,7 @@ rm ../photos/*-eps-converted-to.pdf 2> /dev/null
 pandoc <(sed -e "s/^Copyright 2009– /Copyright 2009–$(date +%Y) /" -e "s/^Wydanie \(.*\), 20..$/Wydanie \\1, $(date '+%Y-%m-%d')/" A0-preface.mkd) -o tmp-1.prefacex.tex
 sed < tmp-1.prefacex.tex 's/section{/section*{/' > tmp-1.preface.tex
 
-cat [0-9]*.mkd | python2 verbatim.py | tee tmp-1.verbatim | pandoc -s -N -f markdown+definition_lists -t latex --toc --default-image-extension=eps -V pdfversionprint -V fontsize:10pt -V documentclass:book -V lang:pl-PL -V langbabel:polish -V "author:Dr Charles R. Severance" -V "title:Python dla wszystkich" -V "subtitle:Odkrywanie danych z Python 3" -V colorlinks:false -V citecolor:black -V urlcolor:black -V linkcolor:black -V numbersections -V printbook -V typeinclude_t1 --syntax-definition=sql.xml --template=template.latex -o tmp-1.tex
+cat [0-9]*.mkd | python2 verbatim.py | tee tmp-1.verbatim | pandoc -s -N -f markdown+definition_lists -t latex --toc --default-image-extension=eps -V pdfversionprint -V fontsize:10pt -V documentclass:book -V lang:pl-PL -V langbabel:polish -V "author:Dr Charles R. Severance" -V "title:Python dla wszystkich" -V "subtitle:Odkrywanie danych z Python 3" -V colorlinks:false -V citecolor:black -V urlcolor:black -V linkcolor:black -V numbersections -V printbook -V typeinclude_t1 --syntax-definition=sql.xml --template=template.latex --listings -V listings-disable-line-numbers:true -o tmp-1.tex
 pandoc [A-Z][A-Z]*.mkd -o tmp-1.app.tex
 
 sed < tmp-1.app.tex -e 's/subsubsection{/xyzzy{/' -e 's/subsection{/plugh{/' -e 's/section{/chapter{/' -e 's/xyzzy{/subsection{/' -e 's/plugh{/section{/'  > tmp-1.appendix.tex
@@ -59,7 +59,7 @@ sed < tmp-2.prefacex.tex 's/section{/section*{/' > tmp-2.preface.tex
 
 cp 01-intro.mkd 01-intro.mkd.orig
 sed -i "3s/.*/% Ostatnia aktualizacja: $(date '+%Y-%m-%d')/" 01-intro.mkd
-cat [0-9]*.mkd | python2 verbatim.py | tee tmp-2.verbatim | pandoc -s -N -f markdown+definition_lists -t latex --toc --default-image-extension=eps -V pdfversiona4  -V fontsize:10pt -V documentclass:book -V papersize:a4paper -V openany -V lang:pl-PL -V langbabel:polish -V "author:Dr Charles R. Severance" -V "title:Python dla wszystkich" -V "subtitle:Odkrywanie danych z Python 3"  -V numbersections -V typeinclude_t2 --template=template.latex --syntax-definition=sql.xml -o tmp-2.tex
+cat [0-9]*.mkd | python2 verbatim.py | tee tmp-2.verbatim | pandoc -s -N -f markdown+definition_lists -t latex --toc --default-image-extension=eps -V pdfversiona4  -V fontsize:10pt -V documentclass:book -V papersize:a4paper -V openany -V lang:pl-PL -V langbabel:polish -V "author:Dr Charles R. Severance" -V "title:Python dla wszystkich" -V "subtitle:Odkrywanie danych z Python 3"  -V numbersections -V typeinclude_t2 --template=template.latex --syntax-definition=sql.xml --listings -V listings-disable-line-numbers:true -o tmp-2.tex
 pandoc [A-Z][A-Z]*.mkd -o tmp-2.app.tex
 mv 01-intro.mkd.orig 01-intro.mkd
 
@@ -91,7 +91,7 @@ rm ../photos/*-eps-converted-to.pdf 2> /dev/null
 pandoc <(sed -e "s/^Copyright 2009– /Copyright 2009–$(date +%Y) /" -e "s/^Wydanie \(.*\), 20..$/Wydanie \\1, $(date '+%Y-%m-%d')/" A0-preface.mkd) -o tmp-3.prefacex.tex
 sed < tmp-3.prefacex.tex 's/section{/section*{/' > tmp-3.preface.tex
 
-cat [0-9]*.mkd | python2 verbatim.py | tee tmp-3.verbatim | pandoc -s -N -f markdown+definition_lists -t latex --toc --default-image-extension=eps -V pdfversionprint -V fontsize:10pt -V documentclass:book -V lang:pl-PL -V langbabel:polish -V "author:Dr Charles R. Severance" -V "title:Python dla wszystkich" -V "subtitle:Odkrywanie danych z Python 3" -V colorlinks:false -V citecolor:black -V urlcolor:black -V linkcolor:black -V numbersections -V printbook --highlight-style=monochrome -V typeinclude_t3 --template=template.latex --syntax-definition=sql.xml -o tmp-3.tex
+cat [0-9]*.mkd | python2 verbatim.py | tee tmp-3.verbatim | pandoc -s -N -f markdown+definition_lists -t latex --toc --default-image-extension=eps -V pdfversionprint -V fontsize:10pt -V documentclass:book -V lang:pl-PL -V langbabel:polish -V "author:Dr Charles R. Severance" -V "title:Python dla wszystkich" -V "subtitle:Odkrywanie danych z Python 3" -V colorlinks:false -V citecolor:black -V urlcolor:black -V linkcolor:black -V numbersections -V printbook --highlight-style=monochrome -V typeinclude_t3 --template=template.latex --listings -V listings-disable-line-numbers:true -V blackandwhite --syntax-definition=sql.xml -o tmp-3.tex
 pandoc [A-Z][A-Z]*.mkd -o tmp-3.app.tex
 
 sed < tmp-3.app.tex -e 's/subsubsection{/xyzzy{/' -e 's/subsection{/plugh{/' -e 's/section{/chapter{/' -e 's/xyzzy{/subsection{/' -e 's/plugh{/section{/'  > tmp-3.appendix.tex
@@ -111,16 +111,16 @@ pdflatex -shell-escape tmp-3.tex # first, TOC
 pdflatex -shell-escape tmp-3.tex # second, add TOC
 mv tmp-3.pdf x-3.pdf
 
-gs -o x-3-cmyk.pdf \
-    -sDEVICE=pdfwrite \
-    -dOverrideICC \
-    -sProcessColorModel=DeviceCMYK \
-    -sColorConversionStrategy=CMYK \
-    -sColorConversionStrategyForImages=CMYK \
-     x-3.pdf
-
-##pdfjam --outfile x-3.pdf --papersize '{7in,10in}' x-3-cmyk.pdf
-mv x-3-cmyk.pdf x-3.pdf
+#gs -o x-3-cmyk.pdf \
+#    -sDEVICE=pdfwrite \
+#    -dOverrideICC \
+#    -sProcessColorModel=DeviceCMYK \
+#    -sColorConversionStrategy=CMYK \
+#    -sColorConversionStrategyForImages=CMYK \
+#     x-3.pdf
+#
+###pdfjam --outfile x-3.pdf --papersize '{7in,10in}' x-3-cmyk.pdf
+#mv x-3-cmyk.pdf x-3.pdf
 
 # cleanup
 
@@ -135,7 +135,7 @@ sed < tmp-4.prefacex.tex 's/section{/section*{/' > tmp-4.preface.tex
 
 cp 01-intro.mkd 01-intro.mkd.orig
 sed -i "3s/.*/% Ostatnia aktualizacja: $(date '+%Y-%m-%d')/" 01-intro.mkd
-cat [0-9]*.mkd | python2 verbatim.py | tee tmp-4.verbatim | pandoc -s -N -f markdown+definition_lists -t latex --toc --default-image-extension=eps -V pdfversiona4  -V fontsize:10pt -V documentclass:book -V papersize:a4paper -V openany -V lang:pl-PL -V langbabel:polish -V "author:Dr Charles R. Severance" -V "title:Python dla wszystkich" -V "subtitle:Odkrywanie danych z Python 3"  -V numbersections -V fontcode:lmss  -V typeinclude_t4 --template=template.latex --syntax-definition=sql.xml -o tmp-4.tex
+cat [0-9]*.mkd | python2 verbatim.py | tee tmp-4.verbatim | pandoc -s -N -f markdown+definition_lists -t latex --toc --default-image-extension=eps -V pdfversiona4  -V fontsize:10pt -V documentclass:book -V papersize:a4paper -V openany -V lang:pl-PL -V langbabel:polish -V "author:Dr Charles R. Severance" -V "title:Python dla wszystkich" -V "subtitle:Odkrywanie danych z Python 3"  -V numbersections -V fontcode:lmss  -V typeinclude_t4 --template=template.latex --syntax-definition=sql.xml --listings -V listings-disable-line-numbers:true -o tmp-4.tex
 pandoc [A-Z][A-Z]*.mkd -o tmp-4.app.tex
 mv 01-intro.mkd.orig 01-intro.mkd
 
