@@ -46,6 +46,18 @@ pdflatex -shell-escape tmp-1.tex # first, TOC
 pdflatex -shell-escape tmp-1.tex # second, add TOC
 mv tmp-1.pdf x-1.pdf
 
+gs -o x-1-cmyk.pdf \
+    -sDEVICE=pdfwrite \
+    -dOverrideICC \
+    -sProcessColorModel=DeviceCMYK \
+    -sColorConversionStrategy=CMYK \
+    -sColorConversionStrategyForImages=CMYK \
+    -dEmbedAllFonts=true \
+     x-1.pdf
+
+##pdfjam --outfile x-1.pdf --papersize '{7in,10in}' x-1-cmyk.pdf
+mv x-1-cmyk.pdf x-1.pdf
+
 # cleanup
 
 rm tmp-1.* tmp-2.* tmp-3.* tmp-4.* *.tmp *.aux 2> /dev/null
