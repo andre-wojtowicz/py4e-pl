@@ -117,6 +117,7 @@ gs -o x-3-cmyk.pdf \
     -sProcessColorModel=DeviceCMYK \
     -sColorConversionStrategy=CMYK \
     -sColorConversionStrategyForImages=CMYK \
+    -dEmbedAllFonts=true \
      x-3.pdf
 
 ##pdfjam --outfile x-3.pdf --papersize '{7in,10in}' x-3-cmyk.pdf
