@@ -126,7 +126,7 @@ $endif$
   frameround       = ffff,
   tabsize          = 4,
   numberstyle      = \color{listing-numbers},
-  aboveskip        = 0.1em,
+  aboveskip        = 0.0em,
   belowskip        = 0.1em,
   abovecaptionskip = 0em,
   belowcaptionskip = 1.0em,
