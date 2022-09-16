@@ -111,16 +111,16 @@ pdflatex -shell-escape tmp-3.tex # first, TOC
 pdflatex -shell-escape tmp-3.tex # second, add TOC
 mv tmp-3.pdf x-3.pdf
 
-#gs -o x-3-cmyk.pdf \
-#    -sDEVICE=pdfwrite \
-#    -dOverrideICC \
-#    -sProcessColorModel=DeviceCMYK \
-#    -sColorConversionStrategy=CMYK \
-#    -sColorConversionStrategyForImages=CMYK \
-#     x-3.pdf
-#
-###pdfjam --outfile x-3.pdf --papersize '{7in,10in}' x-3-cmyk.pdf
-#mv x-3-cmyk.pdf x-3.pdf
+gs -o x-3-cmyk.pdf \
+    -sDEVICE=pdfwrite \
+    -dOverrideICC \
+    -sProcessColorModel=DeviceCMYK \
+    -sColorConversionStrategy=CMYK \
+    -sColorConversionStrategyForImages=CMYK \
+     x-3.pdf
+
+##pdfjam --outfile x-3.pdf --papersize '{7in,10in}' x-3-cmyk.pdf
+mv x-3-cmyk.pdf x-3.pdf
 
 # cleanup
 
