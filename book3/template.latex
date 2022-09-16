@@ -127,7 +127,7 @@ $endif$
   tabsize          = 4,
   numberstyle      = \color{listing-numbers},
   aboveskip        = 0.0em,
-  belowskip        = 0.5em,
+  belowskip        = 0.7em,
   abovecaptionskip = 0.0em,
   belowcaptionskip = 0.0em,
   captionpos       = b,
