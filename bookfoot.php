@@ -85,15 +85,15 @@ function onSelect() {
     <div class="book-primary-btn" style="margin-top: 5px; padding: 3px; width: 100%; border-width: 1px 0;">
         <a rel="nofollow" href="https://amzn.to/3eNb3wp" target="_blank" style="text-decoration: none; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; margin: 0; padding: 0; width: 100%; font: normal 14px/17px Arial,Helvetica,sans-serif; color: #333; font-size: 12px; text-align: center; display: flex; justify-content: space-between;">
             <div style=""><img src="https://py4e.pl/book-amz.png" style="height: 20px;" /></div>
-            <div style="align-self: center;">miękka oprawa</div>
-            <div style="width: 20px"></div>
+            <div style="align-self: center;">druk czarno-biały</div>
+            <div style="width: 5px"></div>
         </a>
     </div>
     <div class="book-primary-btn" style="margin-top: 5px; padding: 3px; width: 100%; border-width: 1px 0;">
-        <a rel="nofollow" href="https://amzn.to/3QM0ZBc" target="_blank" style="text-decoration: none; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; margin: 0; padding: 0; width: 100%; font: normal 14px/17px Arial,Helvetica,sans-serif; color: #333; font-size: 12px; text-align: center; display: flex; justify-content: space-between;">
+        <a rel="nofollow" href="https://amzn.to/3DB8bgC" target="_blank" style="text-decoration: none; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; margin: 0; padding: 0; width: 100%; font: normal 14px/17px Arial,Helvetica,sans-serif; color: #333; font-size: 12px; text-align: center; display: flex; justify-content: space-between;">
             <div style=""><img src="https://py4e.pl/book-amz.png" style="height: 20px;" /></div>
-            <div style="align-self: center;">twarda oprawa</div>
-            <div style="width: 20px"></div>
+            <div style="align-self: center;">druk kolorowy</div>
+            <div style="width: 5px"></div>
         </a>
     </div>
 </div>
