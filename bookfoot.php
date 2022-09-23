@@ -106,6 +106,9 @@ echo($body);
 Jeśli znajdziesz błąd w tej książce, wyślij poprawkę za pomocą
 <a href="https://github.com/andre-wojtowicz/py4e-pl/tree/master/book3" target="_blank">GitHuba</a>.
 </p>
+<p>
+Indywidualne wsparcie na utrzymanie i rozwój tej strony można wysłać poprzez <a href="https://github.com/sponsors/andre-wojtowicz" target="_blank">GitHub Sponsors</a>.
+</p>
 <?php
 
 $OUTPUT->footer();

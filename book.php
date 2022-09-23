@@ -81,6 +81,10 @@
 <p>Rozwiązania zadań programistycznych dostępne są w wersji drukowanej (<a href="https://amzn.to/3dee6xq" target="_blank">Amazon</a>) lub w postaci e-booka (<a href="https://leanpub.com/python-dla-wszystkich-rozwiazania" target="_blank">Leanpub</a>).</p>
 
 <p>
+Indywidualne wsparcie na utrzymanie i rozwój tej strony można wysłać poprzez <a href="https://github.com/sponsors/andre-wojtowicz" target="_blank">GitHub Sponsors</a>.
+</p>
+
+<p>
 Rozdziały 2-10 są mocno zaczerpnięte z otwartej książki zatytułowanej "<a href="https://greenteapress.com/wp/learning-with-python/" target="_blank">Think Python: How to Think like a Computer Scientist</a>" autorstwa
     <a href="https://www.allendowney.com/wp/" target="_blank">Allena B. Downeya</a> i <a href="https://elkner.net/" target="_blank">Jeffa Elknera</a>.
 </p>
