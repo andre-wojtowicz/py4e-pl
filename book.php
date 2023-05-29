@@ -72,13 +72,13 @@
     </li>
 </ul>
 
-<p>Wersja elektroniczna książki dostępna jest również na <a href="https://books.apple.com/us/book/python-dla-wszystkich-odkrywanie-danych-z-python-3/id1560034101" target="_blank">Apple Books</a>.</p>
+<p>Wersja elektroniczna książki dostępna jest również na <a href="https://books.apple.com/us/book/python-dla-wszystkich-odkrywanie-danych-z-python-3/id1560034101" target="_blank">Apple Books</a> i <a href="https://www.empik.com/python-dla-wszystkich-odkrywanie-danych-z-python-3-charles-severance,p1387739130,ebooki-i-mp3-p" target="_blank">Empik</a>.</p>
 
 <p>Wykorzystywane w książce przykładowe kody programów oraz pliki danych znajdują się w katalogu <a href="code3" target="_blank">code3</a>.</p>
 
 <p>Slajdy do wykładów znajdują się w katalogu <a href="lectures3" target="_blank">lectures3</a>.</p>
 
-<p>Rozwiązania zadań programistycznych dostępne są w wersji drukowanej (<a href="https://amzn.to/3dee6xq" target="_blank">Amazon</a>) lub w postaci e-booka (<a href="https://leanpub.com/python-dla-wszystkich-rozwiazania" target="_blank">Leanpub</a>).</p>
+<p>Rozwiązania zadań programistycznych dostępne są w wersji drukowanej (<a href="https://amzn.to/3dee6xq" target="_blank">Amazon</a>) lub w postaci e-booka (<a href="https://www.empik.com/python-dla-wszystkich-rozwiazania-zadan-programistycznych-andrzej-wojtowicz,p1387739343,ebooki-i-mp3-p" target="_blank">Empik</a>, <a href="https://leanpub.com/python-dla-wszystkich-rozwiazania" target="_blank">Leanpub</a>).</p>
 
 <p>
 Indywidualne wsparcie na utrzymanie i rozwój tej strony można wysłać poprzez <a href="https://github.com/sponsors/andre-wojtowicz" target="_blank">GitHub Sponsors</a>.
