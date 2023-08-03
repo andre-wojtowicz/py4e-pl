@@ -39,17 +39,6 @@ pipeline {
                 '''
             }
         }
-        stage('Customize') {
-            steps {
-                withCredentials([
-                    string(credentialsId: 'PY4EPL_PRIVATE_REPO', variable: 'PY4EPL_PRIVATE_REPO'),
-                    file(credentialsId: 'PY4EPL_TSUGI_CONFIG_PHP', variable: 'PY4EPL_TSUGI_CONFIG_PHP')
-                ]) {
-                    sh "cd dest && git clone $PY4EPL_PRIVATE_REPO"
-                    sh "cd dest/tsugi && cp $PY4EPL_TSUGI_CONFIG_PHP config.php"
-                }
-            }
-        }
         stage('Publish') {
             steps {
                 sshPublisher(
@@ -66,6 +55,9 @@ pipeline {
                                     remoteDirectory: 'public_html',
                                     sourceFiles: 'dest/',
                                     removePrefix: 'dest'
+                                ),
+                                sshTransfer(
+                                    execCommand: 'bash customize.sh'
                                 ),
                                 sshTransfer(
                                     execCommand: 'find public_html -type d -print0 | xargs -0 chmod 755'
