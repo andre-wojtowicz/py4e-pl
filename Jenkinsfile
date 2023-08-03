@@ -3,6 +3,11 @@ pipeline {
         dockerfile true
     }
     stages {
+        stage('Clean workspace') {
+            steps {
+                cleanWs()
+            }
+        }
         stage('Prepare book') {
             steps {
                 sh 'cd app && bash prep.sh'
