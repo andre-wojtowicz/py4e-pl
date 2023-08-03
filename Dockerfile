@@ -1,8 +1,5 @@
 FROM 'debian:11.7-slim'
 
-WORKDIR /py4e-pl
-COPY /app .
-
 RUN echo '\
 Acquire::Retries "100";\
 Acquire::https::Timeout "30";\
@@ -21,4 +18,4 @@ ENV LANG en_US.utf8
 RUN apt update && \
     apt install -y python3 python3-pip make wget curl zip unzip git pandoc python2 pcregrep calibre texlive-full pdftk paps qpdf jq
 
-RUN bash prep.sh
+RUN cd app && bash prep.sh
