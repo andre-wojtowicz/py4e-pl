@@ -34,9 +34,9 @@ Polish translation
 | remaining website...   |      |      |       |      |         |          |         |            |       |
 | `unit.sh` check |         |            |       |
 
-(*) moved `book3/figs2` to `images`.
+(*) moved `app/book3/figs2` to `app/images`.
 
-URLs to translated trinkets are in `trinket3-pl-urls.md`.
+URLs to translated trinkets are in `app/trinket3-pl-urls.md`.
 
 [Tsugi translation is done in separate repository.](https://github.com/andre-wojtowicz/tsugi/)
 
@@ -49,12 +49,12 @@ The Python3 versions of the code is all in code3
 If you are interested in the Python for Everybody book
 see the folders
 
-* [book3](book3/)
-* [figures](figures/)
-* [images](images/)
-* [code3](code3/)
+* [book3](app/book3/)
+* [figures](app/figures/)
+* [images](app/images/)
+* [code3](app/code3/)
 
-See the file [`book3/README.md`](book3/README.md) for more details.
+See the file [`book3/README.md`](app/book3/README.md) for more details.
 
 Setup On Localhost
 ------------------

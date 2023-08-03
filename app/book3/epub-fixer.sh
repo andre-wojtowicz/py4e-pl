@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -ex
+
 zipedit_nav(){
     curdir=$(pwd)
     unzip "$1" "$2" -d /tmp 

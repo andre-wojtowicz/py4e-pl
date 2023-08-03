@@ -1,4 +1,8 @@
-#! /bin/bash
+#!/bin/bash
+
+set -ex
+
+mkdir -p ../translations/PL
 
 # EPUB and MOBI versions
 
@@ -10,16 +14,20 @@ if hash ebook-convert 2>/dev/null; then
     echo "mobi generated"
 else
     echo "mobi not generated - please install calibre"
+    exit 1
 fi
 
 # fixer for ingramspark
 bash epub-fixer.sh
 
+mv x.epub ../translations/PL/py4e-pl-latest.epub
+mv x.mobi ../translations/PL/py4e-pl-latest.mobi
+
 # cleanup
 
-rm tmp-1.* tmp-2.* tmp-3.* tmp-4.* *.tmp *.aux 2> /dev/null
-rm ../images/*-eps-converted-to.pdf 2> /dev/null
-rm ../photos/*-eps-converted-to.pdf 2> /dev/null
+rm -f tmp-1.* tmp-2.* tmp-3.* tmp-4.* *.tmp *.aux
+rm -f ../images/*-eps-converted-to.pdf
+rm -f ../photos/*-eps-converted-to.pdf
 
 # PDF print color version
 
@@ -58,11 +66,13 @@ gs -o x-1-cmyk.pdf \
 ##pdfjam --outfile x-1.pdf --papersize '{7in,10in}' x-1-cmyk.pdf
 mv x-1-cmyk.pdf x-1.pdf
 
+mv x-1.pdf ../translations/PL/py4e-pl-print-latest.pdf
+
 # cleanup
 
-rm tmp-1.* tmp-2.* tmp-3.* tmp-4.* *.tmp *.aux 2> /dev/null
-rm ../images/*-eps-converted-to.pdf 2> /dev/null
-rm ../photos/*-eps-converted-to.pdf 2> /dev/null
+rm -f tmp-1.* tmp-2.* tmp-3.* tmp-4.* *.tmp *.aux
+rm -f ../images/*-eps-converted-to.pdf
+rm -f ../photos/*-eps-converted-to.pdf
 
 # PDF print A4
 
@@ -92,11 +102,13 @@ pdflatex -shell-escape tmp-2.tex # first, TOC
 pdflatex -shell-escape tmp-2.tex # second, add TOC
 mv tmp-2.pdf x-2.pdf
 
+mv x-2.pdf ../translations/PL/py4e-pl-a4-latest.pdf
+
 # cleanup
 
-rm tmp-1.* tmp-2.* tmp-3.* tmp-4.* *.tmp *.aux 2> /dev/null
-rm ../images/*-eps-converted-to.pdf 2> /dev/null
-rm ../photos/*-eps-converted-to.pdf 2> /dev/null
+rm -f tmp-1.* tmp-2.* tmp-3.* tmp-4.* *.tmp *.aux
+rm -f ../images/*-eps-converted-to.pdf
+rm -f ../photos/*-eps-converted-to.pdf
 
 # PDF print b/w version (disabled color syntax highlighting)
 
@@ -135,11 +147,13 @@ gs -o x-3-cmyk.pdf \
 ##pdfjam --outfile x-3.pdf --papersize '{7in,10in}' x-3-cmyk.pdf
 mv x-3-cmyk.pdf x-3.pdf
 
+mv x-3.pdf ../translations/PL/py4e-pl-print-bw-latest.pdf
+
 # cleanup
 
-rm tmp-1.* tmp-2.* tmp-3.* tmp-4.* *.tmp *.aux 2> /dev/null
-rm ../images/*-eps-converted-to.pdf 2> /dev/null
-rm ../photos/*-eps-converted-to.pdf 2> /dev/null
+rm -f tmp-1.* tmp-2.* tmp-3.* tmp-4.* *.tmp *.aux
+rm -f ../images/*-eps-converted-to.pdf
+rm -f ../photos/*-eps-converted-to.pdf
 
 # PDF electronic A4
 
@@ -169,8 +183,10 @@ pdflatex -shell-escape tmp-4.tex # first, TOC
 pdflatex -shell-escape tmp-4.tex # second, add TOC
 mv tmp-4.pdf x-4.pdf
 
+mv x-4.pdf ../translations/PL/py4e-pl-a4-online-latest.pdf
+
 # cleanup
 
-rm tmp-1.* tmp-2.* tmp-3.* tmp-4.* *.tmp *.aux 2> /dev/null
-rm ../images/*-eps-converted-to.pdf 2> /dev/null
-rm ../photos/*-eps-converted-to.pdf 2> /dev/null
+rm -f tmp-1.* tmp-2.* tmp-3.* tmp-4.* *.tmp *.aux
+rm -f ../images/*-eps-converted-to.pdf
+rm -f ../photos/*-eps-converted-to.pdf

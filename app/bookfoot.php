@@ -48,6 +48,7 @@ function onSelect() {
   <option <?= x_sel("14-objects.php") ?>>Rozdział 14: Programowanie obiektowe</option>
   <option <?= x_sel("15-database.php") ?>>Rozdział 15: Bazy danych i SQL</option>
   <option <?= x_sel("16-viz.php") ?>>Rozdział 16: Wizualizacja danych</option>
+  <option value="https://py4e.pl/lessons/whatnext">Co dalej?</option>
 </select>
 </div>
 

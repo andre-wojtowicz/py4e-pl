@@ -1249,7 +1249,38 @@
             "youtube" : "AQtKm02FQq4"
         }
     ]
+},
+{ 
+    "title": "Co dalej?",
+    "anchor": "whatnext",
+    "icon" : "fa-bicycle",
+    "description": "W jaki sposób dalej szlifować swoje umiejętności programowania w Pythonie? Poniżej znajduje się lista tematyczna pozycji książkowych w języku polskim, które pomogą w kontynuowaniu nauki programowania w interesującym nas obszarze.",
+    "references" : [
+        {
+            "title" : "Analiza i wizualizacja danych",
+            "href" : "https://py4e.pl/whatnext-datascience.php"
+        },
+        {
+            "title" : "Sztuczna inteligencja",
+            "href" : "https://py4e.pl/whatnext-ai.php"
+        },
+        {
+            "title" : "Gry komputerowe",
+            "href" : "https://py4e.pl/whatnext-games.php"
+        },
+        {
+            "title" : "Matematyka i obliczenia naukowe",
+            "href" : "https://py4e.pl/whatnext-math.php"
+        },
+        {
+            "title" : "Strony internetowe",
+            "href" : "https://py4e.pl/whatnext-webdev.php"
+        },
+        {
+            "title" : "Techniki programowania i inne",
+            "href" : "https://py4e.pl/whatnext-prog.php"
+        }
+    ] 
 }
-
 ]
 }

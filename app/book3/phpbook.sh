@@ -1,8 +1,10 @@
 #!/bin/bash
 
+set -ex
+
 # Clean directory
 mkdir -p ../html3
-rm ../html3/[A0-9]*.php
+rm -f ../html3/[A0-9]*.php
 
 # Get page titles
 mapfile -t titles < <(jq '.modules[].title' ../lessons.json | head -n -1 | nl -n rz -w 2 | sed -e 's/"//g' -e 's/\
@@ -47,4 +49,4 @@ sed -i 's~alt="Algorytm PageRank"~alt="Algorytm PageRank" style="width: 70%"~' .
 sed -i 's~alt="Chmura wyrazów z listy mailingowej deweloperów projektu Sakai"~alt="Chmura wyrazów z listy mailingowej deweloperów projektu Sakai" style="width: 50%"~' ../html3/16-viz.php
 sed -i 's~alt="Aktywność mailowa w projekcie Sakai z podziałem na organizacje"~alt="Aktywność mailowa w projekcie Sakai z podziałem na organizacje" style="width: 75%"~' ../html3/16-viz.php
 
-rm tmp.*
+rm -f tmp.*
