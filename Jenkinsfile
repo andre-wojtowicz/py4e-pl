@@ -6,7 +6,7 @@ pipeline {
         stage('Clean workspace') {
             steps {
                 sh 'rm -rf dest'
-                sh 'cp -r app dest''
+                sh 'cp -r app dest'
             }
         }
         stage('Prepare book') {
