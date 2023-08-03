@@ -24,6 +24,8 @@ pipeline {
                 cd ..
                 cat .htaccess >> .htaccess.orig
                 mv .htaccess.orig .htaccess
+                sed -i -e 's/Options +Indexes/#Options +Indexes/g' .htaccess
+                sed -i -e 's/Options -Indexes/#Options -Indexes/g' theme/.htaccess
                 '''
                 sh '''cd dest
                 git clone https://github.com/andre-wojtowicz/tsugi.git

@@ -1,4 +1,4 @@
-Options +Indexes
+#Options +Indexes
 AddType text/plain .py
 
 # https://perishablepress.com/better-default-directory-views-with-htaccess/
