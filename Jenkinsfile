@@ -5,17 +5,18 @@ pipeline {
     stages {
         stage('Clean workspace') {
             steps {
-                cleanWs()
+                sh 'rm -rf dest'
+                sh 'cp -r app dest''
             }
         }
         stage('Prepare book') {
             steps {
-                sh 'cd app && bash prep.sh'
+                sh 'cd dest && bash prep.sh'
             }
         }
         stage('Prepare website') {
             steps {
-                sh '''cd app
+                sh '''cd dest
                 git clone https://github.com/oupala/apaxy.git
                 cp .htaccess .htaccess.orig
                 cd apaxy
@@ -24,11 +25,11 @@ pipeline {
                 cat .htaccess >> .htaccess.orig
                 mv .htaccess.orig .htaccess
                 '''
-                sh '''cd app
+                sh '''cd dest
                 git clone https://github.com/andre-wojtowicz/tsugi.git
                 mv config-tsugi.php tsugi/config.php
                 '''
-                sh '''cd app/mod
+                sh '''cd dest/mod
                 git clone https://github.com/tsugitools/gift.git
                 git clone https://github.com/tsugitools/peer-grade.git
                 cd ../mod_translation
@@ -69,7 +70,7 @@ pipeline {
                     string(credentialsId: '___UNIVERSAL_ANALYTICS___', variable: '___UNIVERSAL_ANALYTICS___', domain='py4epl'),
                     string(credentialsId: '___PY4EPL_PRIVATE___', variable: '___PY4EPL_PRIVATE___', domain='py4epl')
                 ]) {
-                    sh '''cd app
+                    sh '''cd dest
                     git clone $___PY4EPL_PRIVATE___
                     sed -i -e "s~___APP_HOME___~$___APP_HOME___~g" \
                            -e "s~___WWW_ROOT___~$___WWW_ROOT___~g" \
@@ -114,8 +115,8 @@ pipeline {
                                 ),
                                 sshTransfer(
                                     remoteDirectory: 'public_html',
-                                    sourceFiles: 'app/',
-                                    removePrefix: 'app'
+                                    sourceFiles: 'dest/',
+                                    removePrefix: 'dest'
                                 ),
                                 sshTransfer(
                                     execCommand: 'find public_html -type d -print0 | xargs -0 chmod 755'
