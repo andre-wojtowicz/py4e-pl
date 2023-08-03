@@ -18,4 +18,4 @@ ENV LANG en_US.utf8
 RUN apt update && \
     apt install -y python3 python3-pip make wget curl zip unzip git pandoc python2 pcregrep calibre texlive-full pdftk paps qpdf jq
 
-RUN cd app && bash prep.sh
+RUN pwd && ls -al && ls -al / && cd app && bash prep.sh
