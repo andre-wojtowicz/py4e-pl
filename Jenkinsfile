@@ -39,6 +39,9 @@ pipeline {
                 cd ../gift
                 bash change.sh
                 '''
+                sh '''cd dest
+                sed -i -e "s/__LAST_UPDATE__/$(date '+%Y-%m-%d')/g" book.php
+                '''
             }
         }
         stage('Publish') {

@@ -56,7 +56,7 @@
     <li>
         <a rel="nofollow" href="https://amzn.to/3eNb3wp" target="_blank">Python dla wszystkich: Odkrywanie danych z Python 3</a>:
         <ul class="menu vertical nested is-active">
-            <li class="menu-text">ostatnia aktualizacja: <?php exec('git log -1 --format="%at" | xargs -I{} date -d @{} "+%Y-%m-%d"', $commit_date); echo($commit_date[0]); ?></li>
+            <li class="menu-text">ostatnia aktualizacja: __LAST_UPDATE__</li>
             <li class="menu-text">
                 do czytania na ekranie: <a href="html3">HTML</a>, <a href="translations/PL/py4e-pl-a4-online-latest.pdf" target="_blank">PDF</a>, <a href="translations/PL/py4e-pl-latest.epub" target="_blank">EPUB</a>, <a href="translations/PL/py4e-pl-latest.mobi" target="_blank">MOBI</a>
             </li>
