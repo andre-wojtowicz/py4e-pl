@@ -1,7 +1,6 @@
 .DS_Store
 .vscode
 book3/.chinese
-config.php
 *.swp
 *.pyc
 __pycache__
