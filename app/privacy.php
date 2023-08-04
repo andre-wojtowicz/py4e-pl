@@ -7,7 +7,7 @@
 <p><strong>Kiedy zbieramy informacje?</strong></p>
 <p>Zbieramy od Ciebie informacje podczas rejestracji, zapisania się do naszego newslettera, odpowiadania na ankietę lub komunikację marketingową, przeglądania strony internetowej lub korzystania z niektórych innych funkcji witryny internetowej.</p>
 <p><strong>Jak chronimy Twoje informacje?</strong></p>
-<p>Twoje dane osobowe znajdują się za zabezpieczonymi sieciami i są dostępne tylko dla ograniczonej liczby osób, które mają specjalne prawa dostępu do takich systemów i są zobowiązane do zachowania poufności tych informacji. Ponadto, wszystkie poufne informacje, które dostarczasz, są szyfrowane za pomocą technologii Secure Socket Layer (SSL).</p>
+<p>Twoje dane osobowe znajdują się za zabezpieczonymi sieciami i są dostępne tylko dla ograniczonej liczby osób, które mają specjalne prawa dostępu do takich systemów i są zobowiązane do zachowania poufności tych informacji. Wszystkie poufne informacje, które dostarczasz, są szyfrowane za pomocą technologii Secure Socket Layer (SSL), o ile korzystasz z protokołu HTTPS.</p>
 <p><strong>Czy używamy "ciasteczek"?</strong></p>
 <p>Tak. Pliki ciasteczek są małymi plikami, które witryna lub jej dostawca usług przesyła na dysk twardy komputera użytkownika za pośrednictwem przeglądarki internetowej (jeśli użytkownik na to pozwoli), które umożliwiają systemom witryny lub dostawcy usług rozpoznanie przeglądarki i przechwycenie oraz zapamiętanie pewnych informacji.</p>
 <p><strong>Używamy ciasteczek do:</strong></p>
@@ -44,7 +44,7 @@ aplikacje edukacyjne <i>nie używają ani nie wymagają plików ciasteczek</i> i
 <p><strong>COPPA (Children Online Privacy Protection Act)</strong></p>
 <p>Nie adresujemy oferty w żaden szczególny sposób dla dzieci poniżej 13 roku życia.</p>
 <p><strong>Przechowywanie danych</strong></p>
-<p>Aktywnie wygasamy nieaktywne dane w oparciu o cykliczny harmonogram. Gdy dane wygasają lub są usuwane ręcznie, usługa ta nie zachowuje ich kopii. Przechowując tylko aktywne dane w systemie, zmniejszamy w każdej chwili ogólną ilość "Danych osobowych" (PII) w systemie.
+<p>Raz w miesiącu wygasamy nieaktywne dane (starsze niż 730 dni) w oparciu o cykliczny harmonogram. Kopia zapasowa danych przechowywana jest przez dodatkowy rok. Przechowując tylko aktywne dane w systemie, zmniejszamy w każdej chwili ogólną ilość "Danych osobowych" (PII) w systemie.
 </p>
 <p><strong>Analiza danych</strong></p>
 <p>
@@ -65,6 +65,6 @@ Duża część oprogramowania używanego na tej stronie jest oprogramowaniem otw
 1537 Holbrook Drive
 Holt, Michigan 48842
 United States</code></pre>
-<p>Ostatnia edycja: 27-11-2017</p>
+<p>Ostatnia edycja: 2023-08-04</p>
 <?php include("footer.php"); ?>
 
