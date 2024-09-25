@@ -637,7 +637,8 @@ Ustawienia:
 To oprogramowanie wykorzystuje <a href="http://skulpt.org/" target="_blank">Skulpt</a>
 oraz <a href="http://codemirror.net/" target="_blank">CodeMirror</a>.
 Kod źródłowy sprawdzarki jest dostępny na
-<a href="https://github.com/andre-wojtowicz/tsugi" target="_blank">GitHubie</a>.
+<a href="https://github.com/andre-wojtowicz/tsugi" target="_blank">GitHubie</a>.<br>
+Strona utrzymywana przez <a href="https://wmi.amu.edu.pl">Wydział Matematyki i Informatyki Uniwersytetu im. Adama Mickiewicza w Poznaniu</a>.
 <textarea id="resetcode" cols="80" style="display:none">
 <?php   echo(htmlentities($CODE)); ?>
 </textarea>
