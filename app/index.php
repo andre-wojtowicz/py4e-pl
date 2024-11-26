@@ -19,10 +19,12 @@ Możesz śledzić swoje postępy w nauce za pomocą sekcji <a href="assignments"
 Jeśli prowadzisz zajęcia z Pythona i chcesz wykorzystać udostępnione tutaj materiały (licencja Creative Commons), to możesz <a href="materials.php">pobrać lub zamieścić link</a> do treści z tej strony, <a href="tsugi/cc/export.php">wyeksportować materiały</a> kursu jako IMS Common Cartridge® lub złożyć wniosek o <a href="tsugi/admin/key/index.php">klucz i sekret</a> IMS Learning Tools Interoperability® (LTI®), tak by móc uruchamiać quizy i zadania programistyczne ze swojego systemu LMS. <?php if ( !($CFG->providekeys) ) { echo _m("[Obecnie generowanie kluczy LTI jest wyłączone] "); } ?>
 </li>
 </ul>
+Strona jest utrzymywana przez <a href="https://wmi.amu.edu.pl/dla-kandydata">Wydział Matematyki i Informatyki Uniwersytetu im. Adama Mickiewicza w Poznaniu</a>.<br>
 <?php } else { ?>
 <p>
 Witaj na stronie, na której znajdują się materiały kursowe związane z <a href="book.php"><b>bezpłatną książką "Python dla wszystkich"</b></a>. Umieszczone tutaj materiały i zadania pomogą w uzyskaniu certyfikatu w ramach <a href="https://www.coursera.org/specializations/python" target="_blank">specjalizacji w serwisie Coursera "Python for Everybody"</a>, <a href="https://www.edx.org/bio/charles-severance" target="_blank">dwóch kursów tematycznych "Python for Everybody" na edX</a> lub <a href="https://www.futurelearn.com/courses/programming-for-everybody-python" target="_blank">dwóch kursów "Python for Everybody" na FutureLearn</a>.
 </p>
+<p>Strona jest utrzymywana przez <a href="https://wmi.amu.edu.pl/dla-kandydata">Wydział Matematyki i Informatyki Uniwersytetu im. Adama Mickiewicza w Poznaniu</a>.</p>
 <p>
 Możesz korzystać z tej strony na wiele różnych sposobów:
 <ul class="list-group">
